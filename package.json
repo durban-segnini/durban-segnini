@@ -1,0 +1,24 @@
+{
+  "name": "durban-segnini-provisional",
+  "version": "1.0.0",
+  "description": "Provisional Website (Static) for September Deployment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adeluccar/durban-segnini-provisional.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/adeluccar/durban-segnini-provisional/issues"
+  },
+  "homepage": "https://github.com/adeluccar/durban-segnini-provisional#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
