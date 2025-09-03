@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title or "Site" }}</title>
+
+  {# Core styles #}
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+
+  {# Page-specific stylesheet (optional, set in front matter) #}
+  {% if pageCss %}
+    <link rel="stylesheet" href="/assets/css/pages/{{ pageCss }}">
+  {% endif %}
+</head>
+<body>
+
+  {% include "partials/nav.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <p>Copyright Durban</p>
+  </footer>
+
+  {# Scripts #}
+  <script src="/assets/scripts/app.js" defer></script>
+</body>
+</html>
+
