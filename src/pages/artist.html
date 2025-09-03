@@ -1,0 +1,118 @@
+---
+layout: base.njk
+title: Artist
+pageCss: artist.css
+---
+
+<main id="content">
+  <!-- ===== ARTIST GRID (Penpot-style: 2 cols) ===== -->
+  <section class="artist-hero">
+    <div class="maxw artist-grid">
+      <!-- Left column labels -->
+      <p class="muted-label grid-label">artist</p>
+
+      <!-- Right column content -->
+      <div class="hero-copy">
+        <p class="muted-label grid-label">biography</p>
+        <h2 class="artist-name ">
+          Carmelo Arden Quin
+          <span class="life-dates">(Uruguay, 1913 – France, 2010)</span>
+        </h2>
+
+        <!-- BIO: summary = short styled preview (clickable).
+             p.lead = full paragraph with its own styling. -->
+        <details class="bio">
+          <summary class="bio-toggle">
+            <span class="preview">
+              Painter, sculptor, and poet. From an early age, he began painting and participating in political
+              demonstrations with friends. In 1935 he met Joaquin Torres Garcia at a conference at the headquarters
+              of the Theosophical Society.
+            </span>
+
+          </summary>
+
+          <p class="lead">
+            Painter, sculptor, and poet. From an early age, he began painting and participating in political
+            demonstrations with friends. In 1935 he met Joaquin Torres Garcia at a conference at the headquarters
+            of the Theosophical Society. That year, after creating cubist style proposals, he made his first
+            geometric non-orthogonal paintings, transgressing the traditional limits of the rectangle. By 1937, he
+            settled in Buenos Aires where he surrounded himself with modern artists and studied philosophy and
+            literature. In 1941 he cofounded the bimonthly newspaper <em>El Universitario</em>, where he published his
+            political and aesthetic ideas. He participated in the publishing group of <em>Arturo. Revista de Artes
+            Abstractas</em> along with Gyula Kosice, Rhod Rothfuss, Edgar Bayley, Tomás Maldonado, and Lidy Prati.
+            In 1944 they edited the sole edition, in which Murillo Mendes, Vicente Huidobro, and Torres García also
+            collaborated. This publication marked the beginning of the non-figurative movement in Argentina.
+          </p>
+        </details>
+      </div>
+
+      <!-- Works grid on right column -->
+      <div class="artist-works">
+        <h2 class="works-heading muted-label grid-label">works</h2>
+
+        <div class="grid">
+          <!-- Work Card 1 -->
+          <article class="card">
+            <img class="thumb"
+                 src="assets/artists/carmelo-arden/byn-acrylic-wood-62x82cm-2005.jpg"
+                 alt="B Y N, acrylic on wood (2005)"
+                 loading="lazy" />
+            <div class="card-body">
+              <h3>Carmelo Arden Quin</h3>
+              <p class="meta">
+                B Y N, acrylic on wood<br />
+                24.4 × 32.2 in (62 × 82 cm), 2005
+              </p>
+            </div>
+          </article>
+
+          <!-- Work Card 2 -->
+          <article class="card">
+            <img class="thumb"
+                 src="assets/artists/carmelo-arden/Forme-G_1948_oil-cardboard_27x38cm.jpg"
+                 alt="Forme G, oil on cardboard (1948)"
+                 loading="lazy" />
+            <div class="card-body">
+              <h3>Carmelo Arden Quin</h3>
+              <p class="meta">
+                Forme G, oil on cardboard<br />
+                10.8 × 15 in (27 × 38 cm), 1948
+              </p>
+            </div>
+          </article>
+
+          <!-- Work Card 3 -->
+          <article class="card">
+            <img class="thumb"
+                 src="assets/artists/carmelo-arden/GESTA-43_2006_acrylic-plastic_88x67cm.jpg"
+                 alt="GESTA 43, acrylic on plastic (2006)"
+                 loading="lazy" />
+            <div class="card-body">
+              <h3>Carmelo Arden Quin</h3>
+              <p class="meta">
+                GESTA 43, acrylic on plastic<br />
+                34.6 × 26.3 in (88 × 67 cm), 2006
+              </p>
+            </div>
+          </article>
+
+          <!-- Work Card 4 -->
+          <article class="card">
+            <img class="thumb"
+                 src="assets/artists/carmelo-arden/Passerelle_1954_oil-cardboard_25x16cm.jpg"
+                 alt="Passerelle, oil on cardboard (1954)"
+                 loading="lazy" />
+            <div class="card-body">
+              <h3>Carmelo Arden Quin</h3>
+              <p class="meta">
+                Passerelle, oil on cardboard<br />
+                9.8 × 6.2 in (25 × 16 cm), 1954
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>

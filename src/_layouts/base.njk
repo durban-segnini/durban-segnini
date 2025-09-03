@@ -3,32 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+    
+  <title>{{ title or "Durban Segnini Gallery" }}</title>
 
-  <title>{{ title or "Site" }}</title>
-
-  {# Core styles #}
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/utilities.css">
 
-  {# Page-specific stylesheet (optional, set in front matter) #}
   {% if pageCss %}
     <link rel="stylesheet" href="/assets/css/pages/{{ pageCss }}">
   {% endif %}
+
 </head>
+
 <body>
 
-  {% include "partials/nav.njk" %}
+  {% if isHome %}
+    {% include "partials/header_home.njk" %}
+  {% else %}
+    {% include "partials/header.njk" %}
+  {% endif %}
 
-  <main>
-    {{ content | safe }}
-  </main>
+  {{ content | safe }}
 
-  <footer>
-    <p>Copyright Durban</p>
-  </footer>
+  {% include "partials/footer.njk" %}
 
   {# Scripts #}
+
   <script src="/assets/scripts/app.js" defer></script>
 </body>
 </html>
