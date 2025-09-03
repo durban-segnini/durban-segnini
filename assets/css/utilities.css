@@ -1,0 +1,12 @@
+/* utilities.css */
+.maxw { width:100%; max-width: var(--maxw-desktop); margin: 0 auto; }
+
+.sr-only {
+  position:absolute!important;
+  width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0);
+  white-space:nowrap; border:0;
+}
+
+.full-bleed { width:100%; max-width:none; margin:0; }
+.cluster { display:flex; gap:1rem; }
