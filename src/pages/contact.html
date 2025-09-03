@@ -1,0 +1,65 @@
+---
+layout: base.njk
+title: Contact Us
+pageCss: contact.css
+---
+
+<!-- CONTACT -->
+<main id="content">
+  <section class="contact-hero">
+    <!-- Hero -->
+    <div class="maxw hero">
+      <div class="hero-copy">
+        <h1>contact</h1>
+        <p class="lead">
+          Questions about exhibitions, works, or private viewings? 
+          Send us a note—our team will get right back to you.
+        </p>
+      </div>
+    </div>
+
+    <!-- Form + Info -->
+    <div class="maxw contact">
+      <p class="muted-label">send a message</p>
+
+      <form class="contact-form" action="#" method="post">
+        <!-- First / Last name -->
+        <div class="field">
+          <label for="c-first">First name</label>
+          <input id="c-first" name="first_name" type="text" placeholder="First name"
+                 autocomplete="given-name" required>
+        </div>
+
+        <div class="field">
+          <label for="c-last">Last name</label>
+          <input id="c-last" name="last_name" type="text" placeholder="Last name"
+                 autocomplete="family-name" required>
+        </div>
+
+        <!-- Email -->
+        <div class="field field-span-2">
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" placeholder="Email"
+                 autocomplete="email" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="field field-span-2">
+          <label for="c-phone">Phone</label>
+          <input id="c-phone" name="phone" type="tel" placeholder="Phone number"
+                 autocomplete="tel">
+        </div>
+
+        <!-- Message -->
+        <div class="field field-span-2">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" placeholder="Your message" required></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="field-span-2">Submit</button>
+      </form>
+
+    </div>
+  </section>
+</main>
