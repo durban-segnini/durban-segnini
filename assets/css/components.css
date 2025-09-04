@@ -106,7 +106,7 @@
 }
 
 .hero-copy .dates {
-  margin: .5rem 0 0;
+  margin: .5rem 0 2em;
   font-size: var(--fs-hero-date);
   color: var(--color-muted);
 }
