@@ -136,3 +136,8 @@
   height: auto;
   object-fit: contain;
 }
+
+/* Remove horizontal padding so titles align flush with image edges */
+.artists .card-body{
+  padding: .9rem 0 1.1rem;
+}
