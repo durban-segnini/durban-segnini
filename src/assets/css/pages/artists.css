@@ -133,7 +133,7 @@
   display: block;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Remove horizontal padding so titles align flush with image edges */
