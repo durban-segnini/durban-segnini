@@ -32,8 +32,7 @@
 .artist-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem clamp(2.5rem, 5vw, 3.75rem); /* row col */
-  padding-block: 2rem 3rem;
+  gap: clamp(1rem, 2vw, 2em); /* row col */
 }
 
 /* labels + body type inside grid */
