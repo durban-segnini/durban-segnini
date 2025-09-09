@@ -41,18 +41,15 @@ collections:
     fields:
       - { name: title, label: Title, widget: string }
       - { name: artist, label: Artist, widget: relation, collection: artists,
-          search_fields: [title], value_field: title, display_fields: [title], required: true }
+          search_fields: [title], value_field: title, display_fields: [title] }
       - { name: year, label: Year, widget: string, required: false }
       - { name: medium, label: Medium, widget: string, required: false }
       - { name: dimensions, label: Dimensions, widget: string, required: false }
-      - name: images
-        label: Images
-        widget: list
-        field:
-          name: image
-          label: Image
-          widget: image
-          media_library: { config: { folder: "site/works" } }
+      - name: image
+        label: Image
+        widget: image
+        required: true
+        media_library: { config: { folder: "site/works" } }
       - { name: body, label: Description, widget: markdown, required: false }
 
   - name: exhibitions
