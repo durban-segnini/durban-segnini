@@ -16,7 +16,7 @@ collections:
     create: true
     format: frontmatter
     extension: md
-    slug: "{{slug}}"
+    slug: "{{first_name | slugify }}-{{ last_name | slugify }}"
     fields:
       - { name: first_name, label: First Name, widget: string }
       - { name: last_name, label: Last Name, widget: string }
