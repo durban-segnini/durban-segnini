@@ -1,0 +1,124 @@
+---
+layout: base.njk
+---
+
+<main>
+    <header>
+        <h1>Art Fairs</h1>
+        
+        <nav aria-label="Browse art fairs by year">
+            <ul role="list">
+                <li><button type="button" data-filter="all" aria-current="page">All</button></li>
+                {% if collections.artfairs %}
+                    {% set years = collections.artfairs | map("year") | unique | sort | reverse %}
+                    {% for year in years %}
+                        <li><button type="button" data-filter="{{ year }}">{{ year }}</button></li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    {% if collections.artfairs %}
+        <section aria-labelledby="artfairs-title">
+            <h2 id="artfairs-title" class="sr-only">Art Fairs Directory</h2>
+            
+            <div id="artfairs-grid">
+                {% for artfair in collections.artfairs %}
+                    <article data-year="{{ artfair.data.year }}">
+                        {% if artfair.data.poster %}
+                            <img src="{{ artfair.data.poster }}" alt="{{ artfair.data.title }}" loading="lazy" />
+                        {% else %}
+                            <div>
+                                <span>No image available</span>
+                            </div>
+                        {% endif %}
+                        
+                        <header>
+                            <h3>
+                                <a href="{{ artfair.url }}">{{ artfair.data.title }}</a>
+                            </h3>
+                        </header>
+                        
+                        <div>
+                            <p><strong>Year:</strong> {{ artfair.data.year }}</p>
+                            
+                            {% if artfair.data.location %}
+                                <p><strong>Location:</strong> {{ artfair.data.location }}</p>
+                            {% endif %}
+                            
+                            {% if artfair.data.start and artfair.data.end %}
+                                <p><strong>Dates:</strong> {{ artfair.data.start | date("MMM d, yyyy") }} — {{ artfair.data.end | date("MMM d, yyyy") }}</p>
+                            {% elif artfair.data.start %}
+                                <p><strong>Opening:</strong> {{ artfair.data.start | date("MMM d, yyyy") }}</p>
+                            {% endif %}
+                            
+                            {% if artfair.data.archived %}
+                                <p><strong>Status:</strong> <span class="archived">Archived</span></p>
+                            {% else %}
+                                <p><strong>Status:</strong> <span class="current">Current</span></p>
+                            {% endif %}
+                            
+                            {% if artfair.data.artists and artfair.data.artists.length > 0 %}
+                                <p><strong>Featured Artists:</strong> {{ artfair.data.artists | join(", ") }}</p>
+                            {% endif %}
+                            
+                            {% if artfair.data.body %}
+                                <p>{{ artfair.data.body | truncate(150) }}</p>
+                            {% endif %}
+                        </div>
+                        
+                        <nav>
+                            <a href="{{ artfair.url }}">View Details</a>
+                            {% if artfair.data.website %}
+                                <a href="{{ artfair.data.website }}" target="_blank" rel="noopener">Website</a>
+                            {% endif %}
+                        </nav>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+    {% else %}
+        <section>
+            <p>No art fairs are currently listed. Please check back soon for updates.</p>
+        </section>
+    {% endif %}
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const artfairArticles = document.querySelectorAll('article[data-year]');
+    
+    function filterArtFairs(year) {
+        artfairArticles.forEach(article => {
+            if (year === 'all' || article.getAttribute('data-year') === year) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+        
+        // Update active button
+        filterButtons.forEach(button => {
+            button.setAttribute('aria-current', 'false');
+        });
+        
+        const activeButton = document.querySelector(`[data-filter="${year}"]`);
+        if (activeButton) {
+            activeButton.setAttribute('aria-current', 'true');
+        }
+    }
+    
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            filterArtFairs(filter);
+        });
+    });
+    
+    // Initialize with all art fairs visible
+    filterArtFairs('all');
+});
+</script>

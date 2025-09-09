@@ -61,6 +61,58 @@ module.exports = function (eleventyConfig) {
     return str.toUpperCase();
   });
 
+  // Add year filter to extract year from date or return year directly
+  eleventyConfig.addFilter("year", (item) => {
+    if (!item) return '';
+    if (typeof item === 'number') return item;
+    if (typeof item === 'string') {
+      const d = new Date(item);
+      if (!isNaN(d.getTime())) return d.getFullYear();
+      return item;
+    }
+    if (item.data && item.data.year) return item.data.year;
+    return '';
+  });
+
+  // Add unique filter to get unique values
+  eleventyConfig.addFilter("unique", (arr) => {
+    if (!Array.isArray(arr)) return [];
+    return [...new Set(arr)].filter(item => item !== '');
+  });
+
+  // Add sort filter to sort arrays
+  eleventyConfig.addFilter("sort", (arr) => {
+    if (!Array.isArray(arr)) return [];
+    return [...arr].sort((a, b) => a - b);
+  });
+
+  // Add reverse filter to reverse arrays
+  eleventyConfig.addFilter("reverse", (arr) => {
+    if (!Array.isArray(arr)) return [];
+    return [...arr].reverse();
+  });
+
+  // Add truncate filter for text truncation
+  eleventyConfig.addFilter("truncate", (str, length = 100) => {
+    if (!str || typeof str !== 'string') return '';
+    if (str.length <= length) return str;
+    return str.substring(0, length).trim() + '...';
+  });
+
+  // Add map filter to transform arrays
+  eleventyConfig.addFilter("map", (arr, property) => {
+    if (!Array.isArray(arr)) return [];
+    return arr.map(item => {
+      if (property && item.data && item.data[property] !== undefined) {
+        return item.data[property];
+      }
+      if (property && item[property] !== undefined) {
+        return item[property];
+      }
+      return item;
+    });
+  });
+
   return {
     dir: {
       input: "src",
