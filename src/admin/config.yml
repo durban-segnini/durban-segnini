@@ -17,9 +17,11 @@ collections:
     format: frontmatter
     extension: md
     slug: "{{first_name | slugify }}-{{ last_name | slugify }}"
+    identifier_field: name
     fields:
       - { name: first_name, label: First Name, widget: string }
       - { name: last_name, label: Last Name, widget: string }
+      - { name: name, label: Display Name, widget: string }
       - { name: year_of_birth, label: Year of Birth, widget: string, required: false }
       - { name: year_of_death, label: Year of Death, widget: string, required: false }
       - name: portrait
@@ -40,8 +42,13 @@ collections:
     slug: "{{slug}}"
     fields:
       - { name: title, label: Title, widget: string }
-      - { name: artist, label: Artist, widget: relation, collection: artists,
-          search_fields: [title], value_field: title, display_fields: [title] }
+      - name: artist
+        label: Artist
+        widget: relation
+        collection: artists
+        search_fields: [name, first_name, last_name]
+        value_field: name
+        display_fields: [name]
       - { name: year, label: Year, widget: string, required: false }
       - { name: medium, label: Medium, widget: string, required: false }
       - { name: dimensions, label: Dimensions, widget: string, required: false }
@@ -51,6 +58,7 @@ collections:
         required: true
         media_library: { config: { folder: "site/works" } }
       - { name: body, label: Description, widget: markdown, required: false }
+      - { name: layout, widget: hidden, default: "work.njk" }
 
   - name: exhibitions
     label: Exhibitions
@@ -71,6 +79,7 @@ collections:
       - { name: works, label: Works, widget: relation, collection: works, multiple: true,
           search_fields: [title, artist], value_field: title, display_fields: [title] }
       - { name: body, label: Notes, widget: markdown, required: false }
+      - { name: layout, widget: hidden, default: "exhibition.njk" }
 
   - name: artfairs
     label: Art Fairs
@@ -88,3 +97,4 @@ collections:
       - { name: artists, label: Artists, widget: relation, collection: artists, multiple: true,
           search_fields: [title], value_field: title, display_fields: [title] }
       - { name: body, label: Notes, widget: markdown, required: false }
+      - { name: layout, widget: hidden, default: "artfair.njk" }
