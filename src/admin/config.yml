@@ -63,6 +63,7 @@ collections:
     fields:
       - { name: title, label: Title, widget: string }
       - { name: location, label: Location, widget: string, required: false }
+      - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
       - { name: start, label: Start, widget: datetime, time_format: false }
       - { name: end, label: End, widget: datetime, time_format: false, required: false }
       - { name: poster, label: Poster, widget: image, required: false,
