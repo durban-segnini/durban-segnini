@@ -49,6 +49,18 @@ module.exports = function (eleventyConfig) {
     return d.toLocaleDateString();
   });
 
+  // Add first filter to get first character
+  eleventyConfig.addFilter("first", (str) => {
+    if (!str || typeof str !== 'string') return '';
+    return str.charAt(0);
+  });
+
+  // Add upper filter to convert to uppercase
+  eleventyConfig.addFilter("upper", (str) => {
+    if (!str || typeof str !== 'string') return '';
+    return str.toUpperCase();
+  });
+
   return {
     dir: {
       input: "src",
