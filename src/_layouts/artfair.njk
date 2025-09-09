@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<h1>{{ title }}</h1>
+{% if location %}<p>{{ location }}</p>{% endif %}
+{% if start or end %}<p>{{ start | date("yyyy-LL-dd") }}{% if end %} – {{ end | date("yyyy-LL-dd") }}{% endif %}</p>{% endif %}
+{% if artists and artists.length %}
+<h2>Artists</h2>
+<ul>
+  {% for n in artists %}<li><a href="/artists/{{ n | slug }}/">{{ n }}</a></li>{% endfor %}
+</ul>
+{% endif %}
+{{ content | safe }}
