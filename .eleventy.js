@@ -27,6 +27,28 @@ module.exports = function (eleventyConfig) {
     return [...s];
   });
 
+  // Add where filter for filtering collections
+  eleventyConfig.addFilter("where", (collection, property, value) => {
+    return collection.filter(item => item.data[property] === value);
+  });
+
+  // Add date filter for formatting dates
+  eleventyConfig.addFilter("date", (date, format) => {
+    if (!date) return '';
+    const d = new Date(date);
+    if (isNaN(d.getTime())) return '';
+    
+    if (format === "MMM d, yyyy") {
+      return d.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+    }
+    
+    return d.toLocaleDateString();
+  });
+
   return {
     dir: {
       input: "src",
