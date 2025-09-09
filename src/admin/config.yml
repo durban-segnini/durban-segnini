@@ -9,11 +9,84 @@ media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "test"
-    label: "Test Collection"
-    folder: "src/content/test"
+  - name: artists
+    label: Artists
+    label_singular: Artist
+    folder: "src/content/artists"
     create: true
-    extension: "md"
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "Body", widget: "markdown" }
+      - { name: first_name, label: First Name, widget: string }
+      - { name: last_name, label: Last Name, widget: string }
+      - { name: year_of_birth, label: Year of Birth, widget: string, required: false }
+      - { name: year_of_death, label: Year of Death, widget: string, required: false }
+      - name: portrait
+        label: Portrait
+        widget: image
+        required: false
+        media_library: { config: { folder: "site/artists" } }
+      - { name: short_bio, label: Short Bio, widget: markdown, required: false }
+      - { name: body, label: Bio, widget: markdown, required: false }
+
+  - name: works
+    label: Works
+    label_singular: Work
+    folder: "src/content/works"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: artist, label: Artist, widget: relation, collection: artists,
+          search_fields: [title], value_field: title, display_fields: [title], required: true }
+      - { name: year, label: Year, widget: string, required: false }
+      - { name: medium, label: Medium, widget: string, required: false }
+      - { name: dimensions, label: Dimensions, widget: string, required: false }
+      - name: images
+        label: Images
+        widget: list
+        field:
+          name: image
+          label: Image
+          widget: image
+          media_library: { config: { folder: "site/works" } }
+      - { name: body, label: Description, widget: markdown, required: false }
+
+  - name: exhibitions
+    label: Exhibitions
+    label_singular: Exhibition
+    folder: "src/content/exhibitions"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: location, label: Location, widget: string, required: false }
+      - { name: start, label: Start, widget: datetime, time_format: false }
+      - { name: end, label: End, widget: datetime, time_format: false, required: false }
+      - { name: poster, label: Poster, widget: image, required: false,
+          media_library: { config: { folder: "site/exhibitions" } } }
+      - { name: works, label: Works, widget: relation, collection: works, multiple: true,
+          search_fields: [title, artist], value_field: title, display_fields: [title] }
+      - { name: body, label: Notes, widget: markdown, required: false }
+
+  - name: artfairs
+    label: Art Fairs
+    label_singular: Art Fair
+    folder: "src/content/artfairs"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: location, label: Location, widget: string, required: false }
+      - { name: start, label: Start, widget: datetime, time_format: false }
+      - { name: end, label: End, widget: datetime, time_format: false, required: false }
+      - { name: artists, label: Artists, widget: relation, collection: artists, multiple: true,
+          search_fields: [title], value_field: title, display_fields: [title] }
+      - { name: body, label: Notes, widget: markdown, required: false }
