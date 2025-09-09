@@ -3,6 +3,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
 
+  // Add Decap CMS passthrough copy
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+
   return {
     dir: {
       input: "src",

@@ -1,0 +1,19 @@
+# when using the default proxy server port
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "test"
+    label: "Test Collection"
+    folder: "src/content/test"
+    create: true
+    extension: "md"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
