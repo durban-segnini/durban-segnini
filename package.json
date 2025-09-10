@@ -4,7 +4,8 @@
   "description": "Provisional Website (Static) for September Deployment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,7 @@
   },
   "homepage": "https://github.com/adeluccar/durban-segnini-provisional#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
-  },
-  "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "@11ty/eleventy": "^3.1.2",
+    "decap-cms-media-library-cloudinary": "^3.1.0"
   }
 }
