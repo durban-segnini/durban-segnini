@@ -1,0 +1,122 @@
+# Use DecapBridge auth (required)
+backend:
+  name: git-gateway
+  repo: adeluccar/durban-segnini
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/6c2dad04-8348-46c2-bd12-62bb5d5dfb72
+  gateway_url: https://gateway.decapbridge.com
+
+  # Quickly see who did what (optional)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+# Better Decap + Bridge logo (optional)
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Add site links in DecapCMS (optional)
+site_url: https://adeluccar.github.io
+media_folder: "src/assets/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: artists
+    label: Artists
+    label_singular: Artist
+    folder: "src/content/artists"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{first_name | slugify }}-{{ last_name | slugify }}"
+    identifier_field: name
+    fields:
+      - { name: first_name, label: First Name, widget: string }
+      - { name: last_name, label: Last Name, widget: string }
+      - { name: name, label: Display Name, widget: string }
+      - { name: year_of_birth, label: Year of Birth, widget: string, required: false }
+      - { name: year_of_death, label: Year of Death, widget: string, required: false }
+      - name: portrait
+        label: Portrait
+        widget: image
+        required: false
+        media_library: { config: { folder: "site/artists" } }
+      - { name: short_bio, label: Short Bio, widget: markdown, required: false }
+      - { name: body, label: Bio, widget: markdown, required: false }
+
+  - name: works
+    label: Works
+    label_singular: Work
+    folder: "src/content/works"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: artist
+        label: Artist
+        widget: relation
+        collection: artists
+        search_fields: [name, first_name, last_name]
+        value_field: name
+        display_fields: [name]
+      - { name: year, label: Year, widget: string, required: false }
+      - { name: medium, label: Medium, widget: string, required: false }
+      - { name: dimensions, label: Dimensions, widget: string, required: false }
+      - name: image
+        label: Image
+        widget: image
+        required: true
+        media_library: { config: { folder: "site/works" } }
+      - { name: body, label: Description, widget: markdown, required: false }
+      - { name: layout, widget: hidden, default: "work.njk" }
+
+  - name: exhibitions
+    label: Exhibitions
+    label_singular: Exhibition
+    folder: "src/content/exhibitions"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: location, label: Location, widget: string, required: false }
+      - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
+      - { name: start, label: Start, widget: datetime, time_format: false }
+      - { name: end, label: End, widget: datetime, time_format: false, required: false }
+      - { name: poster, label: Poster, widget: image, required: false,
+          media_library: { config: { folder: "site/exhibitions" } } }
+      - { name: works, label: Works, widget: relation, collection: works, multiple: true,
+          search_fields: [title, artist], value_field: title, display_fields: [title] }
+      - { name: body, label: Notes, widget: markdown, required: false }
+      - { name: layout, widget: hidden, default: "exhibition.njk" }
+
+  - name: artfairs
+    label: Art Fairs
+    label_singular: Art Fair
+    folder: "src/content/artfairs"
+    create: true
+    format: frontmatter
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: location, label: Location, widget: string, required: false }
+      - { name: year, label: Year, widget: number, required: true }
+      - { name: archived, label: Archived, widget: boolean, default: false }
+      - { name: start, label: Start, widget: datetime, time_format: false, required: false }
+      - { name: end, label: End, widget: datetime, time_format: false, required: false }
+      - name: poster
+        label: Poster
+        widget: image
+        required: false
+        media_library: { config: { folder: "site/artfairs" } }
+      - { name: artists, label: Artists, widget: relation, collection: artists, multiple: true,
+          search_fields: [name], value_field: name, display_fields: [name] }
+      - { name: body, label: Notes, widget: markdown, required: false }
+      - { name: layout, widget: hidden, default: "artfair.njk" }

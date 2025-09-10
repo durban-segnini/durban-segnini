@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-    
   <title>{{ title or "Durban Segnini Gallery" }}</title>
 
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/utilities.css">
+  {# Use absolute paths or |url so nested pages still find assets #}
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/components.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/utilities.css' | url }}">
 
   {% if pageCss %}
-    <link rel="stylesheet" href="assets/css/pages/{{ pageCss }}">
+    <link rel="stylesheet" href="{{ '/assets/css/pages/' | url }}{{ pageCss }}">
   {% endif %}
-
 </head>
-
 <body>
-
   {% if isHome %}
     {% include "partials/header_home.njk" %}
   {% else %}
@@ -29,9 +26,6 @@
 
   {% include "partials/footer.njk" %}
 
-  {# Scripts #}
-
-  <script src="assets/scripts/app.js" defer></script>
+  <script src="{{ '/assets/scripts/app.js' | url }}" defer></script>
 </body>
 </html>
-

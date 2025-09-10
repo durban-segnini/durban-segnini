@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<h1>{{ name }}</h1>
+{% if year_of_birth or year_of_death %}
+<p>{{ year_of_birth }}{% if year_of_death %} — {{ year_of_death }}{% endif %}</p>
+{% endif %}
+{% if portrait %}<img src="{{ portrait }}" alt="{{ name }} portrait">{% endif %}
+{{ content | safe }}
+
+{% set mine = collections.works | worksByArtist(name) %}
+{% if mine.length %}
+<h2>Works</h2>
+<ul>
+  {% for w in mine %}<li><a href="{{ w.url }}">{{ w.data.title }}</a>{% if w.data.year %} ({{ w.data.year }}){% endif %}</li>{% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,136 @@
+---
+layout: base.njk
+---
+
+<main>
+    <header>
+        <h1>Exhibitions</h1>
+    </header>
+
+    {% if collections.exhibitions %}
+        {% set currentExhibitions = collections.exhibitions | where("status", "current") %}
+        {% if currentExhibitions.length > 0 %}
+        <section aria-labelledby="current-title">
+            <h2 id="current-title">Current Exhibitions</h2>
+            
+            {% for exhibition in currentExhibitions %}
+            <article>
+                {% if exhibition.data.poster %}
+                    <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" loading="lazy" />
+                {% endif %}
+                
+                <header>
+                    <h3>{{ exhibition.data.title }}</h3>
+                    <p><strong>Artist:</strong> {{ exhibition.data.artist or "TBA" }}</p>
+                </header>
+                
+                <div>
+                    {% if exhibition.data.start and exhibition.data.end %}
+                        <p><strong>Dates:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }} — {{ exhibition.data.end | date("MMM d, yyyy") }}</p>
+                    {% elif exhibition.data.start %}
+                        <p><strong>Opening:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }}</p>
+                    {% endif %}
+                    
+                    {% if exhibition.data.location %}
+                        <p><strong>Location:</strong> {{ exhibition.data.location }}</p>
+                    {% endif %}
+                </div>
+                
+                <nav>
+                    <a href="{{ exhibition.url }}">View Details</a>
+                    {% if exhibition.data.catalog %}
+                        <a href="{{ exhibition.data.catalog }}">Catalog</a>
+                    {% endif %}
+                    {% if exhibition.data.pressRelease %}
+                        <a href="{{ exhibition.data.pressRelease }}">Press Release</a>
+                    {% endif %}
+                </nav>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        {% set upcomingExhibitions = collections.exhibitions | where("status", "upcoming") %}
+        {% if upcomingExhibitions.length > 0 %}
+        <section aria-labelledby="upcoming-title">
+            <h2 id="upcoming-title">Upcoming Exhibitions</h2>
+            
+            {% for exhibition in upcomingExhibitions %}
+            <article>
+                {% if exhibition.data.poster %}
+                    <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" loading="lazy" />
+                {% endif %}
+                
+                <header>
+                    <h3>{{ exhibition.data.title }}</h3>
+                    <p><strong>Artist:</strong> {{ exhibition.data.artist or "TBA" }}</p>
+                </header>
+                
+                <div>
+                    {% if exhibition.data.start and exhibition.data.end %}
+                        <p><strong>Dates:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }} — {{ exhibition.data.end | date("MMM d, yyyy") }}</p>
+                    {% elif exhibition.data.start %}
+                        <p><strong>Opening:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }}</p>
+                    {% endif %}
+                    
+                    {% if exhibition.data.location %}
+                        <p><strong>Location:</strong> {{ exhibition.data.location }}</p>
+                    {% endif %}
+                </div>
+                
+                <nav>
+                    <a href="{{ exhibition.url }}">View Details</a>
+                    {% if exhibition.data.catalog %}
+                        <a href="{{ exhibition.data.catalog }}">Catalog</a>
+                    {% endif %}
+                    {% if exhibition.data.pressRelease %}
+                        <a href="{{ exhibition.data.pressRelease }}">Press Release</a>
+                    {% endif %}
+                </nav>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        {% set pastExhibitions = collections.exhibitions | where("status", "past") %}
+        {% if pastExhibitions.length > 0 %}
+        <section aria-labelledby="past-title">
+            <h2 id="past-title">Past Exhibitions</h2>
+            
+            {% for exhibition in pastExhibitions %}
+            <article>
+                {% if exhibition.data.poster %}
+                    <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" loading="lazy" />
+                {% endif %}
+                
+                <header>
+                    <h3>{{ exhibition.data.title }}</h3>
+                    <p><strong>Artist:</strong> {{ exhibition.data.artist or "TBA" }}</p>
+                </header>
+                
+                <div>
+                    {% if exhibition.data.start and exhibition.data.end %}
+                        <p><strong>Dates:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }} — {{ exhibition.data.end | date("MMM d, yyyy") }}</p>
+                    {% elif exhibition.data.start %}
+                        <p><strong>Opening:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }}</p>
+                    {% endif %}
+                    
+                    {% if exhibition.data.location %}
+                        <p><strong>Location:</strong> {{ exhibition.data.location }}</p>
+                    {% endif %}
+                </div>
+                
+                <nav>
+                    <a href="{{ exhibition.url }}">View Details</a>
+                </nav>
+            </article>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+    {% else %}
+        <section>
+            <p>No exhibitions are currently scheduled. Please check back soon for updates.</p>
+        </section>
+    {% endif %}
+</main>
