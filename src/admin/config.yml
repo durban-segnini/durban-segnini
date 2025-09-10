@@ -23,6 +23,16 @@ site_url: https://adeluccar.github.io
 media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
+# Cloudinary media library configuration
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dao1vqck0
+    api_key: 592251927921395
+  output_filename_only: false
+  use_transformations: true
+  use_secure_url: true
+
 collections:
   - name: artists
     label: Artists
@@ -43,7 +53,10 @@ collections:
         label: Portrait
         widget: image
         required: false
-        media_library: { config: { folder: "site/artists" } }
+        media_library:
+          name: cloudinary
+          config:
+            folder: "site/artists"
       - { name: short_bio, label: Short Bio, widget: markdown, required: false }
       - { name: body, label: Bio, widget: markdown, required: false }
 
@@ -71,7 +84,10 @@ collections:
         label: Image
         widget: image
         required: true
-        media_library: { config: { folder: "site/works" } }
+        media_library:
+          name: cloudinary
+          config:
+            folder: "site/works"
       - { name: body, label: Description, widget: markdown, required: false }
       - { name: layout, widget: hidden, default: "work.njk" }
 
@@ -89,8 +105,14 @@ collections:
       - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
       - { name: start, label: Start, widget: datetime, time_format: false }
       - { name: end, label: End, widget: datetime, time_format: false, required: false }
-      - { name: poster, label: Poster, widget: image, required: false,
-          media_library: { config: { folder: "site/exhibitions" } } }
+      - name: poster
+        label: Poster
+        widget: image
+        required: false
+        media_library:
+          name: cloudinary
+          config:
+            folder: "site/exhibitions"
       - { name: works, label: Works, widget: relation, collection: works, multiple: true,
           search_fields: [title, artist], value_field: title, display_fields: [title] }
       - { name: body, label: Notes, widget: markdown, required: false }
@@ -115,7 +137,10 @@ collections:
         label: Poster
         widget: image
         required: false
-        media_library: { config: { folder: "site/artfairs" } }
+        media_library:
+          name: cloudinary
+          config:
+            folder: "site/artfairs"
       - { name: artists, label: Artists, widget: relation, collection: artists, multiple: true,
           search_fields: [name], value_field: name, display_fields: [name] }
       - { name: body, label: Notes, widget: markdown, required: false }
