@@ -28,10 +28,10 @@
   color: var(--color-muted);
 }
 
-/* Section title “send a message” */
+/* Section title "send a message" */
 .contact .muted-label{
   display:block;
-  text-align:center;
+  text-align:left;
   font-size:1.25rem;     /* slightly larger */
   letter-spacing: var(--ls-nav);
   text-transform: uppercase;
