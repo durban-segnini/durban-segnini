@@ -23,10 +23,12 @@
 }
 
 /* Container */
-.maxw {
+/*.maxw {
   max-width: 1200px;
   margin: 0 auto;
 }
+  this container class breaks the exhibitions view commenting out (maybe maw-width needs a different size)
+  */
 
 /* ===== EXHIBITIONS INTRO ===== */
 .exhibitions-intro {
