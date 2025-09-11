@@ -400,7 +400,6 @@ svg {
 
 /* Card heading treatment on artist view */
 .artist-works .card h3 {
-  text-transform: lowercase;
   letter-spacing: .02em;
   font-weight: 500;
 }
