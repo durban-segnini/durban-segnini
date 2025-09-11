@@ -533,8 +533,7 @@ svg {
 
 /* Active nav (no JS) — set aria-current="page" on the current link */
 .primary-nav a[aria-current="page"] {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-weight: 800;
 }
 
 /* ==========================================================================
