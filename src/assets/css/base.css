@@ -34,7 +34,7 @@
 
   /* Hero paddings from comp */
   --hero-pad-top:4.5rem;        /* 72px */
-  --hero-pad-bottom:8.5rem;  /* 190px */
+  --hero-pad-bottom:4.5rem;  
 
   --fs-hero-title:2rem;    /* 35px */
   --fs-hero-date:1.25rem;      /* 26px */
