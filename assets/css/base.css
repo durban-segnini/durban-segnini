@@ -55,6 +55,14 @@ body{
   color:var(--color-text);
   background:#fff;
   line-height:1.2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area grows to fill available space */
+main#content {
+  flex: 1;
 }
 
 /* Fluid container that matches header left/right padding automatically */
