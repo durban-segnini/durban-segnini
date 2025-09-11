@@ -592,7 +592,7 @@ svg {
 .contact .contact-form,
 .contact .maxw>.muted-label,
 .contact .maxw>.meta {
-  max-width: 68rem;
+  max-width: 100%;
   margin-inline: auto;
 }
 
