@@ -112,11 +112,10 @@
 }
 
 .hero .lead {
-  max-width: 38.1875rem;
+  max-width: 44rem;
   font-size: var(--fs-body);
   line-height: 1.5;
   letter-spacing: .0625rem;
-  margin: .75rem 0 0;
 }
 
 .hero-media figcaption {
@@ -691,3 +690,10 @@ svg {
   text-align:center;
 }
 
+
+
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal tracks */
+  gap: 1.5rem; /* space between the columns */
+}
