@@ -1,0 +1,43 @@
+/* Shared 2-col layout for text (row 1) and images (row 2) */
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* col 1 = text & left image, col 2 = empty & right image */
+  gap: 1.25rem 1.25rem;           /* row gap | column gap */
+  margin-bottom: 2.5rem;
+}
+
+/* Text column sits in column 1; right column intentionally empty */
+.gallery-layout .text-col { grid-column: 1; max-width: 70ch; }
+.gallery-layout .col-spacer { grid-column: 2; }
+
+/* Images go on the next grid row, one per column (keeps perfect alignment) */
+.gallery-layout .img-left  { grid-column: 1; }
+.gallery-layout .img-right { grid-column: 2; }
+
+.thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: .25rem;
+  margin-bottom: 7rem;
+}
+
+/* Tighter space above the H2 and clearer separation from images */
+.gallery-layout .text-col h2 { margin: 0 0 1rem; line-height: 1.25; }
+.gallery-layout .text-col p  { margin: 0 0 1.75rem; }
+
+/* Mobile: collapse to a single column; images stack but stay aligned to text */
+@media (max-width: 900px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .gallery-layout .text-col,
+  .gallery-layout .col-spacer,
+  .gallery-layout .img-left,
+  .gallery-layout .img-right {
+    grid-column: 1;
+  }
+  .gallery-layout .col-spacer { display: none; }
+}
