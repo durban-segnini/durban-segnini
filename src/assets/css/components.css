@@ -213,6 +213,11 @@
    ========================================================================== */
 .site-footer {
   background: var(--color-light);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
 }
 
 .footer-inner {
