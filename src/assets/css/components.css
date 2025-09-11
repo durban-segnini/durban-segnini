@@ -213,6 +213,11 @@
    ========================================================================== */
 .site-footer {
   background: var(--color-light);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
 }
 
 .footer-inner {
@@ -533,8 +538,7 @@ svg {
 
 /* Active nav (no JS) — set aria-current="page" on the current link */
 .primary-nav a[aria-current="page"] {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-weight: 800;
 }
 
 /* ==========================================================================
