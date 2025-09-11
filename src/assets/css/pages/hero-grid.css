@@ -1,0 +1,5 @@
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal tracks */
+  gap: 1.5rem; /* space between the columns */
+}
