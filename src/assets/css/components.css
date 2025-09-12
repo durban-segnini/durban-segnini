@@ -710,6 +710,15 @@ svg {
   object-fit: cover;
 }
 
+/* Desktop: constrain image height for better proportions */
+@media (min-width: 60rem) {
+  .hero-image img {
+    max-height: 50vh;
+    object-fit: contain;
+    object-position: left;
+  }
+}
+
 /* Desktop: two equal columns */
 @media (min-width: 60rem) {
   .gallery-layout {
