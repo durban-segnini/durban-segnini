@@ -727,5 +727,6 @@ svg {
 @media (min-width: 60rem) {
   .gallery-layout {
     grid-template-columns: 1fr 1fr; /* two equal tracks */
+    gap: 12rem; /* increased gap for desktop */
   }
 }
