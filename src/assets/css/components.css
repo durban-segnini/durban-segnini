@@ -693,6 +693,40 @@ svg {
 
 .gallery-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal tracks */
+  grid-template-columns: 1fr; /* single column on mobile */
   gap: 1.5rem; /* space between the columns */
+}
+
+/* Hero image responsive styles */
+.hero-image {
+  margin: 0;
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-image figcaption {
+  margin-top: 1em;
+}
+
+/* Desktop: constrain image height for better proportions */
+@media (min-width: 60rem) {
+  .hero-image img {
+    max-height: 50vh;
+    object-fit: contain;
+    object-position: left;
+  }
+}
+
+/* Desktop: two equal columns */
+@media (min-width: 60rem) {
+  .gallery-layout {
+    grid-template-columns: 1fr 1fr; /* two equal tracks */
+    gap: 12rem; /* increased gap for desktop */
+  }
 }
