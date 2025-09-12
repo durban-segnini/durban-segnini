@@ -710,6 +710,10 @@ svg {
   object-fit: cover;
 }
 
+.hero-image figcaption {
+  margin-top: 1em;
+}
+
 /* Desktop: constrain image height for better proportions */
 @media (min-width: 60rem) {
   .hero-image img {
