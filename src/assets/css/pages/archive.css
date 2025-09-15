@@ -1,0 +1,198 @@
+/* Title grid: header + year chooser */
+.title-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  row-gap:.25rem;
+  padding-block: 1.5rem; /* tighter than generic hero */
+}
+
+@media(min-width:60rem){
+  .title-grid{
+    grid-template-columns: 1fr 3fr 1fr; /* heading | year nav (center, wider) | spacer */
+    align-items:start; /* top align both cells */
+    column-gap: clamp(1rem, 3vw, 1.25rem);
+    padding-top: var(--hero-pad-top);
+    padding-bottom: 0; /* flush with next section */
+  }
+
+  /* Place items explicitly to keep year nav centered */
+  .title-grid .hero-copy{ grid-column: 1; }
+  .title-grid .year-nav{ grid-column: 2; justify-self: center; }
+
+  /* Keep year nav on one line on desktop */
+  .year-list{
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: clamp(.3rem, 1vw, .75rem);
+  }
+}
+
+/* ARCHIVE PAGE (page-scoped) */
+
+/* 4-col grid layout */
+.exhibition-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 2em); /* row col */
+}
+
+/* Exhibition card styling */
+.exhibition-grid .card {
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.exhibition-grid .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+.exhibition-grid .card .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+/* Exhibition card body styling */
+.archive .card-body {
+  padding: .9rem 0 1.1rem;
+}
+
+.exhibition-grid .card h3 {
+  margin: 0 0 .25rem;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  letter-spacing: .02em;
+  color: var(--color-dark);
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.exhibition-year {
+  margin: 0 0 .125rem;
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  color: var(--color-muted);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.exhibition-dates {
+  margin: 0 0 .125rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  color: var(--color-muted);
+  font-weight: 400;
+  letter-spacing: .02em;
+  line-height: 1.4;
+}
+
+.exhibition-curator {
+  margin: 0;
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  color: var(--color-muted);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .01em;
+}
+
+/* Year-based navigation styling */
+.year-nav{ display:flex; }
+.year-nav .year-list{ margin-left:0; }
+
+/* Align year-nav to the top of the container with the Archive header */
+@media (min-width:60rem){
+  .hero:has(+ .year-nav){
+    padding-bottom: 0; /* remove extra gap under the page title hero */
+  }
+  .year-nav{ margin-top: 0; }
+}
+
+.year-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+  align-items: center;
+  padding: .75rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.year-list a{
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+  font-size: var(--fs-nav);
+  color: var(--color-muted);
+  line-height: 1;
+  padding: .375rem .5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Grouped states for year navigation */
+.year-list a:is(:hover, :focus-visible, [aria-current="page"]){
+  color: var(--color-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .exhibition-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.875rem, 1.5vw, 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .exhibition-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(0.75rem, 1.2vw, 1.25rem);
+  }
+
+  .year-list {
+    justify-content: center;
+    gap: .375rem .5rem;
+  }
+
+  .year-list a {
+    padding: .25rem .375rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exhibition-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .year-list {
+    gap: .25rem .375rem;
+  }
+
+  .year-list a {
+    padding: .2rem .3rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Focus styles for accessibility */
+.year-list a:focus-visible,
+.exhibition-grid .card:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for filtering */
+.exhibition-grid .card {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.exhibition-grid .card.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
