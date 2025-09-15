@@ -1,197 +1,381 @@
+/* Gantari Font Family - Matching Penpot Design */
+/* latin-ext */
+@font-face {
+  font-family: 'Gantari';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/gantari/v4/jVyV7nvyB2HL8iZyDk4GVvSZ5MtC9g3HPQ35YZCz2g.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gantari';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/gantari/v4/jVyV7nvyB2HL8iZyDk4GVvSZ5MtC9g3HPQ33YZA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Gantari';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/gantari/v4/jVyV7nvyB2HL8iZyDk4GVvSZ5MtC9g0SOg35YZCz2g.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gantari';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/gantari/v4/jVyV7nvyB2HL8iZyDk4GVvSZ5MtC9g0SOg33YZA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Gantari';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/gantari/v4/jVyV7nvyB2HL8iZyDk4GVvSZ5MtC9g0gOg35YZCz2g.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gantari';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/gantari/v4/jVyV7nvyB2HL8iZyDk4GVvSZ5MtC9g0gOg33YZA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ARCHIVE PAGE STYLES - Matching Penpot Design */
+
 /* Title grid: header + year chooser */
 .title-grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  row-gap:.25rem;
-  padding-block: 1.5rem; /* tighter than generic hero */
-}
-
-@media(min-width:60rem){
-  .title-grid{
-    grid-template-columns: 1fr 3fr 1fr; /* heading | year nav (center, wider) | spacer */
-    align-items:start; /* top align both cells */
-    column-gap: clamp(1rem, 3vw, 1.25rem);
-    padding-top: var(--hero-pad-top);
-    padding-bottom: 0; /* flush with next section */
-  }
-
-  /* Place items explicitly to keep year nav centered */
-  .title-grid .hero-copy{ grid-column: 1; }
-  .title-grid .year-nav{ grid-column: 2; justify-self: center; }
-
-  /* Keep year nav on one line on desktop */
-  .year-list{
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    gap: clamp(.3rem, 1vw, .75rem);
-  }
-}
-
-/* ARCHIVE PAGE (page-scoped) */
-
-/* 4-col grid layout */
-.exhibition-grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 2vw, 2em); /* row col */
+  grid-template-columns: 23% 1fr;
+  align-items: start;
+  padding: 39px 0;
+  gap: clamp(1rem, 3vw, 1.25rem);
 }
 
-/* Exhibition card styling */
-.exhibition-grid .card {
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-
-.exhibition-grid .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,.06);
-}
-
-.exhibition-grid .card .thumb {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
-}
-
-/* Exhibition card body styling */
-.archive .card-body {
-  padding: .9rem 0 1.1rem;
-}
-
-.exhibition-grid .card h3 {
-  margin: 0 0 .25rem;
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
-  letter-spacing: .02em;
-  color: var(--color-dark);
+/* Archive title styling */
+#hero-title {
+  font-family: 'Gantari', sans-serif;
+  font-size: 35px;
   font-weight: 500;
+  color: #9a9a9b;
   text-transform: uppercase;
-  line-height: 1.3;
-}
-
-.exhibition-year {
-  margin: 0 0 .125rem;
-  font-size: clamp(0.875rem, 1.4vw, 1rem);
-  color: var(--color-muted);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-}
-
-.exhibition-dates {
-  margin: 0 0 .125rem;
-  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
-  color: var(--color-muted);
-  font-weight: 400;
-  letter-spacing: .02em;
-  line-height: 1.4;
-}
-
-.exhibition-curator {
+  letter-spacing: 1.1px;
   margin: 0;
-  font-size: clamp(0.7rem, 1vw, 0.8rem);
-  color: var(--color-muted);
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: .01em;
+  line-height: 1.2;
 }
 
 /* Year-based navigation styling */
-.year-nav{ display:flex; }
-.year-nav .year-list{ margin-left:0; }
-
-/* Align year-nav to the top of the container with the Archive header */
-@media (min-width:60rem){
-  .hero:has(+ .year-nav){
-    padding-bottom: 0; /* remove extra gap under the page title hero */
-  }
-  .year-nav{ margin-top: 0; }
+.year-nav{ 
+  display: flex; 
+  justify-self: end;
+  align-self: end;
 }
 
 .year-list{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem .75rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
   align-items: center;
-  padding: .75rem 0;
+  padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .year-list a{
-  text-decoration: none;
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9a9b;
   text-transform: uppercase;
-  letter-spacing: var(--ls-nav);
-  font-size: var(--fs-nav);
-  color: var(--color-muted);
-  line-height: 1;
-  padding: .375rem .5rem;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: color 0.2s ease;
 }
 
-/* Grouped states for year navigation */
-.year-list a:is(:hover, :focus-visible, [aria-current="page"]){
-  color: var(--color-dark);
+/* Active year styling (2023 is active/red) */
+.year-list a[aria-current="page"]{
+  color: #ed1c24;
+}
+
+.year-list a:is(:hover, :focus-visible){
+  color: #ed1c24;
   text-decoration: underline;
   text-underline-offset: 2px;
-  background-color: rgba(0,0,0,0.05);
 }
 
-/* Responsive adjustments */
+/* Year Section Header */
+.year-section {
+  padding: 34px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.year-header {
+  font-family: 'Gantari', sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  color: #9a9a9b;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Exhibition List Layout */
+.exhibition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* Exhibition Card - Horizontal Layout */
+.exhibition-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  padding: 2rem 0;
+  align-items: start;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.exhibition-card:last-child {
+  border-bottom: none;
+}
+
+/* Exhibition Info Section */
+.exhibition-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exhibition-title {
+  font-family: 'Gantari', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #9a9a9b;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.exhibition-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.artists-section h4 {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9a9a9b;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1.2px;
+  line-height: 1.1;
+}
+
+.artists-section p {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9a9b;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 1.2px;
+  line-height: 1.1;
+}
+
+.exhibition-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dates {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9a9b;
+  margin: 0;
+  letter-spacing: 1.2px;
+  line-height: 1.1;
+}
+
+.exhibition-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.learn-more,
+.catalog {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9a9a9b;
+  text-decoration: underline;
+  letter-spacing: 1.2px;
+  line-height: 1.1;
+  transition: color 0.2s ease;
+}
+
+.learn-more:hover,
+.catalog:hover {
+  color: #ed1c24;
+}
+
+/* Exhibition Image Section */
+.exhibition-image {
+  background: #9a9a9b;
+  border-radius: 0;
+  overflow: hidden;
+  min-height: 200px;
+  aspect-ratio: 4/3;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #9a9a9b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a9a9b;
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
-  .exhibition-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(0.875rem, 1.5vw, 1.5rem);
+  .title-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .exhibition-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .exhibition-image {
+    min-height: 250px;
+  }
+
+  .year-nav {
+    justify-self: center;
+  }
+
+  .year-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .year-section {
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .exhibition-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(0.75rem, 1.2vw, 1.25rem);
+  .title-grid {
+    padding: 20px 0;
+  }
+
+  #hero-title {
+    font-size: 28px;
+  }
+
+  .year-header {
+    font-size: 28px;
+  }
+
+  .exhibition-list {
+    gap: 2rem;
+  }
+
+  .exhibition-card {
+    gap: 1.5rem;
+  }
+
+  .exhibition-title {
+    font-size: 22px;
   }
 
   .year-list {
-    justify-content: center;
-    gap: .375rem .5rem;
-  }
-
-  .year-list a {
-    padding: .25rem .375rem;
-    font-size: 0.875rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  .exhibition-grid {
-    grid-template-columns: 1fr;
+  .title-grid {
+    padding: 15px 0;
+  }
+
+  #hero-title {
+    font-size: 24px;
+  }
+
+  .year-header {
+    font-size: 24px;
+  }
+
+  .exhibition-list {
+    gap: 1.5rem;
+  }
+
+  .exhibition-card {
     gap: 1rem;
   }
 
+  .exhibition-title {
+    font-size: 20px;
+  }
+
   .year-list {
-    gap: .25rem .375rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 
   .year-list a {
-    padding: .2rem .3rem;
-    font-size: 0.8rem;
+    font-size: 12px;
   }
 }
 
 /* Focus styles for accessibility */
 .year-list a:focus-visible,
-.exhibition-grid .card:focus-visible {
-  outline: 2px solid var(--color-dark);
+.learn-more:focus-visible,
+.catalog:focus-visible {
+  outline: 2px solid #ed1c24;
   outline-offset: 2px;
 }
 
 /* Smooth transitions for filtering */
-.exhibition-grid .card {
+.exhibition-card {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.exhibition-grid .card.hidden {
+.exhibition-card.hidden {
   opacity: 0;
   transform: scale(0.95);
   pointer-events: none;

@@ -4,18 +4,13 @@ title: Archive
 pageCss: archive.css
 ---
 
-<section class="hero maxw title-grid" aria-labelledby="hero-title">
-  <div class="hero-copy">
-    <h1 id="hero-title">Archive</h1>
-  </div>
-
-  <!-- Year-based navigation instead of alphabetical -->
+<section class="maxw title-grid" aria-labelledby="hero-title">
+  <h1 id="hero-title">Archive</h1>
   <nav class="year-nav" aria-label="Browse exhibitions by year">
     <ul class="year-list" role="list">
-      <li><a href="#" aria-current="page">All</a></li>
       <li><a href="#2025">2025</a></li>
       <li><a href="#2024">2024</a></li>
-      <li><a href="#2023">2023</a></li>
+      <li><a href="#2023" aria-current="page">2023</a></li>
       <li><a href="#2022">2022</a></li>
       <li><a href="#2021">2021</a></li>
       <li><a href="#2020">2020</a></li>
@@ -24,182 +19,297 @@ pageCss: archive.css
   </nav>
 </section>
 
-<!-- ====== EXHIBITIONS ARCHIVE GRID ====== -->
+<!-- ====== YEAR SECTION HEADER ====== -->
+<section class="year-section maxw">
+  <h2 class="year-header">2023</h2>
+</section>
+
+<!-- ====== EXHIBITIONS ARCHIVE CARDS ====== -->
 <section class="archive maxw">
-  <div class="exhibition-grid">
+  <div class="exhibition-list">
+    
     <!-- 2025 Exhibitions -->
-    <article class="card" data-year="2025">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757557804/Alejandro_Puente_udgap7.jpg"
-        alt="Light for the Amazon exhibition view" loading="lazy">
-      <div class="card-body">
-        <h3>Light for the Amazon</h3>
-        <p class="exhibition-year">2025</p>
-        <p class="exhibition-dates">September 11 - October 24, 2025</p>
-        <p class="exhibition-curator">Curated by Omar López-Chahoud</p>
+    <article class="exhibition-card" data-year="2025">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">Light for the Amazon</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Alejandro Puente</p>
+            <p>Ramirez Villamizar</p>
+            <p>Carlos Cruz-Diez</p>
+            <p>Jesús Soto</p>
+            <p>Fernando Botero</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">09.11.2025 — 10.24.2025</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <article class="card" data-year="2025">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757557936/Light_for_the_Amazon_-_Ramirez_Villamizar_Copa_Oil_on_canvas_27.5_x_19.6_in._70_x_50_cm_1953_hjpyyd.jpg"
-        alt="Andrés Arzuaga exhibition view" loading="lazy">
-      <div class="card-body">
-        <h3>Andrés Arzuaga: One Thousand Days of Light</h3>
-        <p class="exhibition-year">2025</p>
-        <p class="exhibition-dates">November 23, 2024 - April 25, 2025</p>
-        <p class="exhibition-curator">Curated by Carlos Gutiérrez</p>
+    <article class="exhibition-card" data-year="2025">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">Andrés Arzuaga: One Thousand Days of Light</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Andrés Arzuaga</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">11.23.2024 — 04.25.2025</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
     <!-- 2024 Exhibitions -->
-    <article class="card" data-year="2024">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757559619/Caldas_Waltercio_-_A_Tale_stainless_steel_glass_and_resin_160_x_235_x_65_cm_2013_xnza6y.jpg"
-        alt="Waltercio Caldas exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Waltercio Caldas: A Tale</h3>
-        <p class="exhibition-year">2024</p>
-        <p class="exhibition-dates">March 15 - May 20, 2024</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <article class="exhibition-card" data-year="2024">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">Waltercio Caldas: A Tale</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Waltercio Caldas</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">03.15.2024 — 05.20.2024</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <article class="card" data-year="2024">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757559678/Dipierro_Marcolina_-_Untitled-2018-Stainless-steel-silk-_zyq8ub.jpg"
-        alt="Marcolina Dipierro exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Marcolina Dipierro: Untitled</h3>
-        <p class="exhibition-year">2024</p>
-        <p class="exhibition-dates">June 10 - August 15, 2024</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <article class="exhibition-card" data-year="2024">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">Marcolina Dipierro: Untitled</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Marcolina Dipierro</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">06.10.2024 — 08.15.2024</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
     <!-- 2023 Exhibitions -->
-    <article class="card" data-year="2023">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757559730/Felguerez_Manuel_-_Juego_de_Planos_Laca_sobre_tela_137_x_137_cm._1973_ov4x3y.jpg"
-        alt="Manuel Felguerez exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Manuel Felguerez: Juego de Planos</h3>
-        <p class="exhibition-year">2023</p>
-        <p class="exhibition-dates">February 8 - April 12, 2023</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <article class="exhibition-card" data-year="2023">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">02.27.2023 — 05.20.2023</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <article class="card" data-year="2023">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757559855/Marinho_Jaildo_-_LIgnes_obliques_465_volumes-flash_acrylic_on_wood_nylon_and_pvc_39.37_x_39.39.37.100_x_100_cm_2012_koi4j0.jpg"
-        alt="Jaildo Marinho exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Jaildo Marinho: Lignes Obliques</h3>
-        <p class="exhibition-year">2023</p>
-        <p class="exhibition-dates">May 18 - July 22, 2023</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <!-- Exhibition Card 2 -->
+    <article class="exhibition-card" data-year="2023">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">02.27.2023 — 05.20.2023</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <!-- 2022 Exhibitions -->
-    <article class="card" data-year="2022">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757560302/Paternosto_Cesar_-_Cuarteto__Tema_Marginal_Oil_on_canvas_4_panels_66.9_x_86.1_In._170_x_220_cm_installed_2016_z8dh7j.jpg"
-        alt="Cesar Paternosto exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Cesar Paternosto: Cuarteto</h3>
-        <p class="exhibition-year">2022</p>
-        <p class="exhibition-dates">January 12 - March 16, 2022</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <!-- Exhibition Card 3 -->
+    <article class="exhibition-card" data-year="2022">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">01.15.2022 — 03.20.2022</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <article class="card" data-year="2022">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757560467/Segu%C3%AD_Antonio_-_Una_ma%C3%B1ana_cualquiera_acrylic_on_canvas_78_7_x_78_7_in._200_x_200_cm_2013_ocwmpb.jpg"
-        alt="Antonio Segui exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Antonio Segui: Una Mañana Cualquiera</h3>
-        <p class="exhibition-year">2022</p>
-        <p class="exhibition-dates">April 20 - June 24, 2022</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <!-- Exhibition Card 4 -->
+    <article class="exhibition-card" data-year="2022">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">04.15.2022 — 06.20.2022</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <!-- 2021 Exhibitions -->
-    <article class="card" data-year="2021">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757560571/Soto_Jesus_-_Color_y_movimiento_1965_ys5hqq.jpg"
-        alt="Jesus Soto exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Jesus Soto: Color y Movimiento</h3>
-        <p class="exhibition-year">2021</p>
-        <p class="exhibition-dates">September 8 - November 12, 2021</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <!-- Exhibition Card 5 -->
+    <article class="exhibition-card" data-year="2021">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">09.08.2021 — 11.12.2021</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <article class="card" data-year="2021">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757560574/Szyszlo_Fernando_-_Paracas_la_noche_acrilico_sobre_tela_100_x_120_cm_orrantia_2011.vendido_Sr._Viloria_tro0l2.jpg"
-        alt="Fernando Szyszlo exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Fernando Szyszlo: Paracas la Noche</h3>
-        <p class="exhibition-year">2021</p>
-        <p class="exhibition-dates">July 14 - September 18, 2021</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <!-- Exhibition Card 6 -->
+    <article class="exhibition-card" data-year="2020">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">02.05.2020 — 04.09.2020</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <!-- 2020 Exhibitions -->
-    <article class="card" data-year="2020">
-      <img class="thumb"
-        src="https://res.cloudinary.com/dao1vqck0/image/upload/v1757560709/Velloj%C3%ADn_Manolo_-_Beato_Acrylic_on_raw_linen_15.7_x_15.7_in._40_x_40_cm_1989_kbndvv.jpg"
-        alt="Manolo Vellojin exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Manolo Vellojin: Beato</h3>
-        <p class="exhibition-year">2020</p>
-        <p class="exhibition-dates">February 5 - April 9, 2020</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
+    <!-- Exhibition Card 7 -->
+    <article class="exhibition-card" data-year="2019">
+      <div class="exhibition-info">
+        <h3 class="exhibition-title">NOMBRE EXPO</h3>
+        <div class="exhibition-details">
+          <div class="artists-section">
+            <h4>Artists</h4>
+            <p>Lorem Ipsum Dolor</p>
+            <p>Sit Amet</p>
+            <p>Consectetuer Adipiscing</p>
+            <p>Elit</p>
+            <p>Sed Diam</p>
+          </div>
+          <div class="exhibition-meta">
+            <p class="dates">03.20.2019 — 05.24.2019</p>
+            <div class="exhibition-links">
+              <a href="#" class="learn-more">Learn more</a>
+              <a href="#" class="catalog">Catalog click here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exhibition-image">
+        <div class="image-placeholder"></div>
       </div>
     </article>
 
-    <article class="card" data-year="2020">
-      <img class="thumb"
-        src="assets/images/artists/pablo-atchugarry/Atchugarry_Victoria-Alada_2015_bronze_53x53x41cm.jpg"
-        alt="Pablo Atchugarry exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Pablo Atchugarry: Victoria Alada</h3>
-        <p class="exhibition-year">2020</p>
-        <p class="exhibition-dates">October 15 - December 19, 2020</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
-      </div>
-    </article>
-
-    <!-- 2019 Exhibitions -->
-    <article class="card" data-year="2019">
-      <img class="thumb"
-        src="assets/images/artists/german-botero/Botero_Trompos_1986-2015_installation_ceramic_variable.jpg"
-        alt="German Botero exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>German Botero: Trompos</h3>
-        <p class="exhibition-year">2019</p>
-        <p class="exhibition-dates">March 20 - May 24, 2019</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
-      </div>
-    </article>
-
-    <article class="card" data-year="2019">
-      <img class="thumb"
-        src="assets/images/artists/carmelo-arden/byn-acrylic-wood-62x82cm-2005.jpg"
-        alt="Carmelo Arden Quin exhibition" loading="lazy">
-      <div class="card-body">
-        <h3>Carmelo Arden Quin: Retrospective</h3>
-        <p class="exhibition-year">2019</p>
-        <p class="exhibition-dates">September 12 - November 16, 2019</p>
-        <p class="exhibition-curator">Curated by Durban Segnini</p>
-      </div>
-    </article>
   </div>
 </section>

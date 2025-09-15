@@ -6,7 +6,8 @@ document.querySelector('.hero-next')?.addEventListener('click', () => {
 // Archive page year filtering functionality
 document.addEventListener('DOMContentLoaded', function() {
   const yearLinks = document.querySelectorAll('.year-list a');
-  const exhibitionCards = document.querySelectorAll('.exhibition-grid .card');
+  const exhibitionCards = document.querySelectorAll('.exhibition-card');
+  const yearHeader = document.querySelector('.year-header');
 
   // Add click event listeners to year navigation links
   yearLinks.forEach(link => {
@@ -22,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get the target year from the href
       const targetYear = this.getAttribute('href').replace('#', '');
       
+      // Update year header
+      if (yearHeader) {
+        yearHeader.textContent = targetYear;
+      }
+      
       // Filter exhibitions based on selected year
       filterExhibitionsByYear(targetYear);
     });
@@ -31,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     exhibitionCards.forEach(card => {
       const cardYear = card.getAttribute('data-year');
       
-      if (year === 'All' || cardYear === year) {
+      if (cardYear === year) {
         // Show the card
         card.classList.remove('hidden');
       } else {
