@@ -1,16 +1,50 @@
-
-/* ARCHIVE PAGE STYLES - Matching Penpot Design */
-
-/* Title grid: header + year chooser */
-.title-grid{
+/* ========== ARCHIVE (matches mock) ========== */
+/* Archive page main grid layout */
+.archive-main-grid {
   display: grid;
-  grid-template-columns: 23% 1fr;
-  align-items: start;
-  padding: 39px 0;
-  gap: clamp(1rem, 3vw, 1.25rem);
+  grid-template-rows: 13% auto 17%;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1920px;
+  margin: 0 auto;
+  align-items: center;
+  align-content: stretch;
+  justify-items: start;
+  justify-content: stretch;
+  width: 100vw;
+  min-height: 100vh;
 }
 
-/* Archive title styling */
+/* Center year nav bar in grid */
+.year-nav {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Archive content in grid */
+.archive-content {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.title-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 23% 1fr;
+  align-items: start;
+  align-content: stretch;
+  justify-items: start;
+  justify-content: stretch;
+  padding: 39px 0 0 0;
+  gap: .75rem;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #hero-title {
   font-family: 'Gantari', sans-serif;
   font-size: 35px;
@@ -20,26 +54,24 @@
   letter-spacing: 1.1px;
   margin: 0;
   line-height: 1.2;
+  text-align: left;
 }
 
-/* Year-based navigation styling */
-.year-nav{ 
-  display: flex; 
-  justify-self: end;
-  align-self: end;
+.year-nav {
+  display: block;
 }
 
-.year-list{
+.year-list {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1rem;
-  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 1.25rem;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.year-list a{
+.year-list a {
   font-family: 'Gantari', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -48,25 +80,33 @@
   letter-spacing: 1.2px;
   text-decoration: none;
   line-height: 1.2;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
 
-/* Active year styling (2023 is active/red) */
-.year-list a[aria-current="page"]{
+.year-list a[aria-current="page"] {
   color: #ed1c24;
 }
 
-.year-list a:is(:hover, :focus-visible){
+.year-list a:is(:hover, :focus-visible) {
   color: #ed1c24;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-/* Year Section Header */
-.year-section {
-  padding: 34px 0;
-  display: flex;
-  justify-content: flex-end;
+.archive-year {
+  padding: 34px 0 0;
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: 120px minmax(28ch, 34ch) minmax(420px, 1fr);
+  column-gap: clamp(2rem, 6vw, 3rem);
+  row-gap: clamp(2rem, 5vw, 2.5rem);
+  align-items: start;
+}
+
+.year-col {
+  align-self: start;
 }
 
 .year-header {
@@ -76,36 +116,14 @@
   color: #9a9a9b;
   text-transform: uppercase;
   letter-spacing: 1.1px;
-  margin: 0;
+  margin: .15rem 0 0 0;
   line-height: 1.2;
 }
 
-/* Exhibition List Layout */
-.exhibition-list {
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-}
-
-/* Exhibition Card - Horizontal Layout */
-.exhibition-card {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  padding: 2rem 0;
-  align-items: start;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.exhibition-card:last-child {
-  border-bottom: none;
-}
-
-/* Exhibition Info Section */
 .exhibition-info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: .75rem;
 }
 
 .exhibition-title {
@@ -113,16 +131,9 @@
   font-size: 26px;
   font-weight: 400;
   color: #9a9a9b;
-  text-transform: capitalize;
   letter-spacing: 1.2px;
   margin: 0;
   line-height: 1.2;
-}
-
-.exhibition-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .artists-section h4 {
@@ -130,41 +141,26 @@
   font-size: 14px;
   font-weight: 700;
   color: #9a9a9b;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 .4rem 0;
   letter-spacing: 1.2px;
   line-height: 1.1;
 }
 
-.artists-section p {
-  font-family: 'Gantari', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #9a9a9b;
-  margin: 0 0 0.25rem 0;
-  letter-spacing: 1.2px;
-  line-height: 1.1;
-}
-
-.exhibition-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
+.artists-section p,
 .dates {
   font-family: 'Gantari', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #9a9a9b;
-  margin: 0;
+  margin: 0 0 .25rem 0;
   letter-spacing: 1.2px;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .exhibition-links {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: .35rem;
 }
 
 .learn-more,
@@ -176,7 +172,7 @@
   text-decoration: underline;
   letter-spacing: 1.2px;
   line-height: 1.1;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
 
 .learn-more:hover,
@@ -184,128 +180,80 @@
   color: #ed1c24;
 }
 
-/* Exhibition Image Section */
 .exhibition-image {
+  aspect-ratio: 585 / 323;
   background: #9a9a9b;
-  border-radius: 0;
+  max-width: 585px;
+  max-height: 323px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius removed for square/rectangular look */
   overflow: hidden;
-  min-height: 200px;
-  aspect-ratio: 4/3;
 }
 
 .image-placeholder {
   width: 100%;
   height: 100%;
-  background: #9a9a9b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #9a9a9b;
-  font-family: 'Gantari', sans-serif;
-  font-size: 14px;
-  letter-spacing: 1.2px;
+  background: #eaeaea;
+  aspect-ratio: 585 / 323;
+  max-width: 585px;
+  max-height: 323px;
+  /* border-radius removed for square/rectangular look */
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .title-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    text-align: center;
+@media(max-width:1100px) {
+  .archive-grid {
+    grid-template-columns: 90px minmax(26ch, 34ch) minmax(360px, 1fr);
+  }
+}
+
+@media(max-width:992px) {
+  .archive-grid {
+    grid-template-columns: 100px 1fr;
   }
 
-  .exhibition-card {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0;
+  .year-col {
+    grid-column: 1;
+  }
+
+  .exhibition-info {
+    grid-column: 2;
   }
 
   .exhibition-image {
-    min-height: 250px;
-  }
-
-  .year-nav {
-    justify-self: center;
-  }
-
-  .year-list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .year-section {
-    justify-content: center;
+    grid-column: 2;
   }
 }
 
-@media (max-width: 768px) {
-  .title-grid {
-    padding: 20px 0;
-  }
+@media(max-width:720px) {
 
-  #hero-title {
-    font-size: 28px;
-  }
-
+  #hero-title,
   .year-header {
     font-size: 28px;
-  }
-
-  .exhibition-list {
-    gap: 2rem;
-  }
-
-  .exhibition-card {
-    gap: 1.5rem;
   }
 
   .exhibition-title {
     font-size: 22px;
   }
 
-  .year-list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .year-col,
+  .exhibition-info,
+  .exhibition-image {
+    grid-column: 1;
+  }
+
+  .exhibition-image {
+    min-height: 220px;
   }
 }
 
-@media (max-width: 480px) {
-  .title-grid {
-    padding: 15px 0;
-  }
-
-  #hero-title {
-    font-size: 24px;
-  }
-
-  .year-header {
-    font-size: 24px;
-  }
-
-  .exhibition-list {
-    gap: 1.5rem;
-  }
-
-  .exhibition-card {
-    gap: 1rem;
-  }
-
-  .exhibition-title {
-    font-size: 20px;
-  }
-
-  .year-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-  }
-
-  .year-list a {
-    font-size: 12px;
-  }
-}
-
-/* Focus styles for accessibility */
 .year-list a:focus-visible,
 .learn-more:focus-visible,
 .catalog:focus-visible {
@@ -313,13 +261,46 @@
   outline-offset: 2px;
 }
 
-/* Smooth transitions for filtering */
-.exhibition-card {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.year-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.exhibition-card.hidden {
-  opacity: 0;
-  transform: scale(0.95);
-  pointer-events: none;
+.year-list {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.year-list a {
+  font-family: 'Gantari', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9a9b;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: color .2s ease;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.year-list a[aria-current="page"] {
+  color: #ed1c24;
+}
+
+.year-list a:hover,
+.year-list a:focus-visible {
+  color: #ed1c24;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
