@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: Art Fairs
+---
+
+<section aria-labelledby="hero-title">
+  <div>
+    <h1 id="hero-title">Art Fairs</h1>
+  </div>
+</section>
+
+<!-- ====== ART FAIRS GRID ====== -->
+<section>
+  <div>
+    {% for artfair in collections.artfairs %}
+    <a href="{{ artfair.url }}">
+      <article>
+        {% if artfair.data.hero_image %}
+        <img src="{{ artfair.data.hero_image }}" alt="{{ artfair.data.title }}" loading="lazy">
+        {% else %}
+        <div>
+          <span>{{ artfair.data.title | first | upper }}</span>
+        </div>
+        {% endif %}
+        <div>
+          <h3>{{ artfair.data.title }}</h3>
+          {% if artfair.data.year %}
+          <p>{{ artfair.data.year }}</p>
+          {% endif %}
+          {% if artfair.data.location %}
+          <p>{{ artfair.data.location }}</p>
+          {% endif %}
+        </div>
+      </article>
+    </a>
+    {% endfor %}
+  </div>
+</section>

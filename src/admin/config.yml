@@ -1,3 +1,6 @@
+# when using the default proxy server port
+local_backend: true
+
 # Use DecapBridge auth (required)
 backend:
   name: git-gateway
@@ -46,8 +49,9 @@ collections:
     identifier_field: name
     fields:
       - { name: first_name, label: First Name, widget: string }
-      - { name: last_name, label: Last Name, widget: string }
-      - { name: name, label: Display Name, widget: string }
+      - { name: last_name,  label: Last Name,  widget: string }
+      - { name: name,       label: Display Name, widget: hidden, required: false }
+      - { name: computed_slug, label: Computed Slug, widget: hidden, required: false }
       - { name: year_of_birth, label: Year of Birth, widget: string, required: false }
       - { name: year_of_death, label: Year of Death, widget: string, required: false }
       - name: portrait

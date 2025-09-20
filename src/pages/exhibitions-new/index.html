@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: Exhibitions
+---
+
+<section aria-labelledby="hero-title">
+  <div>
+    <h1 id="hero-title">Exhibitions</h1>
+  </div>
+</section>
+
+<!-- ====== EXHIBITIONS GRID ====== -->
+<section>
+  <div>
+    {% for exhibition in collections.exhibitions %}
+    <a href="{{ exhibition.url }}">
+      <article>
+        {% if exhibition.data.hero_image %}
+        <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" loading="lazy">
+        {% else %}
+        <div>
+          <span>{{ exhibition.data.title | first | upper }}</span>
+        </div>
+        {% endif %}
+        <div>
+          <h3>{{ exhibition.data.title }}</h3>
+          {% if exhibition.data.date_range %}
+          <p>{{ exhibition.data.date_range }}</p>
+          {% endif %}
+          {% if exhibition.data.status %}
+          <p>{{ exhibition.data.status | upper }}</p>
+          {% endif %}
+        </div>
+      </article>
+    </a>
+    {% endfor %}
+  </div>
+</section>
