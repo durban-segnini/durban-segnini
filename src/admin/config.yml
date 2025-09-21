@@ -1,3 +1,6 @@
+# when using the default proxy server port
+local_backend: true
+
 # Use DecapBridge auth (required)
 backend:
   name: git-gateway
@@ -19,7 +22,7 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in DecapCMS (optional)
-site_url: https://adeluccar.github.io
+site_url: https://durbansegnini.com
 media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
@@ -46,8 +49,9 @@ collections:
     identifier_field: name
     fields:
       - { name: first_name, label: First Name, widget: string }
-      - { name: last_name, label: Last Name, widget: string }
-      - { name: name, label: Display Name, widget: string }
+      - { name: last_name,  label: Last Name,  widget: string }
+      - { name: name,       label: Display Name, widget: hidden, required: false }
+      - { name: computed_slug, label: Computed Slug, widget: hidden, required: false }
       - { name: year_of_birth, label: Year of Birth, widget: string, required: false }
       - { name: year_of_death, label: Year of Death, widget: string, required: false }
       - name: portrait
@@ -68,19 +72,33 @@ collections:
     create: true
     format: frontmatter
     extension: md
-    slug: "{{slug}}"
+
+    # file like "guernica.md" based on Title
+    slug: "{{ artist | slugify }}-{{ year }}-{{ title | slugify }}"
+    identifier_field: title
+    summary: "{{ artist }} — {{ fields.year }} — {{title}}"
+
     fields:
+      # ——— Basics
       - { name: title, label: Title, widget: string }
+
+      # Single artist (one-to-one)
       - name: artist
         label: Artist
         widget: relation
         collection: artists
+        multiple: false
         search_fields: [name, first_name, last_name]
         value_field: name
         display_fields: [name]
-      - { name: year, label: Year, widget: string, required: false }
+
+      # ——— Work details
+      # Keep 'year' as a string so you can do things like "c. 1972" or "1972–74"
+      - { name: year, label: Year (creation), widget: string, required: true }
       - { name: medium, label: Medium, widget: string, required: false }
       - { name: dimensions, label: Dimensions, widget: string, required: false }
+
+      # ——— Image (required)
       - name: image
         label: Image
         widget: image
@@ -89,8 +107,13 @@ collections:
           name: cloudinary
           config:
             folder: "site/works"
+
+      # ——— Full description in the Markdown BODY (not just front matter)
       - { name: body, label: Description, widget: markdown, required: false }
-      - { name: layout, widget: hidden, default: "work.njk" }
+
+      # Optional: lock the default 11ty template for a work page
+      # - { name: layout, widget: hidden, default: "work.njk" }
+
 
   - name: exhibitions
     label: Exhibitions
@@ -99,13 +122,24 @@ collections:
     create: true
     format: frontmatter
     extension: md
-    slug: "{{slug}}"
+
+    # file like "autumn-show-2025.md"
+    slug: "{{ title | slugify }}"
+    identifier_field: title
+    summary: "{{ title }}"
+
     fields:
+      # ——— Basics
       - { name: title, label: Title, widget: string }
       - { name: location, label: Location, widget: string, required: false }
+
+      # Status (manual), plus optional archive flag
       - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
-      - { name: start, label: Start, widget: datetime, time_format: false }
-      - { name: end, label: End, widget: datetime, time_format: false, required: false }
+
+      # Human-friendly date span typed as one string
+      - { name: date_range, label: Dates, widget: string, hint: "e.g. “September 11 – October 24, 2025”" }
+
+      # ——— Media
       - name: poster
         label: Poster
         widget: image
@@ -113,11 +147,42 @@ collections:
         media_library:
           name: cloudinary
           config:
-            folder: "site/exhibitions"
-      - { name: works, label: Works, widget: relation, collection: works, multiple: true,
-          search_fields: [title, artist], value_field: title, display_fields: [title] }
-      - { name: body, label: Notes, widget: markdown, required: false }
-      - { name: layout, widget: hidden, default: "exhibition.njk" }
+            folder: "site/exhibitions/posters"
+
+      - name: press_release_pdf
+        label: Press Release (PDF)
+        widget: file
+        required: false
+        media_library:
+          name: cloudinary
+          config:
+            folder: "site/exhibitions/press"
+
+      - name: catalog_pdf
+        label: Catalog (PDF)
+        widget: file
+        required: false
+        media_library:
+          name: cloudinary
+          config:
+            folder: "site/exhibitions/catalogs"
+
+      # Pick the works in this exhibition (many)
+      - name: works
+        label: Works
+        widget: relation
+        collection: works
+        multiple: true
+        search_fields: [title, artist]
+        value_field: title      # aligns with your Works config
+        display_fields: [title, artist, year]
+
+      # ——— Page copy (Markdown body)
+      - { name: body, label: Notes / Description, widget: markdown, required: false }
+
+      # Optional: lock the template used by 11ty for exhibitions
+      # - { name: layout, widget: hidden, default: "exhibition.njk" }
+
 
   - name: artfairs
     label: Art Fairs
@@ -126,23 +191,40 @@ collections:
     create: true
     format: frontmatter
     extension: md
-    slug: "{{slug}}"
+
+    # filename like "2025-art-basel-miami-beach.md"
+    slug: "{{ year }}-{{ title | slugify }}"
+    identifier_field: title
+    summary: "{{ fields.year }} — {{ title }}"
+
     fields:
       - { name: title, label: Title, widget: string }
-      - { name: location, label: Location, widget: string, required: false }
-      - { name: year, label: Year, widget: number, required: true }
-      - { name: archived, label: Archived, widget: boolean, default: false }
-      - { name: start, label: Start, widget: datetime, time_format: false, required: false }
-      - { name: end, label: End, widget: datetime, time_format: false, required: false }
-      - name: poster
-        label: Poster
-        widget: image
-        required: false
-        media_library:
-          name: cloudinary
-          config:
-            folder: "site/artfairs"
-      - { name: artists, label: Artists, widget: relation, collection: artists, multiple: true,
-          search_fields: [name], value_field: name, display_fields: [name] }
-      - { name: body, label: Notes, widget: markdown, required: false }
-      - { name: layout, widget: hidden, default: "artfair.njk" }
+      - { name: year,  label: Year,  widget: number }
+      # Artists are typed into the Markdown body—one per line / list—no relations needed.
+      - { name: body,  label: List of Artists, widget: markdown }
+
+      # Optional: lock the template
+      # - { name: layout, widget: hidden, default: "artfair.njk" }
+
+  - name: news
+    label: News
+    label_singular: News Item
+    folder: "src/content/news"
+    create: true
+    format: frontmatter
+    extension: md
+
+    # ✅ produces: 2025-09-30-the-news-title
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{ date | date('YYYY-MM-DD') }}-{{ title | slugify }}"
+    identifier_field: title
+
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: date
+        label: Date
+        widget: datetime
+        format: "YYYY-MM-DD"   # store date-only string
+        time_format: false     # no time portion
+        picker_utc: true       # avoid TZ shifts
+      - { name: body, label: Body, widget: markdown }
