@@ -1,3 +1,7 @@
+.archive-year {
+  display: flex;
+  justify-content: center;
+}
 /* ========== ARCHIVE (matches mock) ========== */
 
 /* ---------- Page shell ---------- */
@@ -98,6 +102,8 @@
   column-gap: clamp(2rem, 6vw, 3rem);
   row-gap: clamp(2rem, 5vw, 2.5rem);
   align-items: start;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .year-col { align-self: start; }
