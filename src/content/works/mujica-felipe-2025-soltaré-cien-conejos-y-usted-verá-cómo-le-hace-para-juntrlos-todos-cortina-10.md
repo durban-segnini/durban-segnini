@@ -1,5 +1,6 @@
 ---
-title: Soltaré cien conejos y usted verá cómo le hace para juntrlos todos (Cortina 10)
+title: Soltaré cien conejos y usted verá cómo le hace para juntarlos todos
+  (Cortina 10)
 artist: Mujica, Felipe
 year: "2022"
 medium: Lana de oveja tejida a mano (telar de cinura), lana bordada a mano, hilo
