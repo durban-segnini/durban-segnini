@@ -25,10 +25,12 @@ layout: base.njk
                 </header>
                 
                 <div>
-                    {% if exhibition.data.start and exhibition.data.end %}
-                        <p><strong>Dates:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }} — {{ exhibition.data.end | date("MMM d, yyyy") }}</p>
-                    {% elif exhibition.data.start %}
-                        <p><strong>Opening:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }}</p>
+                    {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+                        <p><strong>Dates:</strong> {{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+                    {% elif exhibition.data.startingDate %}
+                        <p><strong>Opening:</strong> {{ exhibition.data.startingDate | formatHumanDate }}</p>
+                    {% elif exhibition.data.endingDate %}
+                        <p><strong>Closing:</strong> {{ exhibition.data.endingDate | formatHumanDate }}</p>
                     {% endif %}
                     
                     {% if exhibition.data.location %}
@@ -67,10 +69,12 @@ layout: base.njk
                 </header>
                 
                 <div>
-                    {% if exhibition.data.start and exhibition.data.end %}
-                        <p><strong>Dates:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }} — {{ exhibition.data.end | date("MMM d, yyyy") }}</p>
-                    {% elif exhibition.data.start %}
-                        <p><strong>Opening:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }}</p>
+                    {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+                        <p><strong>Dates:</strong> {{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+                    {% elif exhibition.data.startingDate %}
+                        <p><strong>Opening:</strong> {{ exhibition.data.startingDate | formatHumanDate }}</p>
+                    {% elif exhibition.data.endingDate %}
+                        <p><strong>Closing:</strong> {{ exhibition.data.endingDate | formatHumanDate }}</p>
                     {% endif %}
                     
                     {% if exhibition.data.location %}
@@ -109,10 +113,12 @@ layout: base.njk
                 </header>
                 
                 <div>
-                    {% if exhibition.data.start and exhibition.data.end %}
-                        <p><strong>Dates:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }} — {{ exhibition.data.end | date("MMM d, yyyy") }}</p>
-                    {% elif exhibition.data.start %}
-                        <p><strong>Opening:</strong> {{ exhibition.data.start | date("MMM d, yyyy") }}</p>
+                    {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+                        <p><strong>Dates:</strong> {{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+                    {% elif exhibition.data.startingDate %}
+                        <p><strong>Opening:</strong> {{ exhibition.data.startingDate | formatHumanDate }}</p>
+                    {% elif exhibition.data.endingDate %}
+                        <p><strong>Closing:</strong> {{ exhibition.data.endingDate | formatHumanDate }}</p>
                     {% endif %}
                     
                     {% if exhibition.data.location %}

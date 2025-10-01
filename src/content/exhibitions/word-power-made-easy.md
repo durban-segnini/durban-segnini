@@ -3,6 +3,8 @@ title: Word Power Made Easy
 location: Miami
 status: current
 date_range: September 21 - December 22, 2025
+startingDate: "2025-09-21"
+endingDate: "2025-12-22"
 works:
   - The Goal
 permalink: /exhibitions/word-power-made-easy/index.html

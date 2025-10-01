@@ -24,7 +24,16 @@ title: Exhibitions
         {% endif %}
         <div>
           <h3>{{ exhibition.data.title }}</h3>
-          {% if exhibition.data.date_range %}
+          {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+          <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+          <p><strong>Year:</strong> {{ exhibition.data.startingDate | yearFromDate }}</p>
+          {% elif exhibition.data.startingDate %}
+          <p>{{ exhibition.data.startingDate | formatHumanDate }}</p>
+          <p><strong>Year:</strong> {{ exhibition.data.startingDate | yearFromDate }}</p>
+          {% elif exhibition.data.endingDate %}
+          <p>{{ exhibition.data.endingDate | formatHumanDate }}</p>
+          <p><strong>Year:</strong> {{ exhibition.data.endingDate | yearFromDate }}</p>
+          {% elif exhibition.data.date_range %}
           <p>{{ exhibition.data.date_range }}</p>
           {% endif %}
           {% if exhibition.data.status %}

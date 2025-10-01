@@ -135,9 +135,25 @@ collections:
 
       # Status (manual), plus optional archive flag
       - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
-
-      # Human-friendly date span typed as one string
-      - { name: date_range, label: Dates, widget: string, hint: "e.g. “September 11 – October 24, 2025”" }
+      
+      # Structured date fields for filtering and display
+      - name: startingDate
+        label: Starting Date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: true
+        required: true
+        hint: "Opening date of the exhibition"
+      
+      - name: endingDate
+        label: Ending Date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: true
+        required: true
+        hint: "Closing date of the exhibition"
 
       # ——— Media
       - name: poster

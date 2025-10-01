@@ -4,4 +4,23 @@ layout: base.njk
 
 <h1>{{ title }}</h1>
 
+{% if startingDate or endingDate %}
+<div class="exhibition-dates">
+    {% if startingDate and endingDate %}
+        <p><strong>Dates:</strong> {{ startingDate | formatHumanDate }} — {{ endingDate | formatHumanDate }}</p>
+        <p><strong>Year:</strong> {{ startingDate | yearFromDate }}</p>
+    {% elif startingDate %}
+        <p><strong>Opening:</strong> {{ startingDate | formatHumanDate }}</p>
+        <p><strong>Year:</strong> {{ startingDate | yearFromDate }}</p>
+    {% elif endingDate %}
+        <p><strong>Closing:</strong> {{ endingDate | formatHumanDate }}</p>
+        <p><strong>Year:</strong> {{ endingDate | yearFromDate }}</p>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if location %}
+<p><strong>Location:</strong> {{ location }}</p>
+{% endif %}
+
 {{ content | safe }}
