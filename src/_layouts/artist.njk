@@ -1,17 +1,60 @@
 ---
 layout: base.njk
+pageCss: hero-artist.css
 ---
-<h1>{{ name }}</h1>
-{% if year_of_birth or year_of_death %}
-<p>{{ year_of_birth }}{% if year_of_death %} — {{ year_of_death }}{% endif %}</p>
-{% endif %}
-{% if portrait %}<img src="{{ portrait }}" alt="{{ name }} portrait">{% endif %}
-{{ content | safe }}
 
-{% set mine = collections.works | worksByArtist(name) %}
-{% if mine.length %}
-<h2>Works</h2>
-<ul>
-  {% for w in mine %}<li><a href="{{ w.url }}">{{ w.data.title }}</a>{% if w.data.year %} ({{ w.data.year }}){% endif %}</li>{% endfor %}
-</ul>
-{% endif %}
+<main class="main-wrapper">
+  <section class="artist-intro grid-stack">
+    <div class="section-intro" data-one-quarter-grid="true">
+      <h2 class="section-title">Artist</h2>
+      <p class="section-microtitle">Biography</p>
+    </div>
+    <section class="artist-description-wrapper">
+      <section class="artist-introduction">
+        <h1 class="section-branded-title">{{ name }}</h1>
+        <h2 class="section-subtitle capitalize">
+          {% if year_of_birth %}
+            {{ year_of_birth }}
+          {% endif %}
+          {% if year_of_death %}
+            — {{ year_of_death }}
+          {% endif %}
+        </h2>
+      </section>
+      <section class="artist-description">
+        <details class="flow">
+          <summary>{{ short_bio }}</summary>
+          {{ content | safe }}
+        </details>
+      </section>
+      <section class="artist-images">
+        <div class="artist-images-intro">
+          <h2 class="section-title margin-bottom-2">Works</h2>
+        </div>
+        <div class="artist-images-wrapper cq-grid">
+          {% set mine = collections.works | worksByArtist(name) %}
+          {% if mine.length %}
+            {% for w in mine %}
+              <figure class="artist-image">
+                {% if w.data.image %}
+                  <img src="{{ w.data.image }}" alt="{{ w.data.title }}"/>
+                {% else %}
+                  <img src="https://placehold.co/400x300?text={{ w.data.title | url }}" alt="{{ w.data.title }}"/>
+                {% endif %}
+                <figcaption>
+                  {{ name }}, {{ w.data.title }}
+                  {% if w.data.year %}
+                    ({{ w.data.year }}){% endif %}
+                  {% if w.data.medium %}. {{ w.data.medium }}
+                  {% endif %}
+                </figcaption>
+              </figure>
+            {% endfor %}
+          {% else %}
+            <p>No works available for this artist.</p>
+          {% endif %}
+        </div>
+      </section>
+    </section>
+  </section>
+</main>

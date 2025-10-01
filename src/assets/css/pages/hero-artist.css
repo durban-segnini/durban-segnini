@@ -3,7 +3,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 2rem;
-    width: 78%;
+    width: 75%;
     margin-left: auto;
     margin-top: -1rem;
 
@@ -21,21 +21,19 @@
 }
 
 .artist-introduction {
-    grid-column: 2;
+    /* No grid-column needed - it's in a single column layout */
 }
 
 .artist-description {
-    grid-column: 2;
+    /* No grid-column needed - it's in a single column layout */
 }
 
 .artist-images {
-    grid-column: 2;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .artist-images-wrapper {
-    grid-column: 2;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -44,21 +42,7 @@
         grid-template-columns: 1fr;
     }
     
-    .artist-introduction {
-        grid-column: 1;
-    }
-
-    .artist-description {
-        grid-column: 1;
-    }
-
-    .artist-images {
-        grid-column: 1;
-        margin-top: 2rem;
-    }
-
     .artist-images-wrapper {
-        grid-column: 1;
         grid-template-columns: 1fr;
     }
 }
