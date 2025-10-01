@@ -130,6 +130,20 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // Add filter to add year property to exhibition objects for sorting
+  eleventyConfig.addFilter("addYearProperty", (exhibitions) => {
+    if (!Array.isArray(exhibitions)) return [];
+    
+    return exhibitions.map(exhibition => {
+      const year = exhibition.data.startingDate ? 
+        new Date(exhibition.data.startingDate).getFullYear() : 0;
+      return {
+        ...exhibition,
+        year: year
+      };
+    });
+  });
+
   // Add formatHumanDate filter for human-readable date formatting
   eleventyConfig.addFilter("formatHumanDate", (dateString, locale = "en-US") => {
     if (!dateString || typeof dateString !== 'string') return '';

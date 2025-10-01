@@ -1,12 +1,14 @@
 ---
 title: Word Power Made Easy
-status: current
+status: past
 date_range: September 21 - December 22, 2025
-startingDate: "2025-09-21"
-endingDate: "2025-12-22"
+startingDate: "2023-09-21"
+endingDate: "2023-12-22"
 works:
   - The Goal
 permalink: /exhibitions/word-power-made-easy/index.html
+press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757557562/Copy_of_Press_Release__Light_for_the_Amazon_rfshwv.pdf
+catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757548867/Light-for-the-Amazon_Invite-LFTA_infuwz.jpg
 ---
 Nam pretium erat aliquam sem tristique consequat. Vestibulum accumsan eget odio at dignissim. Ut diam nibh, dignissim non elit in, vestibulum aliquet lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam non ornare arcu, vitae iaculis mi. Ut quis quam diam. Ut venenatis neque non tincidunt tincidunt. Phasellus scelerisque est diam, volutpat auctor leo porta a. Pellentesque lacinia mi nunc, et dapibus mauris hendrerit eu. Morbi at erat varius, sagittis lectus ac, porttitor diam. Quisque viverra leo vitae elementum pretium. Nam sagittis ligula eget ante aliquet, sit amet mattis ipsum pellentesque.
 
