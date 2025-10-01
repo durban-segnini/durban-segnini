@@ -1,38 +1,59 @@
 ---
 layout: base.njk
 title: Art Fairs
+pageScript: picker-utility.js
 ---
 
-<section aria-labelledby="hero-title">
-  <div>
-    <h1 id="hero-title">Art Fairs</h1>
-  </div>
-</section>
-
-<!-- ====== ART FAIRS GRID ====== -->
-<section>
-  <div>
-    {% for artfair in collections.artfairs %}
-    <a href="{{ artfair.url }}">
-      <article>
-        {% if artfair.data.hero_image %}
-        <img src="{{ artfair.data.hero_image }}" alt="{{ artfair.data.title }}" loading="lazy">
-        {% else %}
-        <div>
-          <span>{{ artfair.data.title | first | upper }}</span>
+<main class="main-wrapper grid-stack">
+  <section class="section-intro">
+    <h1 class="section-title">Art Fairs</h1>
+    <div class="picker">
+      <!-- Picker buttons will be generated dynamically by JavaScript -->
+    </div>
+  </section>
+  
+  <section class="event-listing-wrapper">
+    {% set artfairsWithYear = collections.artfairs | map("addYearProperty") %}
+    {% set artfairs = artfairsWithYear | sort(false, false, "year") | reverse %}
+    {% if artfairs.length > 0 %}
+      {% for artfair in artfairs %}
+        {% set year = artfair.data.year %}
+        {% set artists = artfair | getArtistsFromArtFairBody %}
+        <div class="event-card" data-year="{{ year }}">
+          <div class="h2">{{ year }}</div>
+          <div class="event-card-content">
+            <h3><a href="{{ artfair.url }}">{{ artfair.data.title }}</a></h3>
+            {% if artists.length > 0 %}
+              <ul>
+                {% for artist in artists %}
+                  <li>{{ artist }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if artfair.data.location %}
+              <p>{{ artfair.data.location }}</p>
+            {% endif %}
+          </div>
+          <div class="event-card-image">
+            <figure>
+              {% if artfair.data.poster %}
+                <img src="{{ artfair.data.poster }}" alt="{{ artfair.data.title }}" />
+              {% elif artfair.data.hero_image %}
+                <img src="{{ artfair.data.hero_image }}" alt="{{ artfair.data.title }}" />
+              {% else %}
+                <img src="https://placehold.co/600x400" alt="{{ artfair.data.title }}" />
+              {% endif %}
+            </figure>
+          </div>
         </div>
-        {% endif %}
-        <div>
-          <h3>{{ artfair.data.title }}</h3>
-          {% if artfair.data.year %}
-          <p>{{ artfair.data.year }}</p>
-          {% endif %}
-          {% if artfair.data.location %}
-          <p>{{ artfair.data.location }}</p>
-          {% endif %}
+      {% endfor %}
+    {% else %}
+      <div class="event-card">
+        <div class="event-card-content">
+          <h3>No Art Fairs</h3>
+          <p>No art fairs are currently available.</p>
         </div>
-      </article>
-    </a>
-    {% endfor %}
-  </div>
-</section>
+      </div>
+    {% endif %}
+  </section>
+</main>

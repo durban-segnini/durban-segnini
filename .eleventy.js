@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 module.exports = function (eleventyConfig) {
   // Copy assets from src/assets → /assets in _site
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
@@ -137,15 +140,24 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  // Add filter to add year property to exhibition objects for sorting
-  eleventyConfig.addFilter("addYearProperty", (exhibitions) => {
-    if (!Array.isArray(exhibitions)) return [];
+  // Add filter to add year property to exhibition/artfair objects for sorting
+  eleventyConfig.addFilter("addYearProperty", (items) => {
+    if (!Array.isArray(items)) return [];
     
-    return exhibitions.map(exhibition => {
-      const year = exhibition.data.startingDate ? 
-        new Date(exhibition.data.startingDate).getFullYear() : 0;
+    return items.map(item => {
+      let year = 0;
+      
+      // For exhibitions, use startingDate
+      if (item.data.startingDate) {
+        year = new Date(item.data.startingDate).getFullYear();
+      }
+      // For art fairs, use the year field directly
+      else if (item.data.year) {
+        year = parseInt(item.data.year) || 0;
+      }
+      
       return {
-        ...exhibition,
+        ...item,
         year: year
       };
     });
@@ -201,6 +213,41 @@ module.exports = function (eleventyConfig) {
     } catch (error) {
       return '';
     }
+  });
+
+  // Add filter to extract artist names from art fair body markdown (one per line format)
+  eleventyConfig.addFilter("getArtistsFromArtFairBody", (artfair) => {
+    if (!artfair || !artfair.data) return [];
+    
+    try {
+      // Read the file content directly
+      const filePath = artfair.inputPath;
+      const content = fs.readFileSync(filePath, 'utf8');
+      
+      // Split by lines and filter out empty lines and frontmatter
+      const lines = content.split('\n')
+        .map(line => line.trim())
+        .filter(line => line && !line.startsWith('---') && line.startsWith('- '));
+      
+      // Extract artist names by removing the "- " prefix
+      return lines.map(line => line.substring(2).trim()).filter(name => name);
+    } catch (error) {
+      console.warn('Error reading art fair file:', error.message);
+      return [];
+    }
+  });
+
+  // Add shortcode to extract artist names from art fair content
+  eleventyConfig.addShortcode("getArtistsFromContent", function(content) {
+    if (!content || typeof content !== 'string') return [];
+    
+    // Split by lines and filter out empty lines and frontmatter
+    const lines = content.split('\n')
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('---') && line.startsWith('- '));
+    
+    // Extract artist names by removing the "- " prefix
+    return lines.map(line => line.substring(2).trim()).filter(name => name);
   });
 
   return {
