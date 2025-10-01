@@ -23,7 +23,7 @@ pageScript: picker-utility.js
         <div class="event-card" data-year="{{ year }}">
           <div class="h2">{{ year }}</div>
           <div class="event-card-content">
-            <h3>{{ exhibition.data.title }}</h3>
+            <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
             {% if artists.length > 0 %}
               <ul>
                 {% for artist in artists %}
