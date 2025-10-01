@@ -1,0 +1,142 @@
+/* Title grid: header + alphabet chooser */
+.title-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  row-gap:.25rem;
+  padding-block: 1.5rem; /* tighter than generic hero */
+}
+
+@media(min-width:60rem){
+  .title-grid{
+    grid-template-columns: 1fr 3fr 1fr; /* heading | alphabet (center, wider) | spacer */
+    align-items:start; /* top align both cells */
+    column-gap: clamp(1rem, 3vw, 1.25rem);
+    padding-top: var(--hero-pad-top);
+    padding-bottom: 0; /* flush with next section */
+  }
+
+  /* Place items explicitly to keep alphabet centered */
+  .title-grid .hero-copy{ grid-column: 1; }
+  .title-grid .alpha-nav{ grid-column: 2; justify-self: center; }
+
+  /* Keep alphabet on one line on desktop */
+  .alpha-list{
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: clamp(.3rem, 1vw, .75rem);
+  }
+}
+/* ARTISTS PAGE (page-scoped) */
+
+/* 4-col grid layout */
+.artist-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 2em); /* row col */
+}
+
+/* labels + body type inside grid */
+.muted-label { margin: 0; }
+
+.artist-name{
+  margin: 0 0 .25rem;
+  font-size: clamp(1.75rem, 3vw, var(--fs-hero-title));
+  letter-spacing: .06875rem;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.artist-name .life-dates{
+  display: block;
+  margin-top: .25rem;
+  font-size: clamp(1rem, 2vw, var(--fs-hero-date));
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.artist-grid .lead{
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  letter-spacing: .0625rem;
+  margin: .75rem 0 0;
+}
+
+/* bio toggle */
+.bio { margin-top: .75rem; }
+
+/* Truncate only when closed */
+.bio .lead{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; line-clamp: 1;
+  overflow: hidden;
+}
+.bio[open] .lead{
+  -webkit-line-clamp: unset; line-clamp: unset;
+}
+
+.bio-toggle{
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+  font-size: var(--fs-nav);
+  padding: .25rem 0;
+}
+.bio-toggle::-webkit-details-marker { display: none; }
+.bio .bio-toggle::after{ content: "… view more"; }
+.bio[open] .bio-toggle::after{ content: "… view less"; color: var(--color-dark); }
+
+/* A–Z Browse Row */
+.alpha-nav{ display:flex; }
+.alpha-nav .alpha-list{ margin-left:0; }
+
+/* Align alpha-nav to the top of the container with the Artists header */
+@media (min-width:60rem){
+  .hero:has(+ .alpha-nav){
+    padding-bottom: 0; /* remove extra gap under the page title hero */
+  }
+  .alpha-nav{ margin-top: 0; }
+}
+
+.alpha-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+  align-items: center;
+  padding: .75rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.alpha-list a{
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+  font-size: var(--fs-nav);
+  color: var(--color-muted);
+  line-height: 1;
+  padding: .375rem .25rem;
+}
+
+/* Grouped states */
+.alpha-list a:is(:hover, :focus-visible, [aria-current="page"]){
+  color: var(--color-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Optional: image hygiene so cards stay visually consistent */
+.card .thumb{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Remove horizontal padding so titles align flush with image edges */
+.artists .card-body{
+  padding: .9rem 0 1.1rem;
+}
