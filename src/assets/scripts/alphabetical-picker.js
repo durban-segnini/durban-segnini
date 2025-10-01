@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pickerContainer = document.querySelector('.picker');
     if (pickerContainer && !pickerContainer.hasAttribute('data-manual-init')) {
         // Check if this is an alphabetical picker (has artist cards)
-        const artistCards = document.querySelectorAll('.artist-card');
+        const artistCards = document.querySelectorAll('.artist-card-link');
         if (artistCards.length > 0) {
             new AlphabeticalPicker();
         }
