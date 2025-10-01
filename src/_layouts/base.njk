@@ -1,31 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>{{ title or "Durban Segnini Gallery" }}</title>
-
-  {# Use absolute paths or |url so nested pages still find assets #}
-  <link rel="stylesheet" href="{{ '/assets/css/old-base.css' | url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/old-components.css' | url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/old-utilities.css' | url }}">
-
-  {% if pageCss %}
-    <link rel="stylesheet" href="{{ '/assets/css/pages/' | url }}{{ pageCss }}">
-  {% endif %}
-</head>
-<body>
-  {% if isHome %}
-    {% include "partials/header_home.njk" %}
-  {% else %}
-    {% include "partials/header.njk" %}
-  {% endif %}
-
-  {{ content | safe }}
-
-  {% include "partials/footer.njk" %}
-
-  <script src="{{ '/assets/scripts/app.js' | url }}" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow">
+    <title>{{ title or "Durban Segnini Gallery" }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+    <link rel="stylesheet" href="css/hero-index.css"/>
+    {% if pageCss %}
+      <link rel="stylesheet" href="{{ '/assets/css/pages/' | url }}{{ pageCss }}">
+    {% endif %}
+  </head>
+  <body>
+    <div class="page-wrapper">
+      {% if isHome %}
+        {% include "partials/header_home.njk" %}
+      {% else %}
+        {% include "partials/header.njk" %}
+      {% endif %}
+        {{ content | safe }}
+      {% include "partials/footer.njk" %}
+      <script src="{{ '/assets/scripts/app.js' | url }}" defer></script>
+      <script src="{{ '/asset/scripts/mobile-menu.js' }}" defer></script>
+      {% if pageScript %}
+        <script src="{{ '/assets/scripts/' | url }}{{ pageScript }}" defer></script>
+      {% endif %}
+    </div>
+  </body>
 </html>

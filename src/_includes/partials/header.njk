@@ -1,19 +1,76 @@
-<header class="site-header-inverted">
-  <div class="header-inner maxw">
-    <a class="brand" href="index.html" aria-label="Durban Segnini Gallery">
-<a class="brand" href="/" aria-label="Durban Segnini Gallery">
-  <img src="{{ '/assets/svg/LOGO_DS_GALERIA_darkblue.svg' | url }}" 
-       alt="Durban Segnini Gallery" 
-       width="320" height="55" decoding="async" />
-</a>
-     </a>
-     <nav class="primary-nav" aria-label="Main">
-       <a href="artists.html" {% if page.url == '/artists.html' %}aria-current="page"{% endif %}>artists</a>
-       <a href="exhibitions.html" {% if page.url == '/exhibitions.html' %}aria-current="page"{% endif %}>exhibitions</a>
-       <!-- <a href="archive.html" {% if page.url == '/archive.html' %}aria-current="page"{% endif %}>archive</a> -->
-       <!-- <a href="art-fairs">art fairs</a> -->
-       <a href="gallery.html" {% if page.url == '/gallery.html' %}aria-current="page"{% endif %}>the gallery</a>
-       <a href="contact.html" {% if page.url == '/contact.html' %}aria-current="page"{% endif %}>contact us</a>
-     </nav>
-   </div>
+<header class="full-bleed">
+  <div class="header-wrapper">
+    <div class="logo-section">
+      <a href="index.html">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+          viewbox="0 0 242 42"
+          class="logo-durban-segnini">
+          <path
+            style="fill:currentcolor"
+            d="m129.798 12.715-.01.012v-.022l.01.01Zm0 0 .695-.805c1.605 1.485 3.09 2.167 5.235 2.167 2.145 0 3.69-1.23
+              3.69-2.902v-.045c0-1.545-.818-2.445-4.133-3.113-3.502-.705-4.927-1.897-4.927-4.11V3.87c0-2.168 1.98-3.84 4.695-3.84 2.13
+              0 3.525.585 5.01 1.77l-.69.855c-1.38-1.185-2.753-1.65-4.358-1.65-2.152 0-3.57 1.23-3.57 2.752v.038c0 1.545.795 2.482 4.26
+              3.195 3.383.69 4.8 1.897 4.8 4.027v.038c0 2.355-2.025 3.982-4.837 3.982-2.336 0-4.125-.769-5.87-2.322ZM0 .255h4.86c4.59 0
+              7.763 3.15 7.763 7.26v.037c0 4.11-3.173 7.305-7.763 7.305H0V.255Zm4.86 13.597c4.065 0 6.63-2.775
+              6.63-6.262v-.045c0-3.465-2.565-6.3-6.63-6.3H1.08v12.6h3.78v.007Zm15.398-5.07V.247h1.087v8.43c0 3.443 1.853 5.423 4.943
+              5.423s4.86-1.793 4.86-5.318V.247h1.087v8.408c0 4.192-2.445 6.427-5.985 6.427-3.54
+              0-5.985-2.212-5.985-6.3h-.007ZM40.508.255h6.135c1.792 0 3.232.562 4.11 1.44.69.69 1.11 1.665 1.11 2.715v.045c0
+              2.437-1.815 3.84-4.275 4.17l4.815 6.24H51.03l-4.65-6.053h-4.777v6.053h-1.088V.263l-.007-.008Zm6.015 7.567c2.437 0
+              4.252-1.23 4.252-3.337v-.038c0-1.965-1.545-3.194-4.192-3.194h-4.988v6.569h4.928ZM59.76.255h6.038c1.65 0 2.985.48 3.795
+              1.29.607.607.937 1.38.937 2.295v.045c0 1.98-1.297 2.985-2.482 3.465 1.755.457 3.292 1.462 3.292 3.487v.038c0 2.445-2.085
+              3.982-5.235 3.982H59.76V.255Zm6.39 13.598c2.505-.001 4.088-1.148
+              4.088-2.986v-.037c0-1.792-1.568-2.835-4.448-2.835h-4.942v5.865h5.302v-.008Zm-.48-6.862c2.19 0 3.758-1.065
+              3.758-3.007v-.038c0-1.605-1.313-2.692-3.653-2.692h-4.927v5.737h4.822ZM84.548.151h1.042l6.803
+              14.708h-1.185l-1.86-4.088H80.73l-1.86 4.088h-1.125L84.548.151Zm4.335 9.638-3.84-8.453-3.855
+              8.453h7.695ZM99.653.256h1.012l10.08 12.705V.256h1.043v14.603h-.81L100.695 1.883v12.976h-1.042V.256Zm48.6
+              0h10.387v.998h-9.307v5.737h8.362v.997h-8.362v5.865h9.412v.998h-10.492V.256Zm17.497 7.343v-.045c0-3.945 2.858-7.553
+              7.223-7.553 2.377 0 3.877.713 5.34 1.92l-.713.818c-1.147-1.005-2.482-1.755-4.695-1.755-3.547 0-6.03 3-6.03 6.532v.038c0
+              3.78 2.355 6.592 6.255 6.592 1.86 0 3.593-.773 4.65-1.672V8.281h-4.882v-.997h5.925v5.632c-1.313 1.17-3.36 2.19-5.738
+              2.19-4.612 0-7.342-3.397-7.342-7.507h.007ZM186.938.256h1.012l10.08 12.705V.256h1.043v14.603h-.81L187.98
+              1.884v12.975h-1.042V.256Zm20.782 0h1.088v14.603h-1.088V.256Zm9.75 0h1.013l10.08 12.705V.256h1.042v14.603h-.81L218.513
+              1.884v12.975h-1.043V.256Zm20.79 0h1.088v14.603h-1.088V.256ZM128.91 33.864v-.046c0-3.945 2.858-7.552 7.223-7.552 2.377 0
+              3.877.713 5.34 1.92l-.713.817c-1.147-1.005-2.482-1.754-4.695-1.754-3.547 0-6.03 3-6.03 6.532v.038c0 3.78 2.355 6.592
+              6.255 6.592 1.86 0 3.593-.772 4.65-1.672v-4.193h-4.882v-.997h5.925v5.632c-1.313 1.17-3.36 2.19-5.738 2.19-4.612
+              0-7.342-3.397-7.342-7.507l.007-.001Zm24.638-7.447h1.042l6.803 14.707h-1.185l-1.86-4.087h-8.618l-1.86
+              4.087h-1.125l6.803-14.707Zm4.335 9.637-3.84-8.452-3.855 8.452h7.695Zm8.677-9.54h1.088v13.598h8.572v1.005h-9.66V26.514Zm15
+              0h1.088v13.598h8.572v1.005h-9.66V26.514Zm15
+              0h10.388v.998h-9.308v5.737h8.363v.998h-8.363v5.865h9.413v1.005H196.56V26.514Zm16.058 0h6.135c1.792 0 3.232.563 4.11
+              1.44a3.847 3.847 0 0 1 1.11 2.715v.045c0 2.438-1.815 3.84-4.275 4.17l4.815
+              6.24h-1.373l-4.65-6.052h-4.777v6.052h-1.088V26.522l-.007-.008Zm6.007 7.575c2.438 0 4.253-1.23
+              4.253-3.337v-.038c0-1.965-1.545-3.195-4.193-3.195h-4.987v6.57h4.927Zm15.398 1.253-6.263-8.828h1.358l5.467 7.845
+              5.483-7.845h1.297l-6.262 8.805v5.798h-1.088v-5.783l.008.008ZM0 34.277v-.915h111.788v.915H0Z"/>
+        </svg>
+      </a>
+    </div>
+    <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <nav class="navbar-section">
+      <ul class="navbar-menu">
+        <li>
+          <a href="artists.html">Artists</a>
+        </li>
+        <li>
+          <a href="exhibition.html">Exhibition</a>
+        </li>
+        <li>
+          <a href="artfairs.html">Art Fairs</a>
+        </li>
+        <li>
+          <a href="archive.html">Archive</a>
+        </li>
+        <li>
+          <a href="gallery.html">The Gallery</a>
+        </li>
+        <li>
+          <a href="contact-us.html">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
