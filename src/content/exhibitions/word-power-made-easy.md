@@ -1,6 +1,5 @@
 ---
 title: Word Power Made Easy
-location: Miami
 status: current
 date_range: September 21 - December 22, 2025
 startingDate: "2025-09-21"

@@ -131,7 +131,6 @@ collections:
     fields:
       # ——— Basics
       - { name: title, label: Title, widget: string }
-      - { name: location, label: Location, widget: string, required: false }
 
       # Status (manual), plus optional archive flag
       - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
