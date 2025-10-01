@@ -1,23 +1,175 @@
 ---
 layout: base.njk
+pageCcs: hero-exhibition.css
 ---
 
-<h1>{{ title }}</h1>
+{# title in the frontmatter should be the exhibition name #}
 
-{% if startingDate or endingDate %}
-<div class="exhibition-dates">
-    {% if startingDate and endingDate %}
-        <p><strong>Dates:</strong> {{ startingDate | formatHumanDate }} — {{ endingDate | formatHumanDate }}</p>
-        <p><strong>Year:</strong> {{ startingDate | yearFromDate }}</p>
-    {% elif startingDate %}
-        <p><strong>Opening:</strong> {{ startingDate | formatHumanDate }}</p>
-        <p><strong>Year:</strong> {{ startingDate | yearFromDate }}</p>
-    {% elif endingDate %}
-        <p><strong>Closing:</strong> {{ endingDate | formatHumanDate }}</p>
-        <p><strong>Year:</strong> {{ endingDate | yearFromDate }}</p>
-    {% endif %}
-</div>
-{% endif %}
+      <main class="main-wrapper grid-stack">
+        <section class="section-intro">
+          <h2 class="section-title">Exhibition</h2>
+          <p class="section-microtitle">{{ status | capitalize }}</p>
+        </section>
+        <section class="current-exhibition-wrapper">
+          {% set exhibitionData = collections.exhibitions | where("title", title) | first %}
+          {% if exhibitionData %}
+            {% set artists = exhibitionData | getArtistsFromWorks(collections.works) %}
+            {% if artists.length > 0 %}
+              <h2 class="section-branded-title title-tight">{{ artists[0] }}</h2>
+            {% endif %}
+          {% endif %}
+          <h1 class="section-branded-title">{{ title }}</h1>
+          {% if startingDate and endingDate %}
+            <h2 class="section-title capitalize">{{ startingDate | formatHumanDate }}—{{ endingDate | formatHumanDate }}</h2>
+          {% elif date_range %}
+            <h2 class="section-title capitalize">{{ date_range }}</h2>
+          {% endif %}
+          <div class="catalogue-links-wrapper margin-top-2">
+            {% if catalog_pdf %}
+              <a class="section-microtitle uppercase plain-link" href="{{ catalog_pdf }}">Catalog</a>
+            {% endif %}
+            {% if press_release_pdf %}
+              <a class="section-microtitle uppercase plain-link" href="{{ press_release_pdf }}">Press Release</a>
+            {% endif %}
+          </div>
+        </section>
 
+        <section class="exhibition-images-wrapper">
+          <div class="exhibition-image-list-wrapper">
+            {% if poster %}
+              <div class="exhibition-image-card">
+                <img src="{{ poster }}" alt="{{ title }}" />
+              </div>
+            {% endif %}
+            {% if hero_image %}
+              <div class="exhibition-image-card">
+                <img src="{{ hero_image }}" alt="{{ title }}" />
+              </div>
+            {% endif %}
+            {% if not poster and not hero_image %}
+              <div class="exhibition-image-card">
+                <img src="https://placehold.co/400x300" alt="{{ title }}" />
+              </div>
+              <div class="exhibition-image-card">
+                <img src="https://placehold.co/500x250" alt="{{ title }}" />
+              </div>
+            {% endif %}
+          </div>
+        </section>
 
-{{ content | safe }}
+        <section class="exhibition-image-list-text">
+          {{ content | safe }}
+        </section>
+
+{# this one loops through all the artworks attached to that exhibition #}
+        <section class="selected-artworks-wrapper">
+          <h2 class="section-title margin-bottom-2">Selected Artworks</h2>
+          <div class="selected-artwork-card-list cq-grid">
+            {% if works and works.length > 0 %}
+              {% for workTitle in works %}
+                {% set work = null %}
+                {% for w in collections.works %}
+                  {% if w.data.title == workTitle %}
+                    {% set work = w %}
+                  {% endif %}
+                {% endfor %}
+                {% if work %}
+                  <div class="selected-artwork-card card">
+                    <img src="{{ work.data.image or 'https://placehold.co/400x300' }}" alt="{{ work.data.title }}" />
+                    <figcaption>
+                      <h3>{{ work.data.artist or 'Unknown Artist' }}</h3>
+                      <p>{{ work.data.title }}</p>
+                      <p>{{ work.data.year or '' }}{% if work.data.medium %}, {{ work.data.medium }}{% endif %}{% if work.data.dimensions %}, {{ work.data.dimensions }}{% endif %}</p>
+                    </figcaption>
+                  </div>
+                {% else %}
+                  <div class="selected-artwork-card card">
+                    <img src="https://placehold.co/400x300" alt="Work not found" />
+                    <figcaption>
+                      <h3>Work Not Found</h3>
+                      <p>Looking for: "{{ workTitle }}"</p>
+                    </figcaption>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              <div class="selected-artwork-card card">
+                <img src="https://placehold.co/400x300" alt="No artworks available" />
+                <figcaption>
+                  <h3>No Artworks</h3>
+                  <p>No artworks are currently available for this exhibition.</p>
+                </figcaption>
+              </div>
+            {% endif %}
+          </div>
+        </section>
+
+        {# use the filters available to you to loop through the artists (without duplicating them) attached to the works #}
+        <section class="artists-wrapper grid-stack">
+          {% if works and works.length > 0 %}
+            {% set seenArtists = [] %}
+            {% for workTitle in works %}
+              {% set work = null %}
+              {% for w in collections.works %}
+                {% if w.data.title == workTitle %}
+                  {% set work = w %}
+                {% endif %}
+              {% endfor %}
+              {% if work and work.data.artist %}
+                {% set artistName = work.data.artist %}
+                {% set alreadySeen = false %}
+                {% for seen in seenArtists %}
+                  {% if seen == artistName %}
+                    {% set alreadySeen = true %}
+                  {% endif %}
+                {% endfor %}
+                {% if not alreadySeen %}
+                  {% set seenArtists = seenArtists | concat([artistName]) %}
+                  {% set artist = null %}
+                  {% for a in collections.artists %}
+                    {% if a.data.name == artistName %}
+                      {% set artist = a %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if artist %}
+                    <div class="artist-card flow">
+                      <div class="artist-bio flow">
+                        <h2 class="section-title">{{ artist.data.name or artistName }}</h2>
+                        <div class="section-bio-content flow">
+                          <p>{{ artist.data.short_bio or 'Artist bio not available.' }}</p>
+                        </div>
+                        <div class="section-bio-artist-link"><a href="{{ artist.url }}">View More</a></div>
+                      </div>
+                      <div class="artist-image">
+                        <img src="{{ artist.data.image or 'https://placehold.co/400x300' }}" alt="{{ artist.data.name or artistName }}" />
+                      </div>
+                    </div>
+                  {% else %}
+                    <div class="artist-card flow">
+                      <div class="artist-bio flow">
+                        <h2 class="section-title">{{ artistName }}</h2>
+                        <div class="section-bio-content flow">
+                          <p>Artist information not available.</p>
+                        </div>
+                      </div>
+                      <div class="artist-image">
+                        <img src="https://placehold.co/400x300" alt="{{ artistName }}" />
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <div class="artist-card flow">
+              <div class="artist-bio flow">
+                <h2 class="section-title">No Artists</h2>
+                <div class="section-bio-content flow">
+                  <p>No artists are currently associated with this exhibition.</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </section>
+      </main>
+

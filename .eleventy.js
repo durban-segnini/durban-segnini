@@ -92,6 +92,13 @@ module.exports = function (eleventyConfig) {
     return [...arr].reverse();
   });
 
+  // Add concat filter to concatenate arrays
+  eleventyConfig.addFilter("concat", (arr1, arr2) => {
+    if (!Array.isArray(arr1)) arr1 = [];
+    if (!Array.isArray(arr2)) arr2 = [];
+    return [...arr1, ...arr2];
+  });
+
   // Add truncate filter for text truncation
   eleventyConfig.addFilter("truncate", (str, length = 100) => {
     if (!str || typeof str !== 'string') return '';
@@ -146,7 +153,7 @@ module.exports = function (eleventyConfig) {
 
   // Add filter to get artists from works referenced in exhibitions
   eleventyConfig.addFilter("getArtistsFromWorks", (exhibition, worksCollection) => {
-    if (!exhibition.data.works || !Array.isArray(exhibition.data.works)) return [];
+    if (!exhibition || !exhibition.data || !exhibition.data.works || !Array.isArray(exhibition.data.works)) return [];
     
     const artists = new Set();
     

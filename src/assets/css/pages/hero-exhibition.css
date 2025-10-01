@@ -1,3 +1,7 @@
+.exhibition-images-wrapper {
+  container-type: inline-size;
+}
+
 .exhibition-image-list-wrapper {
   display: grid;
   gap: var(--gap, 1em);
