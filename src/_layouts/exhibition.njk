@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-pageCcs: hero-exhibition.css
+pageCss: hero-exhibition.css
 ---
 
 {# title in the frontmatter should be the exhibition name #}
@@ -151,6 +151,7 @@ pageCcs: hero-exhibition.css
                         <div class="section-bio-content flow">
                           <p>Artist information not available.</p>
                         </div>
+                        <div class="section-bio-artist-link"><a href="">View More</a></div>
                       </div>
                       <div class="artist-image">
                         <img src="https://placehold.co/400x300" alt="{{ artistName }}" />
@@ -167,6 +168,10 @@ pageCcs: hero-exhibition.css
                 <div class="section-bio-content flow">
                   <p>No artists are currently associated with this exhibition.</p>
                 </div>
+                <div class="section-bio-artist-link"><a href="">View More</a></div>
+              </div>
+              <div class="artist-image">
+                <img src="https://placehold.co/400x300" alt="No artists available" />
               </div>
             </div>
           {% endif %}
