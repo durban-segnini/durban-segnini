@@ -19,13 +19,16 @@ pageScript: picker-utility.js
     {% if pastExhibitions.length > 0 %}
       {% for exhibition in pastExhibitions %}
         {% set year = exhibition.data.startingDate | yearFromDate %}
+        {% set artists = exhibition | getArtistsFromWorks(collections.works) %}
         <div class="event-card" data-year="{{ year }}">
           <div class="h2">{{ year }}</div>
           <div class="event-card-content">
             <h3>{{ exhibition.data.title }}</h3>
-            {% if exhibition.data.artist %}
+            {% if artists.length > 0 %}
               <ul>
-                <li>{{ exhibition.data.artist }}</li>
+                {% for artist in artists %}
+                  <li>{{ artist }}</li>
+                {% endfor %}
               </ul>
             {% endif %}
             {% if exhibition.data.startingDate and exhibition.data.endingDate %}
@@ -35,9 +38,9 @@ pageScript: picker-utility.js
             {% elif exhibition.data.date_range %}
               <p>{{ exhibition.data.date_range }}</p>
             {% endif %}
-            {% if exhibition.data.catalog %}
+            {% if exhibition.data.catalog_pdf %}
               <p>
-                <a href="{{ exhibition.data.catalog }}" class="plain-section-microtitle uppercase plain-link">Catalog</a>
+                <a href="{{ exhibition.data.catalog_pdf }}" class="plain-section-microtitle uppercase plain-link">Catalog</a>
               </p>
             {% endif %}
           </div>

@@ -144,6 +144,22 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  // Add filter to get artists from works referenced in exhibitions
+  eleventyConfig.addFilter("getArtistsFromWorks", (exhibition, worksCollection) => {
+    if (!exhibition.data.works || !Array.isArray(exhibition.data.works)) return [];
+    
+    const artists = new Set();
+    
+    exhibition.data.works.forEach(workTitle => {
+      const work = worksCollection.find(w => w.data.title === workTitle);
+      if (work && work.data.artist) {
+        artists.add(work.data.artist);
+      }
+    });
+    
+    return Array.from(artists);
+  });
+
   // Add formatHumanDate filter for human-readable date formatting
   eleventyConfig.addFilter("formatHumanDate", (dateString, locale = "en-US") => {
     if (!dateString || typeof dateString !== 'string') return '';
