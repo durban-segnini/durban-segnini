@@ -70,6 +70,10 @@
   transition: transform 0.2s ease;
 }
 
+.artist-image.artist-image-placeholder {
+  background-color: var(--color-surface-muted);
+}
+
 /* Container queries for artists list */
 @container (min-width: 900px) {
   .artists-card-list {

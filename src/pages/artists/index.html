@@ -21,7 +21,12 @@ pageScript: alphabetical-picker.js
             {% if artist.data.portrait %}
             <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name }}" class="artist-image" loading="lazy" />
             {% else %}
-            <img src="https://placehold.co/400x400?text={{ artist.data.name | first | upper }}" alt="{{ artist.data.name }}" class="artist-image" loading="lazy" />
+              {% set artistWorks = collections.works | worksByArtist(artist.data.name) %}
+              {% if artistWorks.length > 0 and artistWorks[0].data.image %}
+              <img src="{{ artistWorks[0].data.image }}" alt="{{ artist.data.name }}" class="artist-image" loading="lazy" />
+              {% else %}
+              <div class="artist-image artist-image-placeholder"></div>
+              {% endif %}
             {% endif %}
             <figcaption>
               <h3>{{ artist.data.name }}</h3>
