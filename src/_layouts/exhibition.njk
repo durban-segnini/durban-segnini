@@ -77,9 +77,8 @@ pageCss: hero-exhibition.css
                   <div class="selected-artwork-card card">
                     <img src="{{ work.data.image or 'https://placehold.co/400x300' }}" alt="{{ work.data.title }}" />
                     <figcaption>
-                      <h3>{{ work.data.artist or 'Unknown Artist' }}</h3>
-                      <p>{{ work.data.title }}</p>
-                      <p>{{ work.data.year or '' }}{% if work.data.medium %}, {{ work.data.medium }}{% endif %}{% if work.data.dimensions %}, {{ work.data.dimensions }}{% endif %}</p>
+                      <h3>{{ work.data.title }}</h3>
+                      <p>{{ work.data.artist or 'Unknown Artist' }}{% if work.data.year %}, {{ work.data.year }}{% endif %}{% if work.data.medium %}, {{ work.data.medium }}{% endif %}</p>
                     </figcaption>
                   </div>
                 {% else %}

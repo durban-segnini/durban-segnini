@@ -78,9 +78,24 @@
 
 .hero-fitcaption {
   grid-area: figcaption;
-  margin-top: 0.5em;
+  margin-top: 0;
   font-size: var(--step--2);
   color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hero-fitcaption h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.hero-fitcaption p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
 .hero-navigation {

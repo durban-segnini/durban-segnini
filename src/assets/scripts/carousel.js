@@ -46,9 +46,18 @@ class HeroCarousel {
         // Add active class to current image
         this.images[index].classList.add('active');
         
-        // Update figcaption with the current image's caption
-        if (this.figcaption && this.images[index].dataset.caption) {
-            this.figcaption.textContent = this.images[index].dataset.caption;
+        // Update figcaption with the current image's data
+        if (this.figcaption) {
+            const currentImage = this.images[index];
+            const title = currentImage.dataset.title || '';
+            const artist = currentImage.dataset.artist || '';
+            
+            if (title && artist) {
+                this.figcaption.innerHTML = `<h3>${title}</h3><p>${artist}</p>`;
+            } else if (currentImage.dataset.caption) {
+                // Fallback for installation view images
+                this.figcaption.textContent = currentImage.dataset.caption;
+            }
         }
         
         // Update current index

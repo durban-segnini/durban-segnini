@@ -60,7 +60,10 @@ pageScript: carousel.js
               src="{{ work.data.image or 'https://placehold.co/700x500' }}"
               alt="{{ work.data.title }} by {{ work.data.artist or 'Unknown Artist' }}"
               class="carousel-image{% if loop.first %} active{% endif %}"
-              data-caption="{{ work.data.title }} by {{ work.data.artist or 'Unknown Artist' }}{% if work.data.year %}, {{ work.data.year }}{% endif %}{% if work.data.medium %}, {{ work.data.medium }}{% endif %}"/>
+              data-title="{{ work.data.title }}"
+              data-artist="{{ work.data.artist or 'Unknown Artist' }}"
+              data-year="{{ work.data.year or '' }}"
+              data-medium="{{ work.data.medium or '' }}"/>
           {% endif %}
         {% endfor %}
       {% else %}
