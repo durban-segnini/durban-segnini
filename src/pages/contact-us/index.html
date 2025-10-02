@@ -9,14 +9,15 @@ title: Contact Us - Durban Segnini Gallery
       <p>Questions about exhibitions, works, or private viewings?</p>
       </section>
     <section class="contact-form-section">
-      <form class="contact-form" action="#" method="post" novalidate>
+      <form class="contact-form" action="https://formcarry.com/s/6fsQfDShmVP" method="post" novalidate>
         <div class="form-grid">
           <div class="form-group form-group--first-name">
             <label for="first-name">FIRST NAME</label>
             <input
               type="text"
               id="first-name"
-              name="first-name"
+              name="first_name"
+              autocomplete="given-name"
               required
               aria-label="Enter your first name" />
           </div>
@@ -26,7 +27,8 @@ title: Contact Us - Durban Segnini Gallery
             <input
               type="text"
               id="last-name"
-              name="last-name"
+              name="last_name"
+              autocomplete="family-name"
               required
               aria-label="Enter your last name" />
           </div>
@@ -37,6 +39,7 @@ title: Contact Us - Durban Segnini Gallery
               type="email"
               id="contact-email"
               name="email"
+              autocomplete="email"
               required
               aria-label="Enter your email address" />
           </div>
@@ -47,6 +50,7 @@ title: Contact Us - Durban Segnini Gallery
               type="tel"
               id="contact-phone"
               name="phone"
+              autocomplete="tel"
               aria-label="Enter your phone number" />
           </div>
           
