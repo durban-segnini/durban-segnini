@@ -1,6 +1,6 @@
 .hero-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 2fr 3fr;
   grid-template-rows: auto;
   align-items: center;
   gap: 5rem;
