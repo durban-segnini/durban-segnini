@@ -42,7 +42,10 @@ pageCss: hero-artist.css
                   <img src="https://placehold.co/400x300?text={{ w.data.title | url }}" alt="{{ w.data.title }}"/>
                 {% endif %}
                 <figcaption>
-                  {{ w.data.title }}, {{ name }}{% if w.data.year %}, {{ w.data.year }}{% endif %}{% if w.data.medium %}, {{ w.data.medium }}{% endif %}
+                  <h3>{{ w.data.title }}</h3>
+                  {% if name %}<p>{{ name }}</p>{% endif %}
+                  {% if w.data.year %}<p>{{ w.data.year }}</p>{% endif %}
+                  {% if w.data.medium %}<p>{{ w.data.medium }}</p>{% endif %}
                 </figcaption>
               </figure>
             {% endfor %}
