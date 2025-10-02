@@ -196,7 +196,7 @@ module.exports = function (eleventyConfig) {
         
         return date.toLocaleDateString(locale, {
           year: 'numeric',
-          month: 'long',
+          month: 'short',
           day: 'numeric'
         });
       } else {
@@ -206,7 +206,7 @@ module.exports = function (eleventyConfig) {
         
         return date.toLocaleDateString(locale, {
           year: 'numeric',
-          month: 'long',
+          month: 'short',
           day: 'numeric'
         });
       }
