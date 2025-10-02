@@ -77,8 +77,24 @@ pageCss: hero-exhibition.css
                   <div class="selected-artwork-card card">
                     <img src="{{ work.data.image or 'https://placehold.co/400x300' }}" alt="{{ work.data.title }}" />
                     <figcaption>
-                      <h3>{{ work.data.title }}</h3>
-                      <p>{{ work.data.artist or 'Unknown Artist' }}{% if work.data.year %}, {{ work.data.year }}{% endif %}{% if work.data.medium %}, {{ work.data.medium }}{% endif %}</p>
+                      {% if work.data.artist %}
+                        {% set artist = null %}
+                        {% for a in collections.artists %}
+                          {% if a.data.name == work.data.artist %}
+                            {% set artist = a %}
+                          {% endif %}
+                        {% endfor %}
+                        {% if artist %}
+                          <h3><a href="{{ artist.url }}">{{ work.data.title }}</a></h3>
+                        {% else %}
+                          <h3>{{ work.data.title }}</h3>
+                        {% endif %}
+                      {% else %}
+                        <h3>{{ work.data.title }}</h3>
+                      {% endif %}
+                      {% if work.data.artist %}<p>{{ work.data.artist }}</p>{% endif %}
+                      {% if work.data.year %}<p>{{ work.data.year }}</p>{% endif %}
+                      {% if work.data.medium %}<p>{{ work.data.medium }}</p>{% endif %}
                     </figcaption>
                   </div>
                 {% else %}
