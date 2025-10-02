@@ -250,6 +250,35 @@ module.exports = function (eleventyConfig) {
     return lines.map(line => line.substring(2).trim()).filter(name => name);
   });
 
+  // Add isActive filter to determine if a navigation link matches the current page
+  eleventyConfig.addFilter("isActive", function(linkUrl, currentUrl) {
+    if (!linkUrl || !currentUrl) return false;
+    
+    // Normalize URLs by removing trailing slashes and converting to lowercase
+    const normalizedLink = linkUrl.replace(/\/$/, '').toLowerCase();
+    const normalizedCurrent = currentUrl.replace(/\/$/, '').toLowerCase();
+    
+    // For exact matches
+    if (normalizedLink === normalizedCurrent) return true;
+    
+    // For home page, check if current URL is exactly "/" or empty
+    if (normalizedLink === '' || normalizedLink === '/') {
+      return normalizedCurrent === '' || normalizedCurrent === '/';
+    }
+    
+    // Handle .html extension case (e.g., /artists.html should match /artists/)
+    if (normalizedCurrent.endsWith('.html')) {
+      const currentWithoutExt = normalizedCurrent.replace('.html', '');
+      if (normalizedLink === currentWithoutExt) return true;
+    }
+    
+    // For section pages, check if current URL starts with the link URL
+    // This handles cases like /artists/ matching /artists/some-artist/
+    if (normalizedCurrent.startsWith(normalizedLink + '/')) return true;
+    
+    return false;
+  });
+
   return {
     dir: {
       input: "src",

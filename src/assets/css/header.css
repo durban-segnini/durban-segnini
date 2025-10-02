@@ -74,6 +74,10 @@ header[data-home-header="true"] {
   text-decoration: underline;
 }
 
+.navbar-menu a.active {
+  font-weight: 600;
+}
+
 /* Hamburger menu styles */
 .hamburger-menu {
   display: none;
@@ -188,6 +192,11 @@ header[data-home-header="true"] {
   .navbar-menu a:hover,
   .navbar-menu a:focus {
     font-weight: 600;
+  }
+
+  .navbar-menu a.active {
+    font-weight: 600;
+    text-decoration: underline;
   }
 
   header[data-home-header="true"] .navbar-menu a {
