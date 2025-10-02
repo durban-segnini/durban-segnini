@@ -7,6 +7,8 @@ pageScript: carousel.js
 ---
 {% set currentExhibitions = collections.exhibitions | where("status", "current") %}
 {% set currentExhibition = currentExhibitions[0] if currentExhibitions.length > 0 else null %}
+{% set sortedNews = collections.news | sortByDate("desc") %}
+{% set latestNews = sortedNews[0] if sortedNews.length > 0 else null %}
 <main class="main-wrapper">
 <section class="hero-wrapper">
   <article class="hero-content">
@@ -99,15 +101,11 @@ pageScript: carousel.js
 <section class="news-wrapper">
   <h2 class="news-title">Current News</h2>
   <div class="news-content">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum leo a lobortis ornare. Suspendisse vel
-      elit a velit aliquet porttitor vitae vitae dui. Sed feugiat, enim at pretium vulputate, ipsum justo sodales massa, eget
-      imperdiet nibh ipsum et arcu. Pellentesque imperdiet, dui ac placerat tristique, diam diam tempus diam, et pharetra mi
-      est sed dui. Quisque in lectus sit amet mi suscipit dapibus eget eu ante. Ut dictum aliquam leo et ornare. Suspendisse
-      bibendum ultrices mauris. Phasellus ullamcorper odio ac erat feugiat aliquam eget malesuada eros. Aliquam ultricies
-      dignissim massa, et convallis justo iaculis eget. Mauris viverra a tortor sed condimentum. Vestibulum scelerisque sit
-      amet libero non aliquam. In congue id nibh ut blandit.
-    </p>
+    {% if latestNews %}
+      <p>{{ latestNews.content | safe }}</p>
+    {% else %}
+      <p>No news available at this time.</p>
+    {% endif %}
   </div>
 </section>
 </main>

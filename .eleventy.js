@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("works", c => c.getFilteredByGlob("src/content/works/*.md"));
   eleventyConfig.addCollection("exhibitions", c => c.getFilteredByGlob("src/content/exhibitions/*.md"));
   eleventyConfig.addCollection("artfairs", c => c.getFilteredByGlob("src/content/artfairs/*.md"));
+  eleventyConfig.addCollection("news", c => c.getFilteredByGlob("src/content/news/*.md"));
 
   eleventyConfig.addFilter("filterWorksByTitles", (works, titles) => {
     const list = Array.isArray(works) ? works : [];
@@ -33,6 +34,15 @@ module.exports = function (eleventyConfig) {
   // Add where filter for filtering collections
   eleventyConfig.addFilter("where", (collection, property, value) => {
     return collection.filter(item => item.data[property] === value);
+  });
+
+  // Add sortByDate filter for sorting collections by date
+  eleventyConfig.addFilter("sortByDate", (collection, order = "desc") => {
+    return collection.sort((a, b) => {
+      const dateA = new Date(a.data.date || a.date);
+      const dateB = new Date(b.data.date || b.date);
+      return order === "desc" ? dateB - dateA : dateA - dateB;
+    });
   });
 
   // Add date filter for formatting dates
