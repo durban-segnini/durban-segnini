@@ -5,7 +5,7 @@ title: Exhibitions - Duran Segnini Gallery
 
 <main class="main-wrapper grid-stack">
   <section class="section-intro">
-    <h1 class="section-title">Exhibitions</h1>
+    <h1 class="section-title">Current Exhibition</h1>
     <div class="picker">
       <!-- Picker removed but keeping div for styling -->
     </div>
@@ -13,7 +13,6 @@ title: Exhibitions - Duran Segnini Gallery
   
   <!-- Current Exhibitions Section -->
   <section class="event-listing-wrapper">
-    <h2 class="section-subtitle">Current Exhibitions</h2>
     {% set currentExhibitions = collections.exhibitions | where("status", "current") %}
     {% if currentExhibitions.length > 0 %}
       {% for exhibition in currentExhibitions %}
@@ -65,8 +64,14 @@ title: Exhibitions - Duran Segnini Gallery
   </section>
 
   <!-- Upcoming Exhibitions Section -->
+  <section class="section-intro">
+    <h1 class="section-title">Upcoming Exhibitions</h1>
+    <div class="picker">
+      <!-- Picker removed but keeping div for styling -->
+    </div>
+  </section>
+  
   <section class="event-listing-wrapper">
-    <h2 class="section-subtitle">Upcoming Exhibitions</h2>
     {% set upcomingExhibitions = collections.exhibitions | where("status", "upcoming") %}
     {% if upcomingExhibitions.length > 0 %}
       {% for exhibition in upcomingExhibitions %}
