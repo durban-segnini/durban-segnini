@@ -5,48 +5,86 @@ isHome: true
 pageCss: hero-index.css
 pageScript: carousel.js
 ---
+{% set currentExhibitions = collections.exhibitions | where("status", "current") %}
+{% set currentExhibition = currentExhibitions[0] if currentExhibitions.length > 0 else null %}
 <main class="main-wrapper">
 <section class="hero-wrapper">
   <article class="hero-content">
-    <h1 class="section-branded-title">
-      <a href="exhibition.html">Light for the Amazon</a>
-    </h1>
-    <h2>
-      <time datetime="2025-09-11">September 11</time>
-      -
-      <time datetime="2025-10-24">October 24, 2025</time>
-    </h2>
-    <p>
-      Durban Segnini Gallery is pleased to announce
-      <strong>Light for the Amazon</strong>, an exhibition organized by Omar López-Chahoud with a selection of works from the
-        gallery's collection. With a focus on modern and contemporary art this selection of works highlights some of the most
-        important Latin American 20th century masters in conversation with contemporary artists from different generations and
-        diverse backgrounds. The works on view range from geometric abstraction to loose figuration, reflecting at times on a
-        cross cultural dialogue nurtured by references to pre-Hispanic visual languages.
-    </p>
+    {% if currentExhibition %}
+      <h1 class="section-branded-title">
+        <a href="{{ currentExhibition.url }}">{{ currentExhibition.data.title }}</a>
+      </h1>
+      <h2>
+        {% if currentExhibition.data.startingDate and currentExhibition.data.endingDate %}
+          <time datetime="{{ currentExhibition.data.startingDate }}">{{ currentExhibition.data.startingDate | formatHumanDate }}</time>
+          -
+          <time datetime="{{ currentExhibition.data.endingDate }}">{{ currentExhibition.data.endingDate | formatHumanDate }}</time>
+        {% elif currentExhibition.data.date_range %}
+          {{ currentExhibition.data.date_range }}
+        {% endif %}
+      </h2>
+      <p>
+        {{ currentExhibition.content | safe }}
+      </p>
+    {% else %}
+      <h1 class="section-branded-title">
+        <a href="exhibition.html">Light for the Amazon</a>
+      </h1>
+      <h2>
+        <time datetime="2025-09-11">September 11</time>
+        -
+        <time datetime="2025-10-24">October 24, 2025</time>
+      </h2>
+      <p>
+        Durban Segnini Gallery is pleased to announce
+        <strong>Light for the Amazon</strong>, an exhibition organized by Omar López-Chahoud with a selection of works from the
+          gallery's collection. With a focus on modern and contemporary art this selection of works highlights some of the most
+          important Latin American 20th century masters in conversation with contemporary artists from different generations and
+          diverse backgrounds. The works on view range from geometric abstraction to loose figuration, reflecting at times on a
+          cross cultural dialogue nurtured by references to pre-Hispanic visual languages.
+      </p>
+    {% endif %}
   </article>
   <div class="hero-image">
     <div class="hero-carousel">
-      <img
-        src="https://placehold.co/700x500/2C3E50/FFFFFF?text=Installation+View+1"
-        alt="Installation view 1: Light for the Amazon exhibition"
-        class="carousel-image active"
-        data-caption="Installation view 1: Light for the Amazon, Durban Segnini Gallery, 2025"/>
-      <img
-        src="https://placehold.co/700x500/8E44AD/FFFFFF?text=Installation+View+2"
-        alt="Installation view 2: Light for the Amazon exhibition"
-        class="carousel-image"
-        data-caption="Installation view 2: Light for the Amazon, Durban Segnini Gallery, 2025"/>
-      <img
-        src="https://placehold.co/700x500/E74C3C/FFFFFF?text=Installation+View+3"
-        alt="Installation view 3: Light for the Amazon exhibition"
-        class="carousel-image"
-        data-caption="Installation view 3: Light for the Amazon, Durban Segnini Gallery, 2025"/>
-      <img
-        src="https://placehold.co/700x500/27AE60/FFFFFF?text=Installation+View+4"
-        alt="Installation view 4: Light for the Amazon exhibition"
-        class="carousel-image"
-        data-caption="Installation view 4: Light for the Amazon, Durban Segnini Gallery, 2025"/>
+      {% if currentExhibition and currentExhibition.data.works and currentExhibition.data.works.length > 0 %}
+        {% for workTitle in currentExhibition.data.works %}
+          {% set work = null %}
+          {% for w in collections.works %}
+            {% if w.data.title == workTitle %}
+              {% set work = w %}
+            {% endif %}
+          {% endfor %}
+          {% if work %}
+            <img
+              src="{{ work.data.image or 'https://placehold.co/700x500' }}"
+              alt="{{ work.data.title }} by {{ work.data.artist or 'Unknown Artist' }}"
+              class="carousel-image{% if loop.first %} active{% endif %}"
+              data-caption="{{ work.data.title }} by {{ work.data.artist or 'Unknown Artist' }}{% if work.data.year %}, {{ work.data.year }}{% endif %}{% if work.data.medium %}, {{ work.data.medium }}{% endif %}"/>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <img
+          src="https://placehold.co/700x500/2C3E50/FFFFFF?text=Installation+View+1"
+          alt="Installation view 1: Light for the Amazon exhibition"
+          class="carousel-image active"
+          data-caption="Installation view 1: Light for the Amazon, Durban Segnini Gallery, 2025"/>
+        <img
+          src="https://placehold.co/700x500/8E44AD/FFFFFF?text=Installation+View+2"
+          alt="Installation view 2: Light for the Amazon exhibition"
+          class="carousel-image"
+          data-caption="Installation view 2: Light for the Amazon, Durban Segnini Gallery, 2025"/>
+        <img
+          src="https://placehold.co/700x500/E74C3C/FFFFFF?text=Installation+View+3"
+          alt="Installation view 3: Light for the Amazon exhibition"
+          class="carousel-image"
+          data-caption="Installation view 3: Light for the Amazon, Durban Segnini Gallery, 2025"/>
+        <img
+          src="https://placehold.co/700x500/27AE60/FFFFFF?text=Installation+View+4"
+          alt="Installation view 4: Light for the Amazon exhibition"
+          class="carousel-image"
+          data-caption="Installation view 4: Light for the Amazon, Durban Segnini Gallery, 2025"/>
+      {% endif %}
     </div>
     <figcaption class="hero-fitcaption"></figcaption>
     <div class="hero-navigation">
