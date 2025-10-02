@@ -133,21 +133,31 @@ module.exports = function (eleventyConfig) {
     });
   });
 
-  // Add yearFromDate filter to extract year from date string
-  eleventyConfig.addFilter("yearFromDate", (dateString) => {
-    if (!dateString || typeof dateString !== 'string') return '';
+  // Add yearFromDate filter to extract year from date string or Date object
+  eleventyConfig.addFilter("yearFromDate", (dateInput) => {
+    if (!dateInput) return '';
     
-    // Trim whitespace
-    const trimmed = dateString.trim();
-    if (!trimmed) return '';
-    
-    try {
-      const date = new Date(trimmed);
-      if (isNaN(date.getTime())) return '';
-      return date.getFullYear().toString();
-    } catch (error) {
-      return '';
+    // If it's already a Date object
+    if (dateInput instanceof Date) {
+      if (isNaN(dateInput.getTime())) return '';
+      return dateInput.getFullYear().toString();
     }
+    
+    // If it's a string
+    if (typeof dateInput === 'string') {
+      const trimmed = dateInput.trim();
+      if (!trimmed) return '';
+      
+      try {
+        const date = new Date(trimmed);
+        if (isNaN(date.getTime())) return '';
+        return date.getFullYear().toString();
+      } catch (error) {
+        return '';
+      }
+    }
+    
+    return '';
   });
 
   // Add filter to add year property to exhibition/artfair objects for sorting
@@ -190,39 +200,54 @@ module.exports = function (eleventyConfig) {
   });
 
   // Add formatHumanDate filter for human-readable date formatting
-  eleventyConfig.addFilter("formatHumanDate", (dateString, locale = "en-US") => {
-    if (!dateString || typeof dateString !== 'string') return '';
+  eleventyConfig.addFilter("formatHumanDate", (dateInput, locale = "en-US") => {
+    if (!dateInput) return '';
     
-    // Trim whitespace
-    const trimmed = dateString.trim();
-    if (!trimmed) return '';
-    
-    try {
-      // For YYYY-MM-DD format, create date in local timezone to avoid day shift
-      if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
-        const [year, month, day] = trimmed.split('-').map(Number);
-        const date = new Date(year, month - 1, day); // month is 0-indexed
-        if (isNaN(date.getTime())) return '';
-        
-        return date.toLocaleDateString(locale, {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        });
-      } else {
-        // For ISO strings, use the standard Date constructor
-        const date = new Date(trimmed);
-        if (isNaN(date.getTime())) return '';
-        
-        return date.toLocaleDateString(locale, {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        });
-      }
-    } catch (error) {
-      return '';
+    // If it's already a Date object
+    if (dateInput instanceof Date) {
+      if (isNaN(dateInput.getTime())) return '';
+      
+      return dateInput.toLocaleDateString(locale, {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
     }
+    
+    // If it's a string
+    if (typeof dateInput === 'string') {
+      const trimmed = dateInput.trim();
+      if (!trimmed) return '';
+      
+      try {
+        // For YYYY-MM-DD format, create date in local timezone to avoid day shift
+        if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+          const [year, month, day] = trimmed.split('-').map(Number);
+          const date = new Date(year, month - 1, day); // month is 0-indexed
+          if (isNaN(date.getTime())) return '';
+          
+          return date.toLocaleDateString(locale, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+        } else {
+          // For ISO strings, use the standard Date constructor
+          const date = new Date(trimmed);
+          if (isNaN(date.getTime())) return '';
+          
+          return date.toLocaleDateString(locale, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+        }
+      } catch (error) {
+        return '';
+      }
+    }
+    
+    return '';
   });
 
   // Add filter to extract artist names from art fair body markdown (one per line format)

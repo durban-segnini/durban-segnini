@@ -14,8 +14,6 @@ pageScript: picker-utility.js
   
   <section class="event-listing-wrapper">
     {% set pastExhibitions = collections.exhibitions | where("status", "past") %}
-    {% set pastExhibitionsWithYear = pastExhibitions | map("addYearProperty") %}
-    {% set pastExhibitions = pastExhibitionsWithYear | sort(false, false, "year") | reverse %}
     {% if pastExhibitions.length > 0 %}
       {% for exhibition in pastExhibitions %}
         {% set year = exhibition.data.startingDate | yearFromDate %}
