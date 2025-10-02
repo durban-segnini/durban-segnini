@@ -20,8 +20,7 @@
       {% endif %}
         {{ content | safe }}
       {% include "partials/footer.njk" %}
-      <script src="{{ '/assets/scripts/app.js' | url }}" defer></script>
-      <script src="{{ '/asset/scripts/mobile-menu.js' }}" defer></script>
+      <script src="{{ '/assets/scripts/mobile-menu.js' }}" defer></script>
       {% if pageScript %}
         <script src="{{ '/assets/scripts/' | url }}{{ pageScript }}" defer></script>
       {% endif %}
