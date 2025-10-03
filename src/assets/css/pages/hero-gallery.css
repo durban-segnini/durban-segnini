@@ -20,6 +20,7 @@
     font-weight: 500;
     margin-bottom: 1em;
     font-size: var(--step-2);
+    line-height: normal;
 }
 
 .gallery-images-wrapper {
