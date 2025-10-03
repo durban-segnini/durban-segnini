@@ -26,6 +26,9 @@ site_url: https://durbansegnini.com
 media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
+# Activate Editorial Workflow
+publish_mode: editorial_workflow
+
 # Cloudinary media library configuration
 media_library:
   name: cloudinary
