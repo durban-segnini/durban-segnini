@@ -68,7 +68,7 @@
     grid-column: 1;
     text-align: right;
     color: var(--color-text-secondary);
-    font-weight: 500;
+    font-weight: 300;
   }
 
   & .event-card-content {
@@ -77,6 +77,11 @@
     h3 {
       hyphens: none;
       text-transform: uppercase;
+    }
+
+    h3 a {
+      text-decoration: underline;
+      font-weight: 300;
     }
 
     > * + * {
