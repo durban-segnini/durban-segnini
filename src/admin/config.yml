@@ -26,6 +26,9 @@ site_url: https://durbansegnini.com
 media_folder: "src/assets/uploads"
 public_folder: "/uploads"
 
+# Activate Editorial Workflow
+publish_mode: editorial_workflow
+
 # Cloudinary media library configuration
 media_library:
   name: cloudinary
@@ -74,12 +77,13 @@ collections:
     extension: md
 
     # file like "guernica.md" based on Title
-    slug: "{{ artist | slugify }}-{{ year }}-{{ title | slugify }}"
-    identifier_field: title
-    summary: "{{ artist }} — {{ fields.year }} — {{title}}"
+    slug: "{{ artist | slugify }}-{{ year }}-{{ work_id }}"
+    identifier_field: work_id
+    summary: "{{ artist }} — {{ fields.year }} — {{title}} (ID: {{work_id}})"
 
     fields:
       # ——— Basics
+      - { name: work_id, label: Work ID, widget: hidden, required: false }
       - { name: title, label: Title, widget: string }
 
       # Single artist (one-to-one)
@@ -188,9 +192,9 @@ collections:
         widget: relation
         collection: works
         multiple: true
-        search_fields: [title, artist]
-        value_field: title      # aligns with your Works config
-        display_fields: [title, artist, year]
+        search_fields: [work_id, title, artist]
+        value_field: work_id      # uses unique work_id instead of title
+        display_fields: [work_id, title, artist, year]
 
       # ——— Page copy (Markdown body)
       - { name: body, label: Notes / Description, widget: markdown, required: false }
