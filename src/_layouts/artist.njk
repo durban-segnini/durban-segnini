@@ -22,10 +22,16 @@ pageCss: hero-artist.css
         </h2>
       </section>
       <section class="artist-description">
-        <details class="flow">
-          <summary>{{ short_bio }}</summary>
-          {{ content | safe }}
-        </details>
+        {% if content and content.trim() %}
+          <details class="flow">
+            <summary>{{ short_bio }}</summary>
+            {{ content | safe }}
+          </details>
+        {% else %}
+          <div class="flow">
+            <p>{{ short_bio }}</p>
+          </div>
+        {% endif %}
       </section>
       <section class="artist-images">
         <div class="artist-images-intro">
