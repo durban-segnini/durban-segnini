@@ -64,16 +64,16 @@ title: Exhibitions - Duran Segnini Gallery
   </section>
 
   <!-- Upcoming Exhibitions Section -->
-  <section class="section-intro">
-    <h1 class="section-title">Upcoming Exhibitions</h1>
-    <div class="picker">
-      <!-- Picker removed but keeping div for styling -->
-    </div>
-  </section>
-  
-  <section class="event-listing-wrapper">
-    {% set upcomingExhibitions = collections.exhibitions | where("status", "upcoming") %}
-    {% if upcomingExhibitions.length > 0 %}
+  {% set upcomingExhibitions = collections.exhibitions | where("status", "upcoming") %}
+  {% if upcomingExhibitions.length > 0 %}
+    <section class="section-intro">
+      <h1 class="section-title">Upcoming Exhibitions</h1>
+      <div class="picker">
+        <!-- Picker removed but keeping div for styling -->
+      </div>
+    </section>
+    
+    <section class="event-listing-wrapper">
       {% for exhibition in upcomingExhibitions %}
         {% set artists = exhibition | getArtistsFromWorks(collections.works) %}
         <div class="event-card">
@@ -112,13 +112,6 @@ title: Exhibitions - Duran Segnini Gallery
           </div>
         </div>
       {% endfor %}
-    {% else %}
-      <div class="event-card">
-        <div class="event-card-content">
-          <h3>No Upcoming Exhibitions</h3>
-          <p>No upcoming exhibitions are currently scheduled.</p>
-        </div>
-      </div>
-    {% endif %}
-  </section>
+    </section>
+  {% endif %}
 </main>
