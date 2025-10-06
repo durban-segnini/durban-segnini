@@ -151,9 +151,11 @@ pageCss: hero-exhibition.css
                         </div>
                         <div class="section-bio-artist-link"><a href="{{ artist.url }}">View More</a></div>
                       </div>
-                      <div class="artist-image">
-                        <img src="{{ artist.data.image or 'https://placehold.co/400x300' }}" alt="{{ artist.data.name or artistName }}" />
-                      </div>
+                      {% if artist.data.portrait %}
+                        <div class="artist-image">
+                          <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name or artistName }}" />
+                        </div>
+                      {% endif %}
                     </div>
                   {% else %}
                     <div class="artist-card flow">
@@ -163,9 +165,6 @@ pageCss: hero-exhibition.css
                           <p>Artist information not available.</p>
                         </div>
                         <div class="section-bio-artist-link"><a href="">View More</a></div>
-                      </div>
-                      <div class="artist-image">
-                        <img src="https://placehold.co/400x300" alt="{{ artistName }}" />
                       </div>
                     </div>
                   {% endif %}
