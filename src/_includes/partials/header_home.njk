@@ -1,7 +1,7 @@
 <header class="full-bleed" data-home-header="true">
   <div class="header-wrapper">
     <div class="logo-section">
-      <a href="/">
+      <a href="{{ '/' | url }}">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xml:space="preserve"
@@ -53,22 +53,22 @@
     <nav class="navbar-section">
       <ul class="navbar-menu">
         <li>
-          <a href="/artists/"{% if "/artists/" | isActive(page.url) %} class="active"{% endif %}>Artists</a>
+          <a href="{{ '/artists/' | url }}"{% if "/artists/" | isActive(page.url) %} class="active"{% endif %}>Artists</a>
         </li>
         <li>
-          <a href="/exhibitions/"{% if "/exhibitions/" | isActive(page.url) %} class="active"{% endif %}>Exhibitions</a>
+          <a href="{{ '/exhibitions/' | url }}"{% if "/exhibitions/" | isActive(page.url) %} class="active"{% endif %}>Exhibitions</a>
         </li>
         <li>
-          <a href="/artfairs/"{% if "/artfairs/" | isActive(page.url) %} class="active"{% endif %}>Art Fairs</a>
+          <a href="{{ '/artfairs/' | url }}"{% if "/artfairs/" | isActive(page.url) %} class="active"{% endif %}>Art Fairs</a>
         </li>
         <li>
-          <a href="/archive/"{% if "/archive/" | isActive(page.url) %} class="active"{% endif %}>Archive</a>
+          <a href="{{ '/archive/' | url }}"{% if "/archive/" | isActive(page.url) %} class="active"{% endif %}>Archive</a>
         </li>
         <li>
-          <a href="/gallery/"{% if "/gallery/" | isActive(page.url) %} class="active"{% endif %}>The Gallery</a>
+          <a href="{{ '/gallery/' | url }}"{% if "/gallery/" | isActive(page.url) %} class="active"{% endif %}>The Gallery</a>
         </li>
         <li>
-          <a href="/contact-us/"{% if "/contact-us/" | isActive(page.url) %} class="active"{% endif %}>Contact Us</a>
+          <a href="{{ '/contact-us/' | url }}"{% if "/contact-us/" | isActive(page.url) %} class="active"{% endif %}>Contact Us</a>
         </li>
       </ul>
     </nav>

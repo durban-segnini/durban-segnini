@@ -7,13 +7,13 @@ layout: null
 <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/artists/fanny-sanin/">
-    <link rel="canonical" href="/artists/fanny-sanin/">
+    <meta http-equiv="refresh" content="0; url={{ '/artists/fanny-sanin/' | url }}">
+    <link rel="canonical" href="{{ '/artists/fanny-sanin/' | url }}">
 </head>
 <body>
-    <p>Redirecting to <a href="/artists/fanny-sanin/">Fanny Sanin's page</a>...</p>
+    <p>Redirecting to <a href="{{ '/artists/fanny-sanin/' | url }}">Fanny Sanin's page</a>...</p>
     <script>
-        window.location.href = '/artists/fanny-sanin/';
+        window.location.href = '{{ '/artists/fanny-sanin/' | url }}';
     </script>
 </body>
 </html>

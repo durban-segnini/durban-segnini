@@ -7,7 +7,7 @@ layout: base.njk
 {% if artists and artists.length %}
 <h2>Artists</h2>
 <ul>
-  {% for n in artists %}<li><a href="/artists/{{ n | slug }}/">{{ n }}</a></li>{% endfor %}
+  {% for n in artists %}<li><a href="{{ ('/artists/' + (n | slug) + '/') | url }}">{{ n }}</a></li>{% endfor %}
 </ul>
 {% endif %}
 {{ content | safe }}

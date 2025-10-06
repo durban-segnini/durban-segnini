@@ -315,6 +315,10 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    // Set pathPrefix so the `url` filter can prepend a subpath (e.g., for GitHub Pages project sites)
+    // Configure via environment variable ELEVENTY_PATH_PREFIX (e.g., "/durban-segnini-provisional/")
+    // Defaults to "/" for root deployments
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/",
     dir: {
       input: "src",
       includes: "_includes",
