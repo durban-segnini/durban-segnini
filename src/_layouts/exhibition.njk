@@ -66,10 +66,10 @@ pageCss: hero-exhibition.css
           <h2 class="section-title margin-bottom-2">Selected Artworks</h2>
           <div class="selected-artwork-card-list cq-grid">
             {% if works and works.length > 0 %}
-              {% for workTitle in works %}
+              {% for workId in works %}
                 {% set work = null %}
                 {% for w in collections.works %}
-                  {% if w.data.title == workTitle %}
+                  {% if w.data.work_id == workId %}
                     {% set work = w %}
                   {% endif %}
                 {% endfor %}
@@ -102,7 +102,7 @@ pageCss: hero-exhibition.css
                     <img src="https://placehold.co/400x300" alt="Work not found" />
                     <figcaption>
                       <h3>Work Not Found</h3>
-                      <p>Looking for: "{{ workTitle }}"</p>
+                      <p>Looking for: "{{ workId }}"</p>
                     </figcaption>
                   </div>
                 {% endif %}

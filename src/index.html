@@ -50,10 +50,10 @@ pageScript: carousel.js
   <div class="hero-image">
     <div class="hero-carousel">
       {% if currentExhibition and currentExhibition.data.works and currentExhibition.data.works.length > 0 %}
-        {% for workTitle in currentExhibition.data.works %}
+        {% for workId in currentExhibition.data.works %}
           {% set work = null %}
           {% for w in collections.works %}
-            {% if w.data.title == workTitle %}
+            {% if w.data.work_id == workId %}
               {% set work = w %}
             {% endif %}
           {% endfor %}
