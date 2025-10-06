@@ -11,12 +11,19 @@ pageCss: hero-exhibition.css
           <p class="section-microtitle">{{ status | capitalize }}</p>
         </section>
         <section class="current-exhibition-wrapper">
-          {% set exhibitionData = collections.exhibitions | where("title", title) | first %}
-          {% if exhibitionData %}
-            {% set artists = exhibitionData | getArtistsFromWorks(collections.works) %}
-            {% if artists.length > 0 %}
-              <h2 class="section-branded-title title-tight">{{ artists[0] }}</h2>
-            {% endif %}
+          {# Derive header artist directly from this page's works (by work_id) #}
+          {% set headerArtist = null %}
+          {% if works and works.length > 0 %}
+            {% for workId in works %}
+              {% for w in collections.works %}
+                {% if (not headerArtist) and w.data.work_id == workId and w.data.artist %}
+                  {% set headerArtist = w.data.artist %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+          {% if headerArtist %}
+            <h2 class="section-branded-title title-tight">{{ headerArtist }}</h2>
           {% endif %}
           <h1 class="section-branded-title">{{ title }}</h1>
           {% if startingDate and endingDate %}
@@ -123,10 +130,10 @@ pageCss: hero-exhibition.css
         <section class="artists-wrapper grid-stack">
           {% if works and works.length > 0 %}
             {% set seenArtists = [] %}
-            {% for workTitle in works %}
+            {% for workId in works %}
               {% set work = null %}
               {% for w in collections.works %}
-                {% if w.data.title == workTitle %}
+                {% if w.data.work_id == workId %}
                   {% set work = w %}
                 {% endif %}
               {% endfor %}
