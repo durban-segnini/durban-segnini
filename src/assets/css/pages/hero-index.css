@@ -173,6 +173,10 @@
     height: 300px;
   }
 
+  .hero-navigation {
+    justify-content: center;
+  }
+
   .news-wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
