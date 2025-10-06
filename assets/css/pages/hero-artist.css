@@ -1,0 +1,48 @@
+.artist-description-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+    width: 75%;
+    margin-left: auto;
+    margin-top: -1rem;
+
+    @media (max-width: 500px) {
+        width: 100%;
+        /* margin-left: 0; */
+        gap: 1rem;
+    }
+}
+
+.artist-and-images-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+}
+
+.artist-introduction {
+    /* No grid-column needed - it's in a single column layout */
+}
+
+.artist-description {
+    /* No grid-column needed - it's in a single column layout */
+}
+
+.artist-images {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.artist-images-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 500px) {
+    .artist-and-images-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .artist-images-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

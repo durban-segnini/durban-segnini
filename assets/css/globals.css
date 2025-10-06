@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700&display=swap');
+
+:root {
+  font-size: 100%;
+  --color-brand-primary: #4b5466;
+  --color-surface-light: #fafafa;
+  --color-surface-muted: #e9eaec;
+  --color-text-primary: #231f20;
+  --color-text-secondary: #9a9a9b;
+  --color-accent: #ed1c24;
+  --main-container-width: clamp(500px, 85vw, 1920px);
+  --font-family: "Gantari", sans-serif;
+  --main-line-height: 1.5;
+  --main-font-size: 1rem;
+
+  /* @link https://utopia.fyi/type/calculator?c=500,16,1.125,1920,21,1.25,4,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --step--4: clamp(0.5376rem, 0.6548rem + -0.0977vw, 0.6243rem);
+  --step--3: clamp(0.672rem, 0.713rem + -0.0342vw, 0.7023rem);
+  --step--2: clamp(0.7901rem, 0.7726rem + 0.0562vw, 0.84rem);
+  --step--1: clamp(0.8889rem, 0.8322rem + 0.1815vw, 1.05rem);
+  --step-0: clamp(1rem, 0.89rem + 0.3521vw, 1.3125rem);
+  --step-1: clamp(1.125rem, 0.9434rem + 0.581vw, 1.6406rem);
+  --step-2: clamp(1.2656rem, 0.9892rem + 0.8847vw, 2.0508rem);
+  --step-3: clamp(1.4238rem, 1.0225rem + 1.2841vw, 2.5635rem);
+  --step-4: clamp(1.6018rem, 1.0375rem + 1.8057vw, 3.2043rem);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--step-0);
+  line-height: var(--main-line-height);
+  background-color: var(--color-surface-light);
+  overflow-x: hidden; /* for the full bleed header and footer */
+}
+
+p {
+  font-size: var(--step--1);
+  /* max-width: 60ch; */
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--step-2);
+  color: var(--color-brand-primary);
+  letter-spacing: 1.1;
+  font-weight: 300;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--step-0);
+  color: var(--color-text-secondary);
+  letter-spacing: 1.1;
+  font-weight: 300;
+
+}
+
+h3 {
+  font-size: var(--step-0);
+  color: var(--color-text-secondary);
+  letter-spacing: 1.1;
+  font-weight: 300;
+
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: inherit;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: 1.1;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: var(--color-accent);
+  }
+}
+
+figcaption {
+  margin-top: 0.5em;
+  max-width: 20ch;
+
+  & > h3 {
+    font-size: var(--step--2);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  & > p {
+    font-size: var(--step--1);
+    color: var(--color-text-secondary);
+  }
+  & > * + * {
+    padding-bottom: 0;
+    line-height: 1.2;
+  }
+}
+
+summary {
+  display: block;
+  font-size: var(--step--1);
+}
+
+summary::after {
+  content: "view more";
+  color: var(--color-brand-primary);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: var(--step--2);
+  cursor: pointer;
+  display: block;
+  margin-top: 1em;
+  border: 1px solid var(--color-brand-primary);
+  padding: 0.4em 0.8em;
+  text-align: center;
+  width: fit-content;
+}
+
+summary:hover::after {
+  background-color: var(--color-brand-primary);
+  color: var(--color-surface-light);
+}
+
+details[open] summary::after {
+  content: "… close";
+}
+
+details p {
+  font-size: var(--step--1);
+  line-height: inherit;
+  color: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}

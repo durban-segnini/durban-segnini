@@ -1,0 +1,124 @@
+.event-listing-wrapper {
+
+  /*
+
+  use this listing wrapper like this
+    <section class="event-listing-wrapper">
+      <div class="event-card">
+      </div>
+    </section>
+
+  */
+
+  :has(> &) {
+    container-type: inline-size;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 90%;
+  justify-self: right;
+
+  @container (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.picker-wrapper {
+  margin-top: 2rem;
+
+  @media (max-width: 500px) {
+    margin-top: 1rem;
+  }
+}
+
+.event-card {
+  /*
+    how to use this card component
+
+    <div class="event-card">
+        <div class="h2">year</div>
+        <div class="event-card-content flow">
+            <h3>Artists</h3>
+            <ul>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+            </ul>
+            <p>02.27.2023 — 05.20.2023</p>
+        <p>
+            <a href="#" class="plain-section-microtitle uppercase plain-link">Catalog</a>
+        </p>
+        </div>
+    */
+
+  /* this is the has me selector */
+  /* it merely tells the parent to */
+  /* act as a container */
+  :has(> &) {
+    container-type: inline-size;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr 4fr 5fr;
+  gap: 2rem;
+
+  & > .h2 {
+    grid-column: 1;
+    text-align: right;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+  }
+
+  & .event-card-content {
+    grid-column: 2;
+
+    h3 {
+      hyphens: none;
+      text-transform: uppercase;
+    }
+
+    h3 a {
+      text-decoration: underline;
+      font-weight: 300;
+    }
+
+    > * + * {
+      margin-block-start: var(--flow-space, 1em);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      /* margin: 0; */
+    }
+  }
+
+  & .event-card-image {
+    display: grid;
+    grid-column: 3;
+    aspect-ratio: 3/2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  @container (max-width: 500px) {
+    grid-template-columns: 1fr 5fr;
+
+    .event-card-image {
+      display: none;
+    }
+  }
+}
