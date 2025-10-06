@@ -3,7 +3,7 @@ title: Light for the Amazon
 status: current
 startingDate: 2025-09-11
 endingDate: 2025-10-24
-poster: https://placehold.co/600x800/2C3E50/FFFFFF?text=Light+for+the+Amazon
+poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1757548867/Light-for-the-Amazon_Invite-LFTA_infuwz.jpg
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757557562/Copy_of_Press_Release__Light_for_the_Amazon_rfshwv.pdf
 works:
   - Eslabon y Esfera
