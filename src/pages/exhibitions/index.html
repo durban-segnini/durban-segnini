@@ -1,0 +1,124 @@
+---
+layout: base.njk
+title: Exhibitions - Duran Segnini Gallery
+---
+
+<main class="main-wrapper grid-stack">
+  <section class="section-intro">
+    <h1 class="section-title">Current Exhibition</h1>
+    <div class="picker">
+      <!-- Picker removed but keeping div for styling -->
+    </div>
+  </section>
+  
+  <!-- Current Exhibitions Section -->
+  <section class="event-listing-wrapper">
+    {% set currentExhibitions = collections.exhibitions | where("status", "current") %}
+    {% if currentExhibitions.length > 0 %}
+      {% for exhibition in currentExhibitions %}
+        {% set artists = exhibition | getArtistsFromWorks(collections.works) %}
+        <div class="event-card">
+          <div class="event-card-content">
+            <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
+            {% if artists.length > 0 %}
+              <ul>
+                {% for artist in artists %}
+                  <li>{{ artist }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+              <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+            {% elif exhibition.data.startingDate %}
+              <p>{{ exhibition.data.startingDate | formatHumanDate }}</p>
+            {% elif exhibition.data.date_range %}
+              <p>{{ exhibition.data.date_range }}</p>
+            {% endif %}
+            {% if exhibition.data.catalog_pdf %}
+              <p>
+                <a href="{{ exhibition.data.catalog_pdf }}" class="plain-section-microtitle uppercase plain-link">Catalog</a>
+              </p>
+            {% endif %}
+          </div>
+          <div class="event-card-image">
+            <figure>
+              {% if exhibition.data.poster %}
+                <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" />
+              {% elif exhibition.data.hero_image %}
+                <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" />
+              {% else %}
+                <img src="https://placehold.co/600x400" alt="{{ exhibition.data.title }}" />
+              {% endif %}
+            </figure>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="event-card">
+        <div class="event-card-content">
+          <h3>No Current Exhibitions</h3>
+          <p>No current exhibitions are currently on display.</p>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+
+  <!-- Upcoming Exhibitions Section -->
+  <section class="section-intro">
+    <h1 class="section-title">Upcoming Exhibitions</h1>
+    <div class="picker">
+      <!-- Picker removed but keeping div for styling -->
+    </div>
+  </section>
+  
+  <section class="event-listing-wrapper">
+    {% set upcomingExhibitions = collections.exhibitions | where("status", "upcoming") %}
+    {% if upcomingExhibitions.length > 0 %}
+      {% for exhibition in upcomingExhibitions %}
+        {% set artists = exhibition | getArtistsFromWorks(collections.works) %}
+        <div class="event-card">
+          <div class="event-card-content">
+            <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
+            {% if artists.length > 0 %}
+              <ul>
+                {% for artist in artists %}
+                  <li>{{ artist }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+              <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+            {% elif exhibition.data.startingDate %}
+              <p>{{ exhibition.data.startingDate | formatHumanDate }}</p>
+            {% elif exhibition.data.date_range %}
+              <p>{{ exhibition.data.date_range }}</p>
+            {% endif %}
+            {% if exhibition.data.catalog_pdf %}
+              <p>
+                <a href="{{ exhibition.data.catalog_pdf }}" class="plain-section-microtitle uppercase plain-link">Catalog</a>
+              </p>
+            {% endif %}
+          </div>
+          <div class="event-card-image">
+            <figure>
+              {% if exhibition.data.poster %}
+                <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" />
+              {% elif exhibition.data.hero_image %}
+                <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" />
+              {% else %}
+                <img src="https://placehold.co/600x400" alt="{{ exhibition.data.title }}" />
+              {% endif %}
+            </figure>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="event-card">
+        <div class="event-card-content">
+          <h3>No Upcoming Exhibitions</h3>
+          <p>No upcoming exhibitions are currently scheduled.</p>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+</main>

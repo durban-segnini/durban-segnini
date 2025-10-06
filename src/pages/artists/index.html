@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Artists - Durban Segnini Gallery
+pageCss: hero-artists.css
+pageScript: alphabetical-picker.js
+---
+
+<main class="main-wrapper">
+  <section class="artists-wrapper grid-stack">
+    <section class="section-intro">
+      <h1 class="section-title">Artists</h1>
+      <div class="picker">
+        <!-- Picker buttons will be generated dynamically by JavaScript -->
+      </div>
+    </section>
+    <section>
+      <div class="artist-card-list cq-grid">
+        {% for artist in collections.artists %}
+        <a href="{{ artist.url }}" class="artist-card-link">
+          <figure class="artist-card">
+            {% if artist.data.portrait %}
+            <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name }}" class="artist-image" loading="lazy" />
+            {% else %}
+              {% set artistWorks = collections.works | worksByArtist(artist.data.name) %}
+              {% if artistWorks.length > 0 and artistWorks[0].data.image %}
+              <img src="{{ artistWorks[0].data.image }}" alt="{{ artist.data.name }}" class="artist-image" loading="lazy" />
+              {% else %}
+              <div class="artist-image artist-image-placeholder"></div>
+              {% endif %}
+            {% endif %}
+            <figcaption>
+              <h3>{{ artist.data.name }}</h3>
+            </figcaption>
+          </figure>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+</main>
+

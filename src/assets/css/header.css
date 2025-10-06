@@ -1,0 +1,205 @@
+.header-wrapper {
+  max-width: var(--main-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo navbar";
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+
+header {
+  background-color: var(--color-surface-light);
+}
+
+header[data-home-header="true"] {
+  background-color: var(--color-brand-primary);
+
+  & .logo-durban-segnini {
+    color: var(--color-surface-light);
+  }
+  & .navbar-menu a {
+    color: var(--color-surface-light);
+  }
+}
+
+.logo-section {
+  grid-area: logo;
+}
+
+.logo-durban-segnini {
+  height: 7rem;
+  width: auto;
+  max-width: 320px;
+  display: block;
+  color: var(--color-brand-primary);
+
+  @media (max-width: 500px) {
+    max-width: 190px;
+  }
+}
+
+.navbar-section {
+  grid-area: navbar;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  /* margin: 0; */
+  padding: 0;
+}
+
+.navbar-menu a {
+  white-space: nowrap;
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: var(--step--2);
+  cursor: pointer;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a:focus {
+  text-decoration: underline;
+}
+
+.navbar-menu a.active {
+  font-weight: 600;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger-line {
+  width: 1.5rem;
+  height: 0.125rem;
+  background-color: currentColor;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-line:first-child {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 500px) {
+  .header-wrapper {
+    margin-top: 1rem;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo hamburger";
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .logo-section {
+    grid-area: logo;
+    justify-self: start;
+    align-self: center;
+  }
+
+  .logo-durban-segnini {
+    height: 2.5rem;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    grid-area: hamburger;
+    color: var(--color-brand-primary);
+  }
+
+  header[data-home-header="true"] .hamburger-menu {
+    color: var(--color-surface-light);
+  }
+
+  .navbar-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-surface-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+  }
+
+  header[data-home-header="true"] .navbar-section {
+    background-color: var(--color-brand-primary);
+  }
+
+  .navbar-section[aria-expanded="true"] {
+    transform: translateX(0);
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar-menu li {
+    font-size: var(--step-1);
+  }
+
+  .navbar-menu a {
+    color: var(--color-brand-primary);
+    font-size: var(--step-1);
+    transition: font-weight 0.2s ease;
+  }
+
+  .navbar-menu a:hover,
+  .navbar-menu a:focus {
+    font-weight: 600;
+  }
+
+  .navbar-menu a.active {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  header[data-home-header="true"] .navbar-menu a {
+    color: var(--color-surface-light);
+  }
+}

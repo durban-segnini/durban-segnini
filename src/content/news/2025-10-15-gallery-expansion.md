@@ -1,0 +1,7 @@
+---
+title: Gallery Expansion
+date: 2025-10-15
+---
+Durban Segnini Gallery is pleased to announce the expansion of our exhibition space with the addition of a new 2,000 square foot gallery dedicated to contemporary installations and multimedia works. The new space will allow us to present larger-scale works and immersive installations by our roster of international artists.
+
+The expansion includes a dedicated projection room for video works, a flexible installation space with 20-foot ceilings, and an outdoor sculpture garden. This development reflects our commitment to supporting ambitious contemporary art practices and providing artists with the space they need to realize their most challenging projects.
