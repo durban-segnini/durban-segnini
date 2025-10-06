@@ -29,6 +29,10 @@ public_folder: "/uploads"
 # Activate Editorial Workflow
 publish_mode: editorial_workflow
 
+# Disable preview pane for all collections
+editor:
+  preview: false
+
 # Cloudinary media library configuration
 media_library:
   name: cloudinary
