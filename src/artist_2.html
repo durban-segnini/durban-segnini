@@ -7,13 +7,13 @@ layout: null
 <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/artists/felipe-mujica/">
-    <link rel="canonical" href="/artists/felipe-mujica/">
+    <meta http-equiv="refresh" content="0; url={{ '/artists/felipe-mujica/' | url }}">
+    <link rel="canonical" href="{{ '/artists/felipe-mujica/' | url }}">
 </head>
 <body>
-    <p>Redirecting to <a href="/artists/felipe-mujica/">Felipe Mujica's page</a>...</p>
+    <p>Redirecting to <a href="{{ '/artists/felipe-mujica/' | url }}">Felipe Mujica's page</a>...</p>
     <script>
-        window.location.href = '/artists/felipe-mujica/';
+        window.location.href = '{{ '/artists/felipe-mujica/' | url }}';
     </script>
 </body>
 </html>

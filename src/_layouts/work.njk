@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 <h1>{{ title }}</h1>
-{% if artist %}<p>By <a href="/artists/{{ artist | slug }}/">{{ artist }}</a></p>{% endif %}
+{% if artist %}<p>By <a href="{{ ('/artists/' + (artist | slug) + '/') | url }}">{{ artist }}</a></p>{% endif %}
 {% if year %}<p>{{ year }}</p>{% endif %}
 {% if medium %}<p>{{ medium }}</p>{% endif %}
 {% if dimensions %}<p>{{ dimensions }}</p>{% endif %}
