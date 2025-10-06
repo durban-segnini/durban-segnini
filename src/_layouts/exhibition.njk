@@ -58,67 +58,10 @@ pageCss: hero-exhibition.css
         </section>
 
 {# this one loops through all the artworks attached to that exhibition #}
+        {% if works and works.length > 0 %}
         <section class="selected-artworks-wrapper">
           <h2 class="section-title margin-bottom-2">Selected Artworks</h2>
           <div class="selected-artwork-card-list cq-grid">
-            {% if works and works.length > 0 %}
-              {% for workId in works %}
-                {% set work = null %}
-                {% for w in collections.works %}
-                  {% if w.data.work_id == workId %}
-                    {% set work = w %}
-                  {% endif %}
-                {% endfor %}
-                {% if work %}
-                  <div class="selected-artwork-card card">
-                    <img src="{{ work.data.image or 'https://placehold.co/400x300' }}" alt="{{ work.data.title }}" />
-                    <figcaption>
-                      {% if work.data.artist %}
-                        {% set artist = null %}
-                        {% for a in collections.artists %}
-                          {% if a.data.name == work.data.artist %}
-                            {% set artist = a %}
-                          {% endif %}
-                        {% endfor %}
-                        {% if artist %}
-                          <h3><a href="{{ artist.url }}">{{ work.data.title }}</a></h3>
-                        {% else %}
-                          <h3>{{ work.data.title }}</h3>
-                        {% endif %}
-                      {% else %}
-                        <h3>{{ work.data.title }}</h3>
-                      {% endif %}
-                      {% if work.data.artist %}<p>{{ work.data.artist }}</p>{% endif %}
-                      {% if work.data.year %}<p>{{ work.data.year }}</p>{% endif %}
-                      {% if work.data.medium %}<p>{{ work.data.medium }}</p>{% endif %}
-                    </figcaption>
-                  </div>
-                {% else %}
-                  <div class="selected-artwork-card card">
-                    <img src="https://placehold.co/400x300" alt="Work not found" />
-                    <figcaption>
-                      <h3>Work Not Found</h3>
-                      <p>Looking for: "{{ workId }}"</p>
-                    </figcaption>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            {% else %}
-              <div class="selected-artwork-card card">
-                <img src="https://placehold.co/400x300" alt="No artworks available" />
-                <figcaption>
-                  <h3>No Artworks</h3>
-                  <p>No artworks are currently available for this exhibition.</p>
-                </figcaption>
-              </div>
-            {% endif %}
-          </div>
-        </section>
-
-        {# use the filters available to you to loop through the artists (without duplicating them) attached to the works #}
-        <section class="artists-wrapper grid-stack">
-          {% if works and works.length > 0 %}
-            {% set seenArtists = [] %}
             {% for workId in works %}
               {% set work = null %}
               {% for w in collections.works %}
@@ -126,65 +69,101 @@ pageCss: hero-exhibition.css
                   {% set work = w %}
                 {% endif %}
               {% endfor %}
-              {% if work and work.data.artist %}
-                {% set artistName = work.data.artist %}
-                {% set alreadySeen = false %}
-                {% for seen in seenArtists %}
-                  {% if seen == artistName %}
-                    {% set alreadySeen = true %}
-                  {% endif %}
-                {% endfor %}
-                {% if not alreadySeen %}
-                  {% set seenArtists = seenArtists | concat([artistName]) %}
-                  {% set artist = null %}
-                  {% for a in collections.artists %}
-                    {% if a.data.name == artistName %}
-                      {% set artist = a %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if artist %}
-                    <div class="artist-card flow">
-                      <div class="artist-bio flow">
-                        <h2 class="section-title">{{ artist.data.name or artistName }}</h2>
-                        <div class="section-bio-content flow">
-                          <p>{{ artist.data.short_bio or 'Artist bio not available.' }}</p>
-                        </div>
-                        <div class="section-bio-artist-link"><a href="{{ artist.url }}">View More</a></div>
-                      </div>
-                      {% if artist.data.portrait %}
-                        <div class="artist-image">
-                          <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name or artistName }}" />
-                        </div>
+              {% if work %}
+                <div class="selected-artwork-card card">
+                  <img src="{{ work.data.image or 'https://placehold.co/400x300' }}" alt="{{ work.data.title }}" />
+                  <figcaption>
+                    {% if work.data.artist %}
+                      {% set artist = null %}
+                      {% for a in collections.artists %}
+                        {% if a.data.name == work.data.artist %}
+                          {% set artist = a %}
+                        {% endif %}
+                      {% endfor %}
+                      {% if artist %}
+                        <h3><a href="{{ artist.url }}">{{ work.data.title }}</a></h3>
+                      {% else %}
+                        <h3>{{ work.data.title }}</h3>
                       {% endif %}
-                    </div>
-                  {% else %}
-                    <div class="artist-card flow">
-                      <div class="artist-bio flow">
-                        <h2 class="section-title">{{ artistName }}</h2>
-                        <div class="section-bio-content flow">
-                          <p>Artist information not available.</p>
-                        </div>
-                        <div class="section-bio-artist-link"><a href="">View More</a></div>
-                      </div>
-                    </div>
-                  {% endif %}
-                {% endif %}
+                    {% else %}
+                      <h3>{{ work.data.title }}</h3>
+                    {% endif %}
+                    {% if work.data.artist %}<p>{{ work.data.artist }}</p>{% endif %}
+                    {% if work.data.year %}<p>{{ work.data.year }}</p>{% endif %}
+                    {% if work.data.medium %}<p>{{ work.data.medium }}</p>{% endif %}
+                  </figcaption>
+                </div>
+              {% else %}
+                <div class="selected-artwork-card card">
+                  <img src="https://placehold.co/400x300" alt="Work not found" />
+                  <figcaption>
+                    <h3>Work Not Found</h3>
+                    <p>Looking for: "{{ workId }}"</p>
+                  </figcaption>
+                </div>
               {% endif %}
             {% endfor %}
-          {% else %}
-            <div class="artist-card flow">
-              <div class="artist-bio flow">
-                <h2 class="section-title">No Artists</h2>
-                <div class="section-bio-content flow">
-                  <p>No artists are currently associated with this exhibition.</p>
-                </div>
-                <div class="section-bio-artist-link"><a href="">View More</a></div>
-              </div>
-              <div class="artist-image">
-                <img src="https://placehold.co/400x300" alt="No artists available" />
-              </div>
-            </div>
-          {% endif %}
+          </div>
         </section>
+        {% endif %}
+
+        {# use the filters available to you to loop through the artists (without duplicating them) attached to the works #}
+        {% if works and works.length > 0 %}
+        <section class="artists-wrapper grid-stack">
+          {% set seenArtists = [] %}
+          {% for workId in works %}
+            {% set work = null %}
+            {% for w in collections.works %}
+              {% if w.data.work_id == workId %}
+                {% set work = w %}
+              {% endif %}
+            {% endfor %}
+            {% if work and work.data.artist %}
+              {% set artistName = work.data.artist %}
+              {% set alreadySeen = false %}
+              {% for seen in seenArtists %}
+                {% if seen == artistName %}
+                  {% set alreadySeen = true %}
+                {% endif %}
+              {% endfor %}
+              {% if not alreadySeen %}
+                {% set seenArtists = seenArtists | concat([artistName]) %}
+                {% set artist = null %}
+                {% for a in collections.artists %}
+                  {% if a.data.name == artistName %}
+                    {% set artist = a %}
+                  {% endif %}
+                {% endfor %}
+                {% if artist %}
+                  <div class="artist-card flow">
+                    <div class="artist-bio flow">
+                      <h2 class="section-title">{{ artist.data.name or artistName }}</h2>
+                      <div class="section-bio-content flow">
+                        <p>{{ artist.data.short_bio or 'Artist bio not available.' }}</p>
+                      </div>
+                      <div class="section-bio-artist-link"><a href="{{ artist.url }}">View More</a></div>
+                    </div>
+                    {% if artist.data.portrait %}
+                      <div class="artist-image">
+                        <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name or artistName }}" />
+                      </div>
+                    {% endif %}
+                  </div>
+                {% else %}
+                  <div class="artist-card flow">
+                    <div class="artist-bio flow">
+                      <h2 class="section-title">{{ artistName }}</h2>
+                      <div class="section-bio-content flow">
+                        <p>Artist information not available.</p>
+                      </div>
+                      <div class="section-bio-artist-link"><a href="">View More</a></div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </section>
+        {% endif %}
       </main>
 
