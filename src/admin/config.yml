@@ -186,6 +186,22 @@ collections:
           config:
             folder: "site/exhibitions/catalogs"
 
+      - name: photos
+        label: Exhibition Photos
+        widget: list
+        required: false
+        allow_add: true
+        collapsed: false
+        fields:
+          - name: image
+            label: Photo
+            widget: image
+            required: true
+            media_library:
+              name: cloudinary
+              config:
+                folder: "site/exhibitions/photos"
+
       # Pick the works in this exhibition (many)
       - name: works
         label: Works
