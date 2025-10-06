@@ -185,17 +185,18 @@ module.exports = function (eleventyConfig) {
 
   // Add filter to get artists from works referenced in exhibitions
   eleventyConfig.addFilter("getArtistsFromWorks", (exhibition, worksCollection) => {
-    if (!exhibition || !exhibition.data || !exhibition.data.works || !Array.isArray(exhibition.data.works)) return [];
-    
+    if (!exhibition || !exhibition.data || !Array.isArray(exhibition.data.works)) return [];
+
     const artists = new Set();
-    
-    exhibition.data.works.forEach(workTitle => {
-      const work = worksCollection.find(w => w.data.title === workTitle);
+
+    // Works are referenced by work_id in exhibition frontmatter
+    exhibition.data.works.forEach(workId => {
+      const work = worksCollection.find(w => w?.data?.work_id === workId);
       if (work && work.data.artist) {
         artists.add(work.data.artist);
       }
     });
-    
+
     return Array.from(artists);
   });
 
