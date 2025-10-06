@@ -40,6 +40,16 @@ media_library:
     cloud_name: dao1vqck0
     api_key: 592251927921395
     upload_preset: unsigned_upload
+    # Site-wide image transformations for optimization
+    # These transformations are applied to all images uploaded through the CMS
+    default_transformations:
+      - - fetch_format: auto
+          width: 1024
+          height: 1024
+          quality: auto
+          crop: limit
+          flags: progressive
+      # https://decapcms.org/docs/cloudinary/
   output_filename_only: false
   use_transformations: true
   use_secure_url: true
