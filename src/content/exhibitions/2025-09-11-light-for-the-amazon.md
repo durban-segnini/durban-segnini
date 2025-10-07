@@ -6,8 +6,8 @@ endingDate: 2025-10-24
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1757548867/Light-for-the-Amazon_Invite-LFTA_infuwz.jpg
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757557562/Copy_of_Press_Release__Light_for_the_Amazon_rfshwv.pdf
 photos:
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1757557804/Alejandro_Puente_udgap7.jpg
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1757557936/Light_for_the_Amazon_-_Ramirez_Villamizar_Copa_Oil_on_canvas_27.5_x_19.6_in._70_x_50_cm_1953_hjpyyd.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759857448/Copy_of_IMG_0198_w2cbcp.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759857451/Copy_of_IMG_0208_bwmydl.jpg
 works:
   - abreu-eslabon-y-esfera-cp2y
 ---
