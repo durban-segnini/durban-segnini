@@ -8,7 +8,7 @@ press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_a
 catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823151/Copy_of_Catalogo_Andr%C3%A9s_Arzuaga_at_Durban_Segnini_Gallery_1_zboohn.pdf
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823143/2D1A7470_aqtsmz.jpg
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823142/2D1A7412_rkmmmh.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823599/3L1000675_vrohev.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823147/6L1000695-Edit_wmex8r.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823149/Andres_Arzuaga_Installation_View_pkuxat.jpg
 works:
