@@ -10,5 +10,7 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759857451/Copy_of_IMG_0208_bwmydl.jpg
 works:
   - abreu-eslabon-y-esfera-cp2y
+  - puente-untitled-2025-0m2a
+  - puente-copa-4qfv
 ---
 Durban Segnini Gallery is pleased to announce Light for the Amazon, an exhibition organized by Omar López-Chahoud with a selection of works from the gallery’s collection. With a focus on modern and contemporary art this selection of works highlights some of the most important Latin American 20th century masters in conversation with contemporary artists from different generations and diverse backgrounds. The works on view range from geometric abstraction to loose figuration, reflecting at times on a cross cultural dialogue nurtured by references to pre-Hispanic visual languages.
