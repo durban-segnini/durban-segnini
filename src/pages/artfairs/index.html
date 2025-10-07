@@ -13,8 +13,7 @@ pageScript: picker-utility.js
   </section>
   
   <section class="event-listing-wrapper">
-    {% set artfairsWithYear = collections.artfairs | map("addYearProperty") %}
-    {% set artfairs = artfairsWithYear | sort(false, false, "year") | reverse %}
+    {% set artfairs = collections.artfairs | sortByDate("desc") %}
     {% if artfairs.length > 0 %}
       {% for artfair in artfairs %}
         {% set year = artfair.data.year %}

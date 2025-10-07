@@ -1,6 +1,7 @@
 ---
 title: ART MIAMI
 year: 2022
+date: 2022-12-01
 ---
 - Carmelo Arden Quin
 - Pablo Atchugarry
