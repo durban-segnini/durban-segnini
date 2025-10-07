@@ -20,6 +20,7 @@ title: Exhibitions - Duran Segnini Gallery
         <div class="event-card">
           <div class="event-card-content">
             <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
+            {# Commented out artist listings for client review
             {% if artists.length > 0 %}
               <ul>
                 {% for artist in artists %}
@@ -27,6 +28,7 @@ title: Exhibitions - Duran Segnini Gallery
                 {% endfor %}
               </ul>
             {% endif %}
+            #}
             {% if exhibition.data.startingDate and exhibition.data.endingDate %}
               <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
             {% elif exhibition.data.startingDate %}
@@ -79,6 +81,7 @@ title: Exhibitions - Duran Segnini Gallery
         <div class="event-card">
           <div class="event-card-content">
             <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
+            {# Commented out artist listings for client review
             {% if artists.length > 0 %}
               <ul>
                 {% for artist in artists %}
@@ -86,6 +89,7 @@ title: Exhibitions - Duran Segnini Gallery
                 {% endfor %}
               </ul>
             {% endif %}
+            #}
             {% if exhibition.data.startingDate and exhibition.data.endingDate %}
               <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
             {% elif exhibition.data.startingDate %}
