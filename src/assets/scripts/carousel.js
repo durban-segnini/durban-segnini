@@ -27,6 +27,18 @@ class HeroCarousel {
         this.prevButton?.addEventListener('click', () => this.previousImage());
         this.nextButton?.addEventListener('click', () => this.nextImage());
         
+        // Hide navigation if only one image is present
+        if (this.images.length <= 1) {
+            if (this.prevButton) {
+                this.prevButton.style.display = 'none';
+                this.prevButton.setAttribute('aria-hidden', 'true');
+            }
+            if (this.nextButton) {
+                this.nextButton.style.display = 'none';
+                this.nextButton.setAttribute('aria-hidden', 'true');
+            }
+        }
+
         // Initialize first image as active
         this.showImage(0);
     }
