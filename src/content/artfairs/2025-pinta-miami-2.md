@@ -1,6 +1,7 @@
 ---
 title: PINTA MIAMI
 year: 2023
+date: 2023-11-29
 ---
 - Ricardo Alcaide
 - Manuel Felguerez

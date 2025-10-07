@@ -1,6 +1,7 @@
 ---
 title: ART MIAMI
 year: 2021
+date: 2021-12-01
 ---
 - Ricardo Alcaide
 - Carmelo Arden Quin

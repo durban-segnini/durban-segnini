@@ -1,6 +1,7 @@
 ---
 title: ZONAMACO
 year: 2024
+date: 2024-02-07
 ---
 - Beto de Volder
 - Fernando De Szyszlo
