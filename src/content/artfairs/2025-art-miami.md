@@ -2,36 +2,36 @@
 title: ART MIAMI
 year: 2024
 ---
-\- Carmelo Arden Quin
+- Carmelo Arden Quin
 
-\- Andres Arzuaga
+- Andres Arzuaga
 
-\- Pablo Atchugarry
+- Pablo Atchugarry
 
-\- Marcolina Dipierro
+- Marcolina Dipierro
 
-\- Sergio Hernandez
+- Sergio Hernandez
 
-\- Gyula Kosice
+- Gyula Kosice
 
-\- Mercedes Pardo
+- Mercedes Pardo
 
-\- Cesar Paternosto
+- Cesar Paternosto
 
-\- Alejandro Puente
+- Alejandro Puente
 
-\- Omar Rayo
+- Omar Rayo
 
-\- Carlos Rojas
+- Carlos Rojas
 
-\- Francisco Salazar
+- Francisco Salazar
 
-\- Fanny Sanin
+- Fanny Sanin
 
-\- Antonio Seguí
+- Antonio Seguí
 
-\- Ines Silva
+- Ines Silva
 
-\- Jesús Soto
+- Jesús Soto
 
-\- Manolo Vellojin
+- Manolo Vellojin
