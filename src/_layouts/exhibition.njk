@@ -93,6 +93,63 @@ pageCss: hero-exhibition.css
         </section>
         {% endif %}
 
-        
+        {# use the filters available to you to loop through the artists (without duplicating them) attached to the works #}
+        {% if works and works.length > 0 %}
+        <section class="artists-wrapper grid-stack">
+          {% set seenArtists = [] %}
+          {% for workId in works %}
+            {% set work = null %}
+            {% for w in collections.works %}
+              {% if w.data.work_id == workId %}
+                {% set work = w %}
+              {% endif %}
+            {% endfor %}
+            {% if work and work.data.artist %}
+              {% set artistName = work.data.artist %}
+              {% set alreadySeen = false %}
+              {% for seen in seenArtists %}
+                {% if seen == artistName %}
+                  {% set alreadySeen = true %}
+                {% endif %}
+              {% endfor %}
+              {% if not alreadySeen %}
+                {% set seenArtists = seenArtists | concat([artistName]) %}
+                {% set artist = null %}
+                {% for a in collections.artists %}
+                  {% if a.data.name == artistName %}
+                    {% set artist = a %}
+                  {% endif %}
+                {% endfor %}
+                {% if artist %}
+                  <div class="artist-card flow">
+                    <div class="artist-bio flow">
+                      <h2 class="section-title">{{ artist.data.name or artistName }}</h2>
+                      <div class="section-bio-content flow">
+                        <p>{{ artist.data.short_bio or 'Artist bio not available.' }}</p>
+                      </div>
+                      <div class="section-bio-artist-link"><a href="{{ artist.url }}">View More</a></div>
+                    </div>
+                    {% if artist.data.portrait %}
+                      <div class="artist-image">
+                        <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name or artistName }}" />
+                      </div>
+                    {% endif %}
+                  </div>
+                {% else %}
+                  <div class="artist-card flow">
+                    <div class="artist-bio flow">
+                      <h2 class="section-title">{{ artistName }}</h2>
+                      <div class="section-bio-content flow">
+                        <p>Artist information not available.</p>
+                      </div>
+                      <div class="section-bio-artist-link"><a href="">View More</a></div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </section>
+        {% endif %}
       </main>
 
