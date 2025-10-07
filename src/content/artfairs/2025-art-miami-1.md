@@ -1,6 +1,6 @@
 ---
 title: ART MIAMI
-year: 2024
+year: 2023
 ---
 - Ricardo Alcaide
 - Pablo Atchugarry
