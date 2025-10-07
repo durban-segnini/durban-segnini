@@ -220,6 +220,7 @@ collections:
       - name: works
         label: Works
         widget: relation
+        required: false
         collection: works
         multiple: true
         search_fields: [work_id, title, artist]
