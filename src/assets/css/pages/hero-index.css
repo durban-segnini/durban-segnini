@@ -17,6 +17,7 @@
     cursor: pointer;
     font-size: var(--step-2);
     font-weight: 300;
+    letter-spacing: 0.05em;
 
     &:hover, &:focus {
       text-decoration: underline;

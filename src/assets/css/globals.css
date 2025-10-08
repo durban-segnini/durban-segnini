@@ -42,7 +42,7 @@ p {
 h1 {
   font-size: var(--step-2);
   color: var(--color-brand-primary);
-  letter-spacing: 1.1;
+  /* letter-spacing: 1em; */
   font-weight: 300;
   text-wrap: balance;
 }
