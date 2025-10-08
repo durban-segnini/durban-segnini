@@ -29,13 +29,8 @@
     {%- endif %}
     
     {#- Render the CSS bundle #}
-    {%- if eleventy.env.runMode === "serve" %}
-    {# External files (local dev live reload will refresh without page reload) #}
+    {# Always use external CSS file for better caching #}
     <link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
-    {%- else %}
-    {# Inlined CSS (fastest site performance in production) #}
-    <style>{% getBundle "css" %}</style>
-    {%- endif %}
   </head>
   <body>
     <div class="page-wrapper">
