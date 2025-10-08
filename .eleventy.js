@@ -2,6 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function (eleventyConfig) {
+  // Custom filter to sort by startingDate (newest to oldest)
+  eleventyConfig.addFilter("sortByStartingDate", (collection, order = "desc") => {
+    if (!Array.isArray(collection)) return [];
+    return [...collection].sort((a, b) => {
+      const dateA = new Date(a.data.startingDate);
+      const dateB = new Date(b.data.startingDate);
+      return order === "desc" ? dateB - dateA : dateA - dateB;
+    });
+  });
   // Copy assets from src/assets → /assets in _site
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
