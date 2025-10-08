@@ -23,6 +23,11 @@
     {%- css %}{% include "src/assets/css/picker-utility.css" %}{% endcss %}
     {%- css %}{% include "src/assets/css/contact.css" %}{% endcss %}
     
+    {#- Add page-specific CSS to bundle if specified #}
+    {%- if pageCss %}
+      {%- css %}{% include "src/assets/css/pages/" + pageCss %}{% endcss %}
+    {%- endif %}
+    
     {#- Render the CSS bundle #}
     {%- if eleventy.env.runMode === "serve" %}
     {# External files (local dev live reload will refresh without page reload) #}
@@ -31,10 +36,6 @@
     {# Inlined CSS (fastest site performance in production) #}
     <style>{% getBundle "css" %}</style>
     {%- endif %}
-    
-    {% if pageCss %}
-      <link rel="stylesheet" href="{{ '/assets/css/pages/' | url }}{{ pageCss }}">
-    {% endif %}
   </head>
   <body>
     <div class="page-wrapper">
