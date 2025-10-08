@@ -13,7 +13,7 @@ pageScript: picker-utility.js
   </section>
   
   <section class="event-listing-wrapper">
-    {% set pastExhibitions = collections.exhibitions | where("status", "past") %}
+    {% set pastExhibitions = collections.exhibitions | where("status", "past") | sortByStartingDate('desc') %}
     {% if pastExhibitions.length > 0 %}
       {% for exhibition in pastExhibitions %}
         {% set year = exhibition.data.startingDate | yearFromDate %}

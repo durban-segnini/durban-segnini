@@ -2,6 +2,22 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function (eleventyConfig) {
+  // Custom filter to sort by startingDate (newest to oldest)
+  eleventyConfig.addFilter("sortByStartingDate", (collection, order = "desc") => {
+    if (!Array.isArray(collection)) return collection;
+    // Helper to safely parse date, fallback to -Infinity/Infinity for sorting
+    function getValidTime(dateStr, fallback) {
+      const d = new Date(dateStr);
+      return isNaN(d.getTime()) ? fallback : d.getTime();
+    }
+    return [...collection].sort((a, b) => {
+      // For "desc", invalid dates go last; for "asc", invalid dates go first
+      const fallback = order === "desc" ? -Infinity : Infinity;
+      const timeA = getValidTime(a?.data?.startingDate, fallback);
+      const timeB = getValidTime(b?.data?.startingDate, fallback);
+      return order === "desc" ? timeB - timeA : timeA - timeB;
+    });
+  });
   // Copy assets from src/assets → /assets in _site
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
