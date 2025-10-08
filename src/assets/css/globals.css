@@ -7,7 +7,7 @@
   --color-text-secondary: #9a9a9b;
   --color-accent: #ed1c24;
   --main-container-width: clamp(500px, 85vw, 1920px);
-  --font-family: "Gantari", sans-serif;
+  --font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   --main-line-height: 1.5;
   --main-font-size: 1rem;
 
