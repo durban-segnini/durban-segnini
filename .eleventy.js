@@ -331,8 +331,24 @@ module.exports = function (eleventyConfig) {
     return false;
   });
 
-  // Add CSS bundle support (built into Eleventy v3+)
-  eleventyConfig.addBundle("css");
+  // Add CSS bundle support with simple minification (built into Eleventy v3+)
+  eleventyConfig.addBundle("css", {
+    transforms: [
+      async function(content) {
+        // Simple CSS minification - remove comments, extra whitespace, etc.
+        return content
+          .replace(/\/\*[\s\S]*?\*\//g, '') // Remove comments
+          .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+          .replace(/;\s*}/g, '}') // Remove semicolon before closing brace
+          .replace(/\s*{\s*/g, '{') // Remove spaces around opening brace
+          .replace(/;\s*/g, ';') // Remove spaces after semicolons
+          .replace(/\s*,\s*/g, ',') // Remove spaces around commas
+          .replace(/\s*:\s*/g, ':') // Remove spaces around colons
+          .replace(/\s*;\s*/g, ';') // Remove spaces around semicolons
+          .trim(); // Remove leading/trailing whitespace
+      }
+    ]
+  });
 
   return {
     // Set pathPrefix so the `url` filter can prepend a subpath (e.g., for GitHub Pages project sites)
