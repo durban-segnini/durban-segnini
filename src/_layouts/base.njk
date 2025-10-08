@@ -5,7 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="robots" content="noindex, nofollow">
     <title>{{ title or "Durban Segnini Gallery" }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+    {#- CSS bundles are provided via the eleventy-plugin-bundle plugin: #}
+    {#- 1. You can add to them using `{% css %}` #}
+    {#- 2. You can get from them using `{% getBundle "css" %}` or `{% getBundleFileUrl "css" %}` #}
+    {#- Learn more: https://github.com/11ty/eleventy-plugin-bundle #}
+    
+    {#- Add to the CSS bundle #}
+    {%- css %}{% include "src/assets/css/reset.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/globals.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/utilities.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/layout.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/header.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/main.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/footer.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/component-events.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/picker-utility.css" %}{% endcss %}
+    {%- css %}{% include "src/assets/css/contact.css" %}{% endcss %}
+    
+    {#- Render the CSS bundle #}
+    {%- if eleventy.env.runMode === "serve" %}
+    {# External files (local dev live reload will refresh without page reload) #}
+    <link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
+    {%- else %}
+    {# Inlined CSS (fastest site performance in production) #}
+    <style>{% getBundle "css" %}</style>
+    {%- endif %}
+    
     <link rel="stylesheet" href="css/hero-index.css"/>
     {% if pageCss %}
       <link rel="stylesheet" href="{{ '/assets/css/pages/' | url }}{{ pageCss }}">

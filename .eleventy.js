@@ -331,6 +331,9 @@ module.exports = function (eleventyConfig) {
     return false;
   });
 
+  // Add CSS bundle support (built into Eleventy v3+)
+  eleventyConfig.addBundle("css");
+
   return {
     // Set pathPrefix so the `url` filter can prepend a subpath (e.g., for GitHub Pages project sites)
     // Configure via environment variable ELEVENTY_PATH_PREFIX (e.g., "/durban-segnini-provisional/")
