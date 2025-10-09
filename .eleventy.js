@@ -25,7 +25,14 @@ module.exports = function (eleventyConfig) {
   // Add Decap CMS passthrough copy
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
 
-  eleventyConfig.addCollection("artists", c => c.getFilteredByGlob("src/content/artists/*.md"));
+  // Artists collection: sorted alphabetically by artist name (case & accent insensitive)
+  eleventyConfig.addCollection("artists", c =>
+    c.getFilteredByGlob("src/content/artists/*.md").sort((a, b) => {
+      const an = (a.data.name || '').trim();
+      const bn = (b.data.name || '').trim();
+      return an.localeCompare(bn, 'en', { sensitivity: 'base' });
+    })
+  );
   eleventyConfig.addCollection("works", c => c.getFilteredByGlob("src/content/works/*.md"));
   eleventyConfig.addCollection("exhibitions", c => c.getFilteredByGlob("src/content/exhibitions/*.md"));
   eleventyConfig.addCollection("artfairs", c => c.getFilteredByGlob("src/content/artfairs/*.md"));
