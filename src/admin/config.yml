@@ -40,16 +40,8 @@ media_library:
     cloud_name: dao1vqck0
     api_key: 592251927921395
     upload_preset: unsigned_upload
-    # Site-wide image transformations for optimization
-    # These transformations are applied to all images uploaded through the CMS
-    default_transformations:
-      - - fetch_format: auto
-          width: 1024
-          height: 1024
-          quality: auto
-          crop: limit
-          flags: progressive
-      # https://decapcms.org/docs/cloudinary/
+    # Removed global default_transformations to prevent PDF files from getting image transformations
+    # Transformations will be applied only to specific image widgets
   output_filename_only: false
   use_transformations: true
   use_secure_url: true
@@ -79,6 +71,13 @@ collections:
           name: cloudinary
           config:
             folder: "site/artists"
+            transformations:
+              - - fetch_format: auto
+                  width: 1024
+                  height: 1024
+                  quality: auto
+                  crop: limit
+                  flags: progressive
       - { name: short_bio, label: Short Bio, widget: markdown, required: false }
       - { name: body, label: Bio, widget: markdown, required: false }
 
@@ -125,6 +124,13 @@ collections:
           name: cloudinary
           config:
             folder: "site/works"
+            transformations:
+              - - fetch_format: auto
+                  width: 1024
+                  height: 1024
+                  quality: auto
+                  crop: limit
+                  flags: progressive
 
       # ——— Full description in the Markdown BODY (not just front matter)
       - { name: body, label: Description, widget: markdown, required: false }
@@ -181,6 +187,13 @@ collections:
           name: cloudinary
           config:
             folder: "site/exhibitions/posters"
+            transformations:
+              - - fetch_format: auto
+                  width: 1024
+                  height: 1024
+                  quality: auto
+                  crop: limit
+                  flags: progressive
 
       - name: press_release_pdf
         label: Press Release (PDF)
@@ -215,6 +228,13 @@ collections:
               name: cloudinary
               config:
                 folder: "site/exhibitions/photos"
+                transformations:
+                  - - fetch_format: auto
+                      width: 1024
+                      height: 1024
+                      quality: auto
+                      crop: limit
+                      flags: progressive
 
       # Pick the works in this exhibition (many)
       - name: works
