@@ -4,7 +4,7 @@ status: past
 startingDate: 2023-12-05
 endingDate: 2024-03-27
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759894031/Structure__Painting_13_z5bfab.png
-catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759892891/Copy_of_Catalogo_Paternosto-_The_Unconventional_Support_ygmggs.pdf
+catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1759892891/Copy_of_Catalogo_Paternosto-_The_Unconventional_Support_ygmggs.pdf
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759894031/Structure__Painting_13_z5bfab.png
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759818776/Paternosto_Cesar_-_Los_L%C3%ADmites_del_Silencio_5_Acrylic_emulsion_and_oil_on_canvas_39.3_x_39.3_In._100_x_100_cm._2021_hlazff.jpg
