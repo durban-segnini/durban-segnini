@@ -1,0 +1,19 @@
+/* Gantari Variable Font - Local WOFF2 Files */
+
+/* Gantari Variable Font (Normal) */
+@font-face {
+  font-family: 'Gantari';
+  src: url('/assets/fonts/Gantari-VariableFont_wght.woff2') format('woff2-variations');
+  font-weight: 100 900; /* Variable font supports all weights from 100 to 900 */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gantari Variable Font (Italic) */
+@font-face {
+  font-family: 'Gantari';
+  src: url('/assets/fonts/Gantari-Italic-VariableFont_wght.woff2') format('woff2-variations');
+  font-weight: 100 900; /* Variable font supports all weights from 100 to 900 */
+  font-style: italic;
+  font-display: swap;
+}
