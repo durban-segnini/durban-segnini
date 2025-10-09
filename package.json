@@ -22,5 +22,8 @@
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
     "decap-cms-media-library-cloudinary": "^3.1.0"
+  },
+  "devDependencies": {
+    "ttf2woff2": "^8.0.0"
   }
 }
