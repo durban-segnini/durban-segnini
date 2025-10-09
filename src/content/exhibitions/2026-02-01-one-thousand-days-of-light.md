@@ -1,6 +1,6 @@
 ---
 title: One Thousand Days of Light
-status: past
+status: current
 startingDate: 2025-05-03
 endingDate: 2025-08-03
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759383736/Andres_Arzuaga_-_2D1A3184_mnbbb0.jpg
