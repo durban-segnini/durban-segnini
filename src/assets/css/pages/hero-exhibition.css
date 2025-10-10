@@ -28,7 +28,8 @@
     width: 100%;
     aspect-ratio: 1;
     object-fit: contain;
-    background-color: var(--color-surface-muted);
+    object-position: left;
+    /* background-color: var(--color-surface-muted); */
   }
   
   figcaption {
@@ -63,6 +64,7 @@
     height: auto;
     aspect-ratio: 4/3;
     object-fit: cover;
+    object-position: left;
   }
   
   figcaption {
