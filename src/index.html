@@ -49,26 +49,23 @@ pageScript: carousel.js
   </article>
   <div class="hero-image">
     <div class="hero-carousel">
-      {% if currentExhibition and currentExhibition.data.works and currentExhibition.data.works.length > 0 %}
-        {% for workId in currentExhibition.data.works %}
-          {% set work = null %}
-          {% for w in collections.works %}
-            {% if w.data.work_id == workId %}
-              {% set work = w %}
-            {% endif %}
-          {% endfor %}
-          {% if work %}
-            <img
-              src="{{ work.data.image or 'https://placehold.co/700x500' }}"
-              alt="{{ work.data.title }} by {{ work.data.artist or 'Unknown Artist' }}"
-              class="carousel-image{% if loop.first %} active{% endif %}"
-              {% if not loop.first %}loading="lazy"{% endif %}
-              data-title="{{ work.data.title }}"
-              data-artist="{{ work.data.artist or 'Unknown Artist' }}"
-              data-year="{{ work.data.year or '' }}"
-              data-medium="{{ work.data.medium or '' }}"/>
-          {% endif %}
+      {% if currentExhibition and currentExhibition.data.photos and currentExhibition.data.photos.length > 0 %}
+        {% for photo in currentExhibition.data.photos %}
+          <img
+            src="{{ photo.image or 'https://placehold.co/700x500' }}"
+            alt="{{ currentExhibition.data.title }} - Exhibition Photo {{ loop.index }}"
+            class="carousel-image{% if loop.first %} active{% endif %}"
+            {% if not loop.first %}loading="lazy"{% endif %}
+            data-title="{{ currentExhibition.data.title }}"
+            data-caption="Exhibition Photo {{ loop.index }}"/>
         {% endfor %}
+      {% elif currentExhibition and currentExhibition.data.poster %}
+        <img
+          src="{{ currentExhibition.data.poster }}"
+          alt="{{ currentExhibition.data.title }} - Exhibition Poster"
+          class="carousel-image active"
+          data-title="{{ currentExhibition.data.title }}"
+          data-caption="Exhibition Poster"/>
       {% endif %}
     </div>
     <figcaption class="hero-fitcaption"></figcaption>
