@@ -39,6 +39,19 @@ function initAutoLightbox() {
             return;
         }
         
+        // Skip if image is an artist card image (should link to artist page)
+        if (img.closest('.artist-card') || 
+            img.closest('.artist-card-link') ||
+            img.classList.contains('artist-image') && img.closest('a[href*="/artists/"]')) {
+            return;
+        }
+        
+        // Skip if image is in exhibition artist cards (should link to artist page)
+        if (img.closest('.artist-bio') || 
+            img.closest('.section-bio-artist-link')) {
+            return;
+        }
+        
         // Create a wrapper link for the image
         const link = document.createElement('a');
         link.href = img.src;
