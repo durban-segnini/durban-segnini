@@ -158,3 +158,29 @@
     }
   }
 }
+
+/* Art fairs specific styling - 3-column grid layout */
+.event-listing-wrapper.artfairs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  width: 100%;
+
+  @container (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @container (max-width: 500px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .event-card {
+    grid-template-columns: 1fr 4fr;
+    
+    & .event-card-content {
+      grid-column: 2;
+    }
+  }
+}
