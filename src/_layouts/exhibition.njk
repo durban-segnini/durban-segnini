@@ -7,8 +7,15 @@ pageCss: hero-exhibition.css
 
       <main class="main-wrapper grid-stack">
         <section class="section-intro">
-          <h2 class="section-title">Exhibition</h2>
-          <p class="section-microtitle">{{ status | capitalize }}</p>
+          <h2 class="section-title">{{ status | capitalize }} EXHIBITION</h2>
+          <div class="catalogue-links-wrapper">
+            {% if catalog_pdf %}
+              <a class="section-microtitle uppercase plain-link-light" href="{{ catalog_pdf }}">Catalog</a>
+            {% endif %}
+            {% if press_release_pdf %}
+              <a class="section-microtitle uppercase plain-link-light" href="{{ press_release_pdf }}">Press Release</a>
+            {% endif %}
+          </div>
         </section>
         <section class="current-exhibition-wrapper">
           <h1 class="section-branded-title">{{ title }}</h1>
@@ -17,14 +24,6 @@ pageCss: hero-exhibition.css
           {% elif date_range %}
             <h2 class="section-title capitalize">{{ date_range }}</h2>
           {% endif %}
-          <div class="catalogue-links-wrapper margin-top-2">
-            {% if catalog_pdf %}
-              <a class="section-microtitle uppercase plain-link" href="{{ catalog_pdf }}">Catalog</a>
-            {% endif %}
-            {% if press_release_pdf %}
-              <a class="section-microtitle uppercase plain-link" href="{{ press_release_pdf }}">Press Release</a>
-            {% endif %}
-          </div>
         </section>
 
         {% if photos and photos.length > 0 %}
