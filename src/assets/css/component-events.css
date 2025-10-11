@@ -122,3 +122,39 @@
     }
   }
 }
+
+/* Exhibitions-specific styles */
+.exhibitions-layout {
+  width: 100%;
+  justify-self: unset;
+  
+  .event-card {
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    .event-card-content {
+      grid-column: unset;
+    }
+    
+    .event-card-image {
+      grid-column: unset;
+    }
+    
+    @container (max-width: 500px) {
+      grid-template-columns: 1fr 1fr;
+      
+      .event-card-image {
+        aspect-ratio: 1/1;
+        height: fit-content;
+        align-self: start;
+      }
+      
+      .event-card-image:nth-child(2) {
+        display: unset;
+      }
+      
+      .event-card-image:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
