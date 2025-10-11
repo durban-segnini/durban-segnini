@@ -22,8 +22,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initAutoLightbox() {
-    // Find all images on the page
-    const images = document.querySelectorAll('img');
+    // Handle carousel images specially - create a single lightbox link for the carousel
+    const carousels = document.querySelectorAll('.hero-carousel');
+    carousels.forEach(carousel => {
+        // Create a single lightbox link for the carousel container
+        const carouselLink = document.createElement('a');
+        carouselLink.style.position = 'absolute';
+        carouselLink.style.top = '0';
+        carouselLink.style.left = '0';
+        carouselLink.style.width = '100%';
+        carouselLink.style.height = '100%';
+        carouselLink.style.zIndex = '1';
+        carouselLink.style.cursor = 'pointer';
+        carouselLink.setAttribute('data-lightbox', 'gallery');
+        
+        // Set up click handler to always use the currently active image
+        carouselLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const activeImage = carousel.querySelector('.carousel-image.active');
+            if (activeImage && activeImage.src) {
+                carouselLink.href = activeImage.src;
+                if (activeImage.alt) {
+                    carouselLink.setAttribute('data-title', activeImage.alt);
+                    carouselLink.setAttribute('data-alt', activeImage.alt);
+                }
+                // Trigger lightbox
+                carouselLink.click();
+            }
+        });
+        
+        // Add the link to the carousel
+        carousel.style.position = 'relative';
+        carousel.appendChild(carouselLink);
+    });
+    
+    // Find all other images on the page (excluding carousel images)
+    const images = document.querySelectorAll('img:not(.carousel-image)');
     
     images.forEach((img, index) => {
         // Skip if already has lightbox functionality
@@ -31,11 +65,9 @@ function initAutoLightbox() {
             return;
         }
         
-        // Skip if image is inside a carousel or navigation that shouldn't be lightboxed
-        if (img.closest('.hero-carousel') || 
-            img.closest('.hero-navigation') || 
-            img.closest('nav') ||
-            img.classList.contains('carousel-image')) {
+        // Skip if image is inside navigation that shouldn't be lightboxed
+        if (img.closest('.hero-navigation') || 
+            img.closest('nav')) {
             return;
         }
         
