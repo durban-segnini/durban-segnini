@@ -1,0 +1,79 @@
+/**
+ * Auto Lightbox Setup
+ * Automatically adds lightbox functionality to all images on the site
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for lightbox to be loaded
+    if (typeof lightbox === 'undefined') {
+        console.warn('Lightbox2 not loaded yet, retrying...');
+        setTimeout(initAutoLightbox, 100);
+        return;
+    }
+    
+    // Set the image path before initializing
+    if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+            'imagePath': '/assets/images/lightbox/'
+        });
+    }
+    
+    initAutoLightbox();
+});
+
+function initAutoLightbox() {
+    // Find all images on the page
+    const images = document.querySelectorAll('img');
+    
+    images.forEach((img, index) => {
+        // Skip if already has lightbox functionality
+        if (img.closest('a[data-lightbox]')) {
+            return;
+        }
+        
+        // Skip if image is inside a carousel or navigation that shouldn't be lightboxed
+        if (img.closest('.hero-carousel') || 
+            img.closest('.hero-navigation') || 
+            img.closest('nav') ||
+            img.classList.contains('carousel-image')) {
+            return;
+        }
+        
+        // Create a wrapper link for the image
+        const link = document.createElement('a');
+        link.href = img.src;
+        link.setAttribute('data-lightbox', 'gallery');
+        
+        // Add title if available
+        if (img.alt) {
+            link.setAttribute('data-title', img.alt);
+        }
+        
+        // Add alt attribute if available
+        if (img.alt) {
+            link.setAttribute('data-alt', img.alt);
+        }
+        
+        // Wrap the image with the link
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+        
+        // Add cursor pointer style
+        link.style.cursor = 'pointer';
+        img.style.cursor = 'pointer';
+    });
+    
+    // Configure lightbox options
+    if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'showImageNumberLabel': true,
+            'albumLabel': 'Image %1 of %2',
+            'fadeDuration': 600,
+            'imageFadeDuration': 600,
+            'fitImagesInViewport': true,
+            'disableScrolling': false
+        });
+    }
+}
