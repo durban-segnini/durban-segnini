@@ -28,6 +28,9 @@
       {%- css %}{% include "src/assets/css/pages/" + pageCss %}{% endcss %}
     {%- endif %}
     
+    {#- Add Lightbox2 CSS #}
+    {%- css %}{% include "src/assets/css/lightbox.css" %}{% endcss %}
+    
     {#- Render the CSS bundle #}
     {# Always use external CSS file for better caching #}
     <link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
@@ -45,6 +48,8 @@
       {% if pageScript %}
         <script src="{{ '/assets/scripts/' | url }}{{ pageScript }}" defer></script>
       {% endif %}
+      <script src="{{ '/assets/scripts/lightbox-plus-jquery.js' }}" defer></script>
+      <script src="{{ '/assets/scripts/auto-lightbox.js' }}" defer></script>
     </div>
   </body>
 </html>
