@@ -57,7 +57,7 @@
   grid-area: image;
   position: relative;
   width: 100%;
-  height: 500px;
+  aspect-ratio: 3/2;
   overflow: hidden;
 }
 
@@ -169,9 +169,6 @@
     gap: 1rem;
   }
 
-  .hero-carousel {
-    height: 300px;
-  }
 
   .hero-navigation {
     justify-content: center;
