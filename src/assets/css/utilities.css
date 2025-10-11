@@ -88,6 +88,17 @@
   color: var(--color-accent);
 }
 
+.plain-link-light {
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.plain-link-light:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
 .exhibition-images-wrapper {
   margin-top: 2em;
 }
