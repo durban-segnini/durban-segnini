@@ -296,6 +296,56 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // Add filter to get linked artists from art fair body (with URLs to artist pages)
+  eleventyConfig.addFilter("getLinkedArtistsFromArtFairBody", (artfair, collections) => {
+    if (!artfair || !artfair.data || !collections || !collections.artists) return [];
+    
+    try {
+      // Read the file content directly
+      const filePath = artfair.inputPath;
+      const content = fs.readFileSync(filePath, 'utf8');
+      
+      // Split by lines and filter out empty lines and frontmatter
+      const lines = content.split('\n')
+        .map(line => line.trim())
+        .filter(line => line && !line.startsWith('---') && line.startsWith('- '));
+      
+      // Extract artist names by removing the "- " prefix
+      const artistNames = lines.map(line => line.substring(2).trim()).filter(name => name);
+      
+      // Match artist names to actual artist pages and return linked objects
+      return artistNames.map(artistName => {
+        // Find matching artist in collections
+        const matchingArtist = collections.artists.find(artist => {
+          const artistData = artist.data;
+          // Try different name matching strategies
+          return artistData.name === artistName || 
+                 artistData.first_name + ' ' + artistData.last_name === artistName ||
+                 artistData.last_name + ', ' + artistData.first_name === artistName ||
+                 artistData.computed_slug === artistName.toLowerCase().replace(/\s+/g, '-');
+        });
+        
+        if (matchingArtist) {
+          return {
+            name: artistName,
+            url: matchingArtist.url,
+            slug: matchingArtist.data.computed_slug || matchingArtist.fileSlug
+          };
+        } else {
+          // Return unlinked version if no match found
+          return {
+            name: artistName,
+            url: null,
+            slug: null
+          };
+        }
+      });
+    } catch (error) {
+      console.warn('Error reading art fair file for linked artists:', error.message);
+      return [];
+    }
+  });
+
   // Add shortcode to extract artist names from art fair content
   eleventyConfig.addShortcode("getArtistsFromContent", function(content) {
     if (!content || typeof content !== 'string') return [];

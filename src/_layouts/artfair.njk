@@ -4,10 +4,19 @@ layout: base.njk
 <h1>{{ title }}</h1>
 {% if location %}<p>{{ location }}</p>{% endif %}
 {% if start or end %}<p>{{ start | date("yyyy-LL-dd") }}{% if end %} – {{ end | date("yyyy-LL-dd") }}{% endif %}</p>{% endif %}
-{% if artists and artists.length %}
+{% set linkedArtists = page | getLinkedArtistsFromArtFairBody(collections) %}
+{% if linkedArtists and linkedArtists.length %}
 <h2>Artists</h2>
 <ul>
-  {% for n in artists %}<li><a href="{{ ('/artists/' + (n | slug) + '/') | url }}">{{ n }}</a></li>{% endfor %}
+  {% for artist in linkedArtists %}
+    <li>
+      {% if artist.url %}
+        <a href="{{ artist.url }}" style="text-decoration: none; font-weight: 600; color: inherit; text-transform: none;">{{ artist.name }}</a>
+      {% else %}
+        {{ artist.name }}
+      {% endif %}
+    </li>
+  {% endfor %}
 </ul>
 {% endif %}
 {{ content | safe }}
