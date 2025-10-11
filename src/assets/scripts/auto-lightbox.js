@@ -22,38 +22,50 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initAutoLightbox() {
-    // Handle carousel images specially - create a single lightbox link for the carousel
+    // Handle carousel images specially - create individual lightbox links for each carousel image
     const carousels = document.querySelectorAll('.hero-carousel');
     carousels.forEach(carousel => {
-        // Create a single lightbox link for the carousel container
-        const carouselLink = document.createElement('a');
-        carouselLink.style.position = 'absolute';
-        carouselLink.style.top = '0';
-        carouselLink.style.left = '0';
-        carouselLink.style.width = '100%';
-        carouselLink.style.height = '100%';
-        carouselLink.style.zIndex = '1';
-        carouselLink.style.cursor = 'pointer';
-        carouselLink.setAttribute('data-lightbox', 'gallery');
+        const carouselImages = carousel.querySelectorAll('.carousel-image');
         
-        // Set up click handler to always use the currently active image
-        carouselLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            const activeImage = carousel.querySelector('.carousel-image.active');
-            if (activeImage && activeImage.src) {
-                carouselLink.href = activeImage.src;
-                if (activeImage.alt) {
-                    carouselLink.setAttribute('data-title', activeImage.alt);
-                    carouselLink.setAttribute('data-alt', activeImage.alt);
-                }
-                // Trigger lightbox
-                carouselLink.click();
-            }
+        // Create individual lightbox links for each carousel image
+        carouselImages.forEach((img, index) => {
+            // Create a lightbox link for this specific image
+            const lightboxLink = document.createElement('a');
+            lightboxLink.href = img.src;
+            lightboxLink.setAttribute('data-lightbox', 'carousel-gallery');
+            lightboxLink.setAttribute('data-title', img.alt || img.dataset.title || '');
+            lightboxLink.setAttribute('data-alt', img.alt || '');
+            
+            // Position the link to cover the entire carousel area
+            lightboxLink.style.position = 'absolute';
+            lightboxLink.style.top = '0';
+            lightboxLink.style.left = '0';
+            lightboxLink.style.width = '100%';
+            lightboxLink.style.height = '100%';
+            lightboxLink.style.zIndex = '1';
+            lightboxLink.style.cursor = 'pointer';
+            lightboxLink.style.display = img.classList.contains('active') ? 'block' : 'none';
+            
+            // Add the link to the carousel
+            carousel.style.position = 'relative';
+            carousel.appendChild(lightboxLink);
+            
+            // Update link visibility when carousel changes
+            const updateLinkVisibility = () => {
+                const allLinks = carousel.querySelectorAll('a[data-lightbox="carousel-gallery"]');
+                allLinks.forEach((link, linkIndex) => {
+                    link.style.display = linkIndex === index && carouselImages[linkIndex].classList.contains('active') ? 'block' : 'none';
+                });
+            };
+            
+            // Listen for carousel changes
+            const observer = new MutationObserver(updateLinkVisibility);
+            observer.observe(carousel, { 
+                attributes: true, 
+                attributeFilter: ['class'],
+                subtree: true 
+            });
         });
-        
-        // Add the link to the carousel
-        carousel.style.position = 'relative';
-        carousel.appendChild(carouselLink);
     });
     
     // Find all other images on the page (excluding carousel images)
@@ -118,7 +130,8 @@ function initAutoLightbox() {
             'fadeDuration': 600,
             'imageFadeDuration': 600,
             'fitImagesInViewport': true,
-            'disableScrolling': false
+            'disableScrolling': false,
+            'alwaysShowNavOnTouchDevices': true
         });
     }
 }
