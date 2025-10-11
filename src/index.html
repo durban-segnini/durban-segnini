@@ -5,28 +5,28 @@ isHome: true
 pageCss: hero-index.css
 pageScript: carousel.js
 ---
-{% set currentExhibitions = collections.exhibitions | where("status", "current") %}
-{% set currentExhibition = currentExhibitions[0] if currentExhibitions.length > 0 else null %}
+{% set featuredExhibitions = collections.exhibitions | where("featured", true) %}
+{% set featuredExhibition = featuredExhibitions[0] if featuredExhibitions.length > 0 else null %}
 {% set sortedNews = collections.news | sortByDate("desc") %}
 {% set latestNews = sortedNews[0] if sortedNews.length > 0 else null %}
 <main class="main-wrapper">
 <section class="hero-wrapper">
   <article class="hero-content">
-    {% if currentExhibition %}
+    {% if featuredExhibition %}
       <h1 class="section-branded-title">
-        <a href="{{ currentExhibition.url }}">{{ currentExhibition.data.title }}</a>
+        <a href="{{ featuredExhibition.url }}">{{ featuredExhibition.data.title }}</a>
       </h1>
       <h2>
-        {% if currentExhibition.data.startingDate and currentExhibition.data.endingDate %}
-          <time datetime="{{ currentExhibition.data.startingDate }}">{{ currentExhibition.data.startingDate | formatHumanDate }}</time>
+        {% if featuredExhibition.data.startingDate and featuredExhibition.data.endingDate %}
+          <time datetime="{{ featuredExhibition.data.startingDate }}">{{ featuredExhibition.data.startingDate | formatHumanDate }}</time>
           -
-          <time datetime="{{ currentExhibition.data.endingDate }}">{{ currentExhibition.data.endingDate | formatHumanDate }}</time>
-        {% elif currentExhibition.data.date_range %}
-          {{ currentExhibition.data.date_range }}
+          <time datetime="{{ featuredExhibition.data.endingDate }}">{{ featuredExhibition.data.endingDate | formatHumanDate }}</time>
+        {% elif featuredExhibition.data.date_range %}
+          {{ featuredExhibition.data.date_range }}
         {% endif %}
       </h2>
       <p>
-        {{ currentExhibition.content | safe }}
+        {{ featuredExhibition.content | safe }}
       </p>
     {% else %}
       <h1 class="section-branded-title">
@@ -49,22 +49,22 @@ pageScript: carousel.js
   </article>
   <div class="hero-image">
     <div class="hero-carousel">
-      {% if currentExhibition and currentExhibition.data.photos and currentExhibition.data.photos.length > 0 %}
-        {% for photo in currentExhibition.data.photos %}
+      {% if featuredExhibition and featuredExhibition.data.photos and featuredExhibition.data.photos.length > 0 %}
+        {% for photo in featuredExhibition.data.photos %}
           <img
             src="{{ photo.image or 'https://placehold.co/700x500' }}"
-            alt="{{ currentExhibition.data.title }} - Exhibition Photo {{ loop.index }}"
+            alt="{{ featuredExhibition.data.title }} - Exhibition Photo {{ loop.index }}"
             class="carousel-image{% if loop.first %} active{% endif %}"
             {% if not loop.first %}loading="lazy"{% endif %}
-            data-title="{{ currentExhibition.data.title }}"
+            data-title="{{ featuredExhibition.data.title }}"
             data-caption="Exhibition Photo {{ loop.index }}"/>
         {% endfor %}
-      {% elif currentExhibition and currentExhibition.data.poster %}
+      {% elif featuredExhibition and featuredExhibition.data.poster %}
         <img
-          src="{{ currentExhibition.data.poster }}"
-          alt="{{ currentExhibition.data.title }} - Exhibition Poster"
+          src="{{ featuredExhibition.data.poster }}"
+          alt="{{ featuredExhibition.data.title }} - Exhibition Poster"
           class="carousel-image active"
-          data-title="{{ currentExhibition.data.title }}"
+          data-title="{{ featuredExhibition.data.title }}"
           data-caption="Exhibition Poster"/>
       {% endif %}
     </div>

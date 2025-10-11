@@ -159,6 +159,9 @@ collections:
       # Status (manual), plus optional archive flag
       - { name: status, label: Status, widget: select, options: [upcoming, current, past], required: true }
       
+      # Featured flag for homepage display
+      - { name: featured, label: Featured on Homepage, widget: boolean, default: false, required: false, hint: "Enable to display this exhibition on the homepage hero section" }
+      
       # Structured date fields for filtering and display
       - name: startingDate
         label: Starting Date
