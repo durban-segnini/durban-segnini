@@ -127,7 +127,7 @@ pageCss: hero-exhibition.css
                       <div class="section-bio-content flow">
                         <p>{{ artist.data.short_bio or 'Artist bio not available.' }}</p>
                       </div>
-                      <div class="section-bio-artist-link"><a href="{{ artist.url }}">View More</a></div>
+                      <div class="section-bio-artist-link"><a class="section-microtitle uppercase plain-link" href="{{ artist.url }}">View More</a></div>
                     </div>
                     {% if artist.data.portrait %}
                       <div class="artist-image">
@@ -142,7 +142,7 @@ pageCss: hero-exhibition.css
                       <div class="section-bio-content flow">
                         <p>Artist information not available.</p>
                       </div>
-                      <div class="section-bio-artist-link"><a href="">View More</a></div>
+                      <div class="section-bio-artist-link"><a class="section-microtitle uppercase plain-link" href="">View More</a></div>
                     </div>
                   </div>
                 {% endif %}
