@@ -17,15 +17,21 @@ pageScript: picker-utility.js
     {% if artfairs.length > 0 %}
       {% for artfair in artfairs %}
         {% set year = artfair.data.year %}
-        {% set artists = artfair | getArtistsFromArtFairBody %}
+        {% set linkedArtists = artfair | getLinkedArtistsFromArtFairBody(collections) %}
         <div class="event-card" data-year="{{ year }}">
           <div class="h2">{{ year }}</div>
           <div class="event-card-content">
             <h3>{{ artfair.data.title }}</h3>
-            {% if artists.length > 0 %}
+            {% if linkedArtists.length > 0 %}
               <ul>
-                {% for artist in artists %}
-                  <li>{{ artist }}</li>
+                {% for artist in linkedArtists %}
+                  <li>
+                    {% if artist.url %}
+                      <a href="{{ artist.url }}" style="text-decoration: none; font-weight: 600; color: inherit; text-transform: none;">{{ artist.name }}</a>
+                    {% else %}
+                      {{ artist.name }}
+                    {% endif %}
+                  </li>
                 {% endfor %}
               </ul>
             {% endif %}
