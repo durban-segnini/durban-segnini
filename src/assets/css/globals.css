@@ -33,6 +33,11 @@ body {
   overflow-x: hidden; /* for the full bleed header and footer */
 }
 
+/* Global underline offset for all text decorations */
+* {
+  text-underline-offset: 0.15rem;
+}
+
 p {
   font-size: var(--step--1);
   /* max-width: 60ch; */
