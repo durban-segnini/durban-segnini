@@ -13,7 +13,8 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864616/Copy_of__PAP3283-1_qssfdz.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864618/Copy_of__PAP3284-1_ayump3.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864620/Copy_of__PAP3286-1_c7eeta.jpg
-works: []
+works:
+  - dipierro-untitled-2018-09qc
 ---
 ARTISTAS INCLUIDOS:
 
