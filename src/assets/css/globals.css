@@ -110,8 +110,8 @@ summary {
   font-size: var(--step--1);
 }
 
-summary::after {
-  content: "view more";
+summary::after,
+.bio-close-btn {
   color: var(--color-brand-primary);
   text-transform: uppercase;
   font-weight: 500;
@@ -123,15 +123,26 @@ summary::after {
   padding: 0.4em 0.8em;
   text-align: center;
   width: fit-content;
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-summary:hover::after {
+summary::after {
+  content: "view more";
+}
+
+summary:hover::after,
+.bio-close-btn:hover {
   background-color: var(--color-brand-primary);
   color: var(--color-surface-light);
 }
 
 details[open] summary::after {
-  content: "… close";
+  display: none;
+}
+
+.bio-close-btn {
+  display: none;
 }
 
 details p {
