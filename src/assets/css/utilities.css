@@ -85,7 +85,7 @@
 
 .plain-link:hover {
   text-decoration: underline;
-  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
 }
 
 .plain-link-light {
@@ -96,7 +96,7 @@
 
 .plain-link-light:hover {
   text-decoration: underline;
-  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
 }
 
 .exhibition-images-wrapper {
