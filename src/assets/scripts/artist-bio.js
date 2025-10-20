@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = '… close';
     btn.onclick = () => details.removeAttribute('open');
     details.appendChild(btn);
+    btn.style.display = details.open ? 'block' : 'none';
     details.addEventListener('toggle', () => {
       btn.style.display = details.open ? 'block' : 'none';
     });
