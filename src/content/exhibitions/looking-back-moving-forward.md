@@ -18,27 +18,21 @@ works:
 ---
 ## Julio Primero
 
+
+
 Nacimiento: 14 de marzo de 1982, Buenos Aires, Argentina.
 
 
-Biografía:
-
 
 Julio es un artista visual contemporáneo cuya obra explora la interacción entre el color, la memoria y la arquitectura emocional del espacio urbano. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at pulvinar nulla. Suspendisse commodo, augue vel consequat placerat, urna lacus pharetra risus, nec laoreet elit arcu et mi. Sus piezas combinan técnicas mixtas con materiales reciclados, generando una narrativa visual que invita al espectador a reflexionar sobre la transformación constante de las ciudades.
-
-
 
 ## Cesar Segundo
 
 Nacimiento: 22 de septiembre de 1978, Ciudad de México, México.
 
 
-Biografía:
-
 
 Cesar es un escultor y pintor reconocido por su enfoque minimalista y su interés en la textura como lenguaje visual. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec diam id purus malesuada sagittis. Morbi eget sapien vitae enim bibendum gravida. Su trabajo ha sido exhibido en galerías de América Latina y Europa, donde se destaca por su equilibrio entre la materia y el vacío.
-
-
 
 ## Marco Tercero
 
