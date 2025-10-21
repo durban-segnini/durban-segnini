@@ -74,7 +74,7 @@ a {
   font-weight: 600;
   font-size: inherit;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s, text-decoration-color 0.2s;
   text-transform: uppercase;
   color: var(--color-text-secondary);
   letter-spacing: 1.1;
@@ -82,6 +82,26 @@ a {
   &:hover, &:focus {
     text-decoration: underline;
     color: var(--color-accent);
+  }
+}
+
+/* Content area links - only change underline color, not text color */
+main a {
+  /*
+    Intentionally keep the link text color unchanged in the main content area
+    so that only the underline (text-decoration-color) changes on hover/focus.
+    This preserves visual consistency for body copy links while still
+    highlighting them with the accent color through the underline.
+
+    Note: A reviewer suggested changing the color on hover (e.g. to
+    var(--color-text-secondary)). That would override this intent and change
+    body link text color site-wide; only apply that if you want body text
+    links to change color as well as underline.
+  */
+  &:hover, &:focus {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
   }
 }
 

@@ -82,6 +82,10 @@
     h3 a {
       text-decoration: underline;
       font-weight: 300;
+
+      &:hover, &:focus {
+        text-decoration-color: var(--color-accent);
+      }
     }
 
     > * + * {
