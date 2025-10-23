@@ -3,7 +3,7 @@ first_name: Carmelo
 last_name: Arden Quin
 name: Arden Quin, Carmelo
 computed_slug: arden-quin-carmelo
-year_of_birth: Uruguay, 1913
+year_of_birth: Uruguay, 1910
 year_of_death: France, 2010
 portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1759514524/carmelo-arden-quin-b-y-n-acrylic-on-wood-62x82cm-2005_m1w6gn.jpg
 short_bio: Painter, sculptor, and poet. From an early age, he began painting and
