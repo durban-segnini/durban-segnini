@@ -15,8 +15,6 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864620/Copy_of__PAP3286-1_c7eeta.jpg
 works: []
 ---
-
-
 ### Mariana Bunimov
 
 Caracas, Venezuela, 1972
@@ -36,8 +34,6 @@ Currently lives and works in Mexico City
 Luis Molina-Pantin blends conceptual and documentary photography to explore what the built environment reveals about a culture’s context. As a self-described “urban archaeologist,” Molina-Pantin investigates themes of authority, class, and display. His work documents Venezuela’s decades-long collapse and modern culture, offering insightful social and political commentary.
 
 Luis Molina-Pantin (Venezuelan, born in Geneva, 1969) currently lives in Mexico City. The artist obtained a BFA at Concordia University, Montreal (1994) and an MFA at the San Francisco Art Institute, California (1997). Molina-Pantin has been featured in solo exhibitions at Fundación Mercantil (Caracas, 2019); Henrique Faria Fine Art (New York, 2021, 2016, 2013); Federico Luger Gallery (Milan, 2024, 2008, 2006); Periférico Caracas | Arte Contemporáneo (Caracas, 2009); Galería Marta Cervera (Madrid, 2008); and the Sala Mendoza (Caracas, 2007, 2003, 1997). His work has been included in major international exhibitions such as Chosen Memories at the Museum of Modern Art (New York, 2023); the 3rd International Center of Photography Triennial (New York, 2013); the 7th Gwangju Biennale (2008) and the 25th São Paulo Biennale (2002). He has also participated in group exhibitions at The Photographer’s Gallery (London, 2019); Museo Amparo (Puebla, 2019); the Simon Preston Gallery (New York, 2013); the Americas Society (New York, 2012); the Kunstraum Kreuzberg/Bethanien (Berlin, 2009) and the Galería de Arte Nacional (Caracas, 2001). Molina-Pantin has been featured in various periodicals including the New York Times, the New Yorker, ArtForum, Flash Art, Libération, Bomb, Cabinet, Gatopardo and Peter Sloterdijk’s *Spheres III*. The artist’s works belong to important collections including the Museum of Modern Art (New York); the Blanton Museum of Art at the University of Texas (Austin); the Museum of Fine Arts (Houston); the Phoenix Art Museum; the Jumex Collection (Mexico City); the Patricia Phelps de Cisneros Collection (New York); the Centro Andaluz de Arte Contemporáneo (Sevilla) and the Galería de Arte Nacional (Caracas).
-
-
 
 ### Alexander Apóstol
 
