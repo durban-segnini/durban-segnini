@@ -15,38 +15,15 @@
   /* align-items: center; */
   border-top: 1px solid var(--color-brand-primary);
   position: relative;
+  padding-bottom: 1rem; /* Add space between years and scrollbar */
   
   /* Horizontal scroll styling */
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
-  
-  /* Hide scrollbar on mobile */
+
   @container (max-width: 500px) {
     padding-top: 1rem;
-    justify-content: flex-start;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-}
-
-/* Webkit scrollbar styling */
-.picker::-webkit-scrollbar {
-  height: 4px;
-}
-
-.picker::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-
-.picker::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Hide scrollbar on mobile webkit */
-@container (max-width: 500px) {
-  .picker::-webkit-scrollbar {
-    display: none;
+    justify-content: center;
   }
 }
 
@@ -71,8 +48,6 @@
   padding: 0.25rem 0.5rem;
   transition: color 0.2s ease;
   text-transform: uppercase;
-  flex-shrink: 0; /* Prevent buttons from shrinking */
-  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .picker-button:hover {
