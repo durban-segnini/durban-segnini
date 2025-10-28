@@ -5,7 +5,7 @@ isHome: true
 pageCss: hero-index.css
 pageScript: carousel.js
 ---
-{% set featuredExhibitions = collections.exhibitions | where("featured", true) %}
+{% set featuredExhibitions = collections.exhibitions | where("featured", true) | sortByStartingDate('desc') %}
 {% set featuredExhibition = featuredExhibitions[0] if featuredExhibitions.length > 0 else null %}
 {% set sortedNews = collections.news | sortByDate("desc") %}
 {% set latestNews = sortedNews[0] if sortedNews.length > 0 else null %}
@@ -73,6 +73,47 @@ pageScript: carousel.js
       <button class="hero-arrow hero-arrow-prev" aria-label="Previous image">&larr;</button>
       <button class="hero-arrow hero-arrow-next" aria-label="Next image">&rarr;</button>
     </div>
+  </div>
+</section>
+<section class="featured-exhibitions">
+  <h2 class="section-title">Featured Exhibitions</h2>
+  <div class="event-listing-wrapper">
+    {% if featuredExhibitions.length > 0 %}
+      {% for exhibition in featuredExhibitions %}
+        {% if loop.index <= 3 %}
+        <div class="event-card">
+          <div class="event-card-content">
+            <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
+            {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+              <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
+            {% elif exhibition.data.startingDate %}
+              <p>{{ exhibition.data.startingDate | formatHumanDate }}</p>
+            {% elif exhibition.data.date_range %}
+              <p>{{ exhibition.data.date_range }}</p>
+            {% endif %}
+          </div>
+          {% if exhibition.data.poster or exhibition.data.hero_image %}
+          <div class="event-card-image">
+            <figure>
+              {% if exhibition.data.poster %}
+                <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" />
+              {% elif exhibition.data.hero_image %}
+                <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" />
+              {% endif %}
+            </figure>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <div class="event-card">
+        <div class="event-card-content">
+          <h3>No Featured Exhibitions</h3>
+          <p>No featured exhibitions are currently available.</p>
+        </div>
+      </div>
+    {% endif %}
   </div>
 </section>
 <section class="news-wrapper">
