@@ -122,3 +122,18 @@ footer {
     }
   }
 }
+
+/* Archive page specific override - disable 2-grid system */
+.archive-page .section-intro {
+  display: block !important;
+  
+  .section-title {
+    margin-bottom: 1rem;
+  }
+  
+  > :nth-child(2) {
+    justify-content: center !important;
+    width: 100% !important;
+    border-top: 1px solid var(--color-brand-primary);
+  }
+}
