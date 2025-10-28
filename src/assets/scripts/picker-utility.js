@@ -21,6 +21,7 @@ class YearPicker {
         
         this.eventCards = document.querySelectorAll(this.cardSelector);
         this.pickerButtons = [];
+        this.scrollArrows = null;
         
         this.init();
     }
@@ -45,6 +46,9 @@ class YearPicker {
         // Generate picker buttons dynamically
         this.generatePickerButtons(availableYears);
         
+        // Create scroll indicator arrows
+        this.createScrollArrows();
+        
         // Add event listeners
         this.addEventListeners();
         
@@ -57,8 +61,57 @@ class YearPicker {
             // Force it again after a short delay to override any browser behavior
             setTimeout(() => {
                 this.pickerContainer.scrollLeft = 0;
+                // Update scroll indicators after forcing scroll position
+                this.updateScrollIndicators();
             }, 100);
         });
+    }
+    
+    /**
+     * Scroll left
+     */
+    scrollLeft() {
+        const scrollAmount = this.pickerContainer.clientWidth * 0.8;
+        this.pickerContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    
+    /**
+     * Scroll right
+     */
+    scrollRight() {
+        const scrollAmount = this.pickerContainer.clientWidth * 0.8;
+        this.pickerContainer.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    
+    /**
+     * Update scroll indicator states
+     */
+    updateScrollIndicators() {
+        if (!this.scrollArrows) return;
+        
+        const { left, right } = this.scrollArrows;
+        const { scrollLeft, scrollWidth, clientWidth } = this.pickerContainer;
+        const maxScrollLeft = scrollWidth - clientWidth;
+        
+        // Update left arrow
+        if (scrollLeft <= 1) {
+            left.classList.add('disabled');
+        } else {
+            left.classList.remove('disabled');
+        }
+        
+        // Update right arrow
+        if (scrollLeft >= maxScrollLeft - 1) {
+            right.classList.add('disabled');
+        } else {
+            right.classList.remove('disabled');
+        }
     }
     
     /**
@@ -108,6 +161,48 @@ class YearPicker {
         button.setAttribute('data-value', value);
         button.textContent = text;
         return button;
+    }
+    
+    /**
+     * Create scroll indicator arrows
+     */
+    createScrollArrows() {
+        // Create arrows container
+        const arrowsContainer = document.createElement('div');
+        arrowsContainer.className = 'picker-scroll-indicators';
+        
+        // Create left arrow
+        const leftArrow = document.createElement('button');
+        leftArrow.className = 'picker-scroll-arrow picker-scroll-arrow-left';
+        leftArrow.innerHTML = '&larr;';
+        leftArrow.setAttribute('aria-label', 'Scroll left');
+        
+        // Create right arrow
+        const rightArrow = document.createElement('button');
+        rightArrow.className = 'picker-scroll-arrow picker-scroll-arrow-right';
+        rightArrow.innerHTML = '&rarr;';
+        rightArrow.setAttribute('aria-label', 'Scroll right');
+        
+        // Add arrows to container
+        arrowsContainer.appendChild(leftArrow);
+        arrowsContainer.appendChild(rightArrow);
+        
+        // Insert arrows after picker container
+        this.pickerContainer.parentNode.insertBefore(arrowsContainer, this.pickerContainer.nextSibling);
+        
+        // Store references
+        this.scrollArrows = {
+            container: arrowsContainer,
+            left: leftArrow,
+            right: rightArrow
+        };
+        
+        // Add click handlers
+        leftArrow.addEventListener('click', () => this.scrollLeft());
+        rightArrow.addEventListener('click', () => this.scrollRight());
+        
+        // Add scroll listener to update arrow states
+        this.pickerContainer.addEventListener('scroll', () => this.updateScrollIndicators());
     }
     
     /**

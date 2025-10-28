@@ -61,6 +61,47 @@
   font-weight: 800;
 }
 
+/* Scroll indicator arrows */
+.picker-scroll-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.picker-scroll-arrow {
+  background: none;
+  border: 1px solid var(--color-text-secondary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.4em 0.8em;
+  transition: all 0.2s ease;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: var(--step--2);
+}
+
+.picker-scroll-arrow:hover {
+  background-color: var(--color-brand-primary);
+  color: var(--color-surface-light);
+}
+
+.picker-scroll-arrow.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.picker-scroll-arrow.disabled:hover {
+  background: none;
+  color: var(--color-text-secondary);
+}
+
 /* Responsive adjustments */
 @media (max-width: 500px) {
   .picker {
