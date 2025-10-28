@@ -5,6 +5,11 @@
  * Can be used across multiple pages (art fairs, archive, etc.)
  */
 
+// Disable browser scroll restoration to prevent landing in the middle
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 class YearPicker {
     constructor(options = {}) {
         this.pickerContainer = options.pickerContainer || document.querySelector('.picker');
@@ -45,6 +50,15 @@ class YearPicker {
         
         // Initialize with default active year
         this.initializeDefaultSelection();
+        
+        // Make sure we start at the far left
+        requestAnimationFrame(() => { 
+            this.pickerContainer.scrollLeft = 0; 
+            // Force it again after a short delay to override any browser behavior
+            setTimeout(() => {
+                this.pickerContainer.scrollLeft = 0;
+            }, 100);
+        });
     }
     
     /**
@@ -193,6 +207,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const pickerContainer = document.querySelector('.picker');
     if (pickerContainer && !pickerContainer.hasAttribute('data-manual-init')) {
         new YearPicker();
+    }
+});
+
+// Additional force scroll on window load to override any browser restoration
+window.addEventListener('load', function() {
+    const pickerContainer = document.querySelector('.picker');
+    if (pickerContainer) {
+        pickerContainer.scrollLeft = 0;
     }
 });
 

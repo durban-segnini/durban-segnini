@@ -1,6 +1,7 @@
 ---
 title: WOMEN SHAPING ABSTRACTION
 status: past
+featured: true
 startingDate: 2024-06-01
 endingDate: 2024-10-24
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759892901/Copy_of_IMG_2575_fi2hqw.jpg

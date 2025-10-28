@@ -62,15 +62,13 @@ pageScript: carousel.js
     {% endif %}
   {% endfor %}
 {% else %}
-      <div class="event-card">
-        <div class="event-card-content">
-          <h3>No Featured Exhibitions</h3>
-          <p>No featured exhibitions are currently available.</p>
-        </div>
-      </div>
-    {% endif %}
-  </div>
-</section>
+  <section class="hero-wrapper">
+    <article class="hero-content">
+      <h1 class="section-branded-title">No Featured Exhibitions</h1>
+      <p>No featured exhibitions are currently available.</p>
+    </article>
+  </section>
+{% endif %}
 <section class="news-wrapper">
   <h2 class="news-title">Current News</h2>
   <div class="news-content">

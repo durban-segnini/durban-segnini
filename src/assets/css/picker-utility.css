@@ -11,11 +11,13 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 1rem;
-  justify-content: flex-end;
-  /* align-items: center; */
+  justify-content: flex-start; /* Changed from flex-end to flex-start */
   border-top: 1px solid var(--color-brand-primary);
   position: relative;
   padding-bottom: 1rem; /* Add space between years and scrollbar */
+  
+  /* Prevent browser from auto-anchoring mid-strip */
+  overflow-anchor: none;
   
   /* Horizontal scroll styling */
   scrollbar-width: thin;
@@ -23,7 +25,7 @@
 
   @container (max-width: 500px) {
     padding-top: 1rem;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
   }
 }
 
