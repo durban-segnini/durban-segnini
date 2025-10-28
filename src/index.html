@@ -10,61 +10,45 @@ pageScript: carousel.js
 {% set sortedNews = collections.news | sortByDate("desc") %}
 {% set latestNews = sortedNews[0] if sortedNews.length > 0 else null %}
 <main class="main-wrapper">
+{% if featuredExhibitions.length > 0 %}
+  {% for exhibition in featuredExhibitions %}
+    {% if loop.index <= 3 %}
 <section class="hero-wrapper">
   <article class="hero-content">
-    {% if featuredExhibition %}
-      <h1 class="section-branded-title">
-        <a href="{{ featuredExhibition.url }}">{{ featuredExhibition.data.title }}</a>
-      </h1>
-      <h2>
-        {% if featuredExhibition.data.startingDate and featuredExhibition.data.endingDate %}
-          <time datetime="{{ featuredExhibition.data.startingDate }}">{{ featuredExhibition.data.startingDate | formatHumanDate }}</time>
-          -
-          <time datetime="{{ featuredExhibition.data.endingDate }}">{{ featuredExhibition.data.endingDate | formatHumanDate }}</time>
-        {% elif featuredExhibition.data.date_range %}
-          {{ featuredExhibition.data.date_range }}
-        {% endif %}
-      </h2>
-      <p>
-        {{ featuredExhibition.content | safe }}
-      </p>
-    {% else %}
-      <h1 class="section-branded-title">
-        <a href="exhibition.html">Light for the Amazon</a>
-      </h1>
-      <h2>
-        <time datetime="2025-09-11">September 11</time>
+    <h1 class="section-branded-title">
+      <a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a>
+    </h1>
+    <h2>
+      {% if exhibition.data.startingDate and exhibition.data.endingDate %}
+        <time datetime="{{ exhibition.data.startingDate }}">{{ exhibition.data.startingDate | formatHumanDate }}</time>
         -
-        <time datetime="2025-10-24">October 24, 2025</time>
-      </h2>
-      <p>
-        Durban Segnini Gallery is pleased to announce
-        <strong>Light for the Amazon</strong>, an exhibition organized by Omar López-Chahoud with a selection of works from the
-          gallery's collection. With a focus on modern and contemporary art this selection of works highlights some of the most
-          important Latin American 20th century masters in conversation with contemporary artists from different generations and
-          diverse backgrounds. The works on view range from geometric abstraction to loose figuration, reflecting at times on a
-          cross cultural dialogue nurtured by references to pre-Hispanic visual languages.
-      </p>
-    {% endif %}
+        <time datetime="{{ exhibition.data.endingDate }}">{{ exhibition.data.endingDate | formatHumanDate }}</time>
+      {% elif exhibition.data.date_range %}
+        {{ exhibition.data.date_range }}
+      {% endif %}
+    </h2>
+    <p>
+      {{ exhibition.content | safe }}
+    </p>
   </article>
   <div class="hero-image">
     <div class="hero-carousel">
-      {% if featuredExhibition and featuredExhibition.data.photos and featuredExhibition.data.photos.length > 0 %}
-        {% for photo in featuredExhibition.data.photos %}
+      {% if exhibition.data.photos and exhibition.data.photos.length > 0 %}
+        {% for photo in exhibition.data.photos %}
           <img
             src="{{ photo.image or 'https://placehold.co/700x500' }}"
-            alt="{{ featuredExhibition.data.title }} - Exhibition Photo {{ loop.index }}"
+            alt="{{ exhibition.data.title }} - Exhibition Photo {{ loop.index }}"
             class="carousel-image{% if loop.first %} active{% endif %}"
             {% if not loop.first %}loading="lazy"{% endif %}
-            data-title="{{ featuredExhibition.data.title }}"
+            data-title="{{ exhibition.data.title }}"
             data-caption="Exhibition Photo {{ loop.index }}"/>
         {% endfor %}
-      {% elif featuredExhibition and featuredExhibition.data.poster %}
+      {% elif exhibition.data.poster %}
         <img
-          src="{{ featuredExhibition.data.poster }}"
-          alt="{{ featuredExhibition.data.title }} - Exhibition Poster"
+          src="{{ exhibition.data.poster }}"
+          alt="{{ exhibition.data.title }} - Exhibition Poster"
           class="carousel-image active"
-          data-title="{{ featuredExhibition.data.title }}"
+          data-title="{{ exhibition.data.title }}"
           data-caption="Exhibition Poster"/>
       {% endif %}
     </div>
@@ -75,38 +59,9 @@ pageScript: carousel.js
     </div>
   </div>
 </section>
-<section class="featured-exhibitions">
-  <h2 class="section-title">Featured Exhibitions</h2>
-  <div class="event-listing-wrapper">
-    {% if featuredExhibitions.length > 0 %}
-      {% for exhibition in featuredExhibitions %}
-        {% if loop.index <= 3 %}
-        <div class="event-card">
-          <div class="event-card-content">
-            <h3><a href="{{ exhibition.url }}">{{ exhibition.data.title }}</a></h3>
-            {% if exhibition.data.startingDate and exhibition.data.endingDate %}
-              <p>{{ exhibition.data.startingDate | formatHumanDate }} — {{ exhibition.data.endingDate | formatHumanDate }}</p>
-            {% elif exhibition.data.startingDate %}
-              <p>{{ exhibition.data.startingDate | formatHumanDate }}</p>
-            {% elif exhibition.data.date_range %}
-              <p>{{ exhibition.data.date_range }}</p>
-            {% endif %}
-          </div>
-          {% if exhibition.data.poster or exhibition.data.hero_image %}
-          <div class="event-card-image">
-            <figure>
-              {% if exhibition.data.poster %}
-                <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" />
-              {% elif exhibition.data.hero_image %}
-                <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" />
-              {% endif %}
-            </figure>
-          </div>
-          {% endif %}
-        </div>
-        {% endif %}
-      {% endfor %}
-    {% else %}
+    {% endif %}
+  {% endfor %}
+{% else %}
       <div class="event-card">
         <div class="event-card-content">
           <h3>No Featured Exhibitions</h3>

@@ -1,16 +1,17 @@
 /**
- * Hero Carousel Functionality
+ * Carousel Functionality
  * Handles image carousel with fade transitions
  * Supports next/previous navigation with smooth ease-in-out transitions
+ * Works for both hero carousel and exhibition carousels
  */
 
-class HeroCarousel {
-    constructor() {
-        this.carousel = document.querySelector('.hero-carousel');
-        this.images = document.querySelectorAll('.carousel-image');
-        this.prevButton = document.querySelector('.hero-arrow-prev');
-        this.nextButton = document.querySelector('.hero-arrow-next');
-        this.figcaption = document.querySelector('.hero-fitcaption');
+class Carousel {
+    constructor(container) {
+        this.carousel = container;
+        this.images = container.querySelectorAll('.carousel-image');
+        this.prevButton = container.parentElement.querySelector('.hero-arrow-prev, .exhibition-arrow-prev');
+        this.nextButton = container.parentElement.querySelector('.hero-arrow-next, .exhibition-arrow-next');
+        this.figcaption = container.parentElement.querySelector('.hero-fitcaption');
         this.currentIndex = 0;
         this.isTransitioning = false;
         
@@ -100,8 +101,12 @@ class HeroCarousel {
 
 // Auto-initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    new HeroCarousel();
+    // Initialize all hero carousels (multiple hero sections)
+    const heroCarousels = document.querySelectorAll('.hero-carousel');
+    heroCarousels.forEach(carousel => {
+        new Carousel(carousel);
+    });
 });
 
 // Export for manual initialization if needed
-window.HeroCarousel = HeroCarousel;
+window.Carousel = Carousel;
