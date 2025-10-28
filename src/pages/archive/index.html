@@ -1,10 +1,10 @@
 ---
 layout: base.njk
-title: Archive - Duran Segnini Gallery
+title: Archive - Durban Segnini Gallery
 pageScript: picker-utility.js
 ---
 
-<main class="main-wrapper grid-stack">
+<main class="main-wrapper grid-stack archive-page">
   <section class="section-intro">
     <h1 class="section-title">Archives</h1>
     <div class="picker">
@@ -42,17 +42,17 @@ pageScript: picker-utility.js
               </p>
             {% endif %}
           </div>
+          {% if exhibition.data.poster or exhibition.data.hero_image %}
           <div class="event-card-image">
             <figure>
               {% if exhibition.data.poster %}
                 <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" />
               {% elif exhibition.data.hero_image %}
                 <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" />
-              {% else %}
-                <img src="https://placehold.co/600x400" alt="{{ exhibition.data.title }}" />
               {% endif %}
             </figure>
           </div>
+          {% endif %}
         </div>
       {% endfor %}
     {% else %}
