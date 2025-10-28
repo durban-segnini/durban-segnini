@@ -164,9 +164,18 @@ class YearPicker {
     }
     
     /**
-     * Create scroll indicator arrows
+     * Create scroll indicator arrows (only for archive page)
      */
     createScrollArrows() {
+        // Only create arrows on the archive page
+        const isArchivePage = document.body.classList.contains('archive-page') || 
+                             window.location.pathname.includes('/archive') ||
+                             document.querySelector('.archive-page');
+        
+        if (!isArchivePage) {
+            return;
+        }
+        
         // Create arrows container
         const arrowsContainer = document.createElement('div');
         arrowsContainer.className = 'picker-scroll-indicators';
