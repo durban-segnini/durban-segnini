@@ -1,7 +1,7 @@
 ---
-title: "Fernando de Szyszlo – Elogio de la Sombra"
+title: "Fernando De Szyszlo: Elogio de la Sombra"
 status: past
-startingDate: 2015-02-20
+startingDate: 2003-10-01
 works: []
 ---
 
