@@ -13,7 +13,7 @@ photos:
 
 <br>
 
-#### **Durban Segnini Gallery is pleased to announce the exhibition *1994-95 | Mapping Relations | Balteo-Yazbeck | 2025*, by Venezuelan artist Alessandro Balteo-Yazbeck.**
+#### Durban Segnini Gallery is pleased to announce the exhibition *1994-95 | Mapping Relations | Balteo-Yazbeck | 2025*, by Venezuelan artist Alessandro Balteo-Yazbeck.
 
 <br>
 
