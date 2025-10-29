@@ -124,7 +124,6 @@ footer {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  text-transform: uppercase;
 }
 
 .newsletter-form input::placeholder {
