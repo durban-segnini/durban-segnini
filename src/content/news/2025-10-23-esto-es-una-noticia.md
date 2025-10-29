@@ -1,5 +1,15 @@
 ---
-title: Esto es una noticia
-date: 2025-10-24
+title: "Upcming "
+date: 2025-10-29
 ---
-Esto es ejemplo nada mas.
+Upcoming: 
+
+*1994–95 | Mapping Relations | Balteo-Yazbeck | 2025* 
+
+Alessandro Balteo-Yazbeck solo show opening **Saturday November 22, 6-10pm.** 
+
+<br>
+
+ART MIAMI 
+
+December 2-7
