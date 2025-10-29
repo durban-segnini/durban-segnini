@@ -124,7 +124,6 @@ footer {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  text-transform: uppercase;
 }
 
 .newsletter-form input::placeholder {
@@ -184,4 +183,17 @@ footer {
       "email"
       "submit";
   }
+}
+
+/* Mailchimp responses: visually hidden (readable for script, no layout shift) */
+#mce-responses {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }

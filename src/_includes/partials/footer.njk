@@ -49,27 +49,90 @@
         <p class="newsletter-intro">
           To be the first to know about our latest exhibitions, as well as events, news and more, sign up for our newsletter:
         </p>
-        <form class="newsletter-form" action="#" method="post" novalidate>
+        <form action="https://durbansegnini.us13.list-manage.com/subscribe/post?u=533045574fc769f44ab9043f5&amp;id=ec946f2891&amp;f_id=008202e9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form" novalidate>
           <div class="form-group form-group--name">
-            <label for="newsletter-name" class="visually-hidden">Name</label>
-            <input type="text" id="newsletter-name" name="name" placeholder="NAME" required aria-label="Enter your name"/>
+            <label for="mce-FNAME" class="visually-hidden">Name</label>
+            <input type="text" id="mce-FNAME" name="FNAME" placeholder="NAME" required aria-label="Enter your name"/>
           </div>
           <div class="form-group form-group--email">
-            <label for="newsletter-email" class="visually-hidden">Email</label>
+            <label for="mce-EMAIL" class="visually-hidden">Email</label>
             <input
               type="email"
-              id="newsletter-email"
-              name="email"
+              id="mce-EMAIL"
+              name="EMAIL"
               placeholder="EMAIL"
               required
               aria-label="Enter your email address"/>
           </div>
+          <input type="hidden" id="mce-FNAME-HIDDEN" name="FNAME" value="" />
+          <input type="hidden" id="mce-LNAME" name="LNAME" value="" />
+          <div id="mce-responses">
+            <div class="response" id="mce-error-response"></div>
+            <div class="response" id="mce-success-response"></div>
+          </div>
+          <div aria-hidden="true" style="position: absolute; left: -5000px;">
+            <input type="text" name="b_533045574fc769f44ab9043f5_ec946f2891" tabindex="-1" value="">
+          </div>
           <div class="form-group form-group--submit">
-            <button type="submit" class="newsletter-submit-btn">
+            <button type="submit" id="mc-embedded-subscribe" name="subscribe" class="newsletter-submit-btn">
               SUBSCRIBE
             </button>
           </div>
         </form>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+        (function(){
+          var successEl = document.getElementById('mce-success-response');
+          var formEl = document.getElementById('mc-embedded-subscribe-form');
+          if (!formEl) return;
+
+          var visibleName = document.getElementById('mce-FNAME');
+          var hiddenFirst = document.getElementById('mce-FNAME-HIDDEN');
+          var hiddenLast = document.getElementById('mce-LNAME');
+          var submitBtn = document.getElementById('mc-embedded-subscribe');
+
+          function populateHiddenNameFields() {
+            var full = (visibleName && visibleName.value ? visibleName.value : '').trim();
+            var first = '';
+            var last = '';
+            if (full.length > 0) {
+              var parts = full.split(/\s+/);
+              first = parts.shift() || '';
+              last = parts.join(' ');
+            }
+            if (hiddenFirst) hiddenFirst.value = first;
+            if (hiddenLast) hiddenLast.value = last;
+            // Rename the visible field so Mailchimp ignores it; hidden fields carry the data
+            if (visibleName) visibleName.setAttribute('name', 'FULLNAME');
+          }
+
+          // Populate hidden fields before Mailchimp handler using capture phase; avoid UI changes
+          formEl.addEventListener('submit', function(){ populateHiddenNameFields(); }, true);
+
+          // Ensure keyboard activation submits reliably
+          if (submitBtn) {
+            submitBtn.addEventListener('keydown', function(e){
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (formEl.requestSubmit) formEl.requestSubmit(submitBtn);
+                else formEl.submit();
+              }
+            });
+          }
+
+          if (!successEl) return;
+          var contentEl = formEl.closest('.newsletter-content');
+          var observer = new MutationObserver(function(){
+            if (successEl.textContent && successEl.textContent.trim().length > 0) {
+              if (contentEl) {
+                contentEl.innerHTML = '<p class="newsletter-intro">Thanks for subscribing.</p>';
+              }
+              observer.disconnect();
+            }
+          });
+          observer.observe(successEl, { childList: true, subtree: true, characterData: true });
+        })();
+        </script>
       </div>
     </div>
   </div>
