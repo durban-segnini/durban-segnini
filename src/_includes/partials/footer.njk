@@ -49,7 +49,7 @@
         <p class="newsletter-intro">
           To be the first to know about our latest exhibitions, as well as events, news and more, sign up for our newsletter:
         </p>
-        <form action="https://durbansegnini.us13.list-manage.com/subscribe/post?u=533045574fc769f44ab9043f5&amp;id=ec946f2891&amp;f_id=008202e9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form" target="_blank" novalidate>
+        <form action="https://durbansegnini.us13.list-manage.com/subscribe/post?u=533045574fc769f44ab9043f5&amp;id=ec946f2891&amp;f_id=008202e9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form" novalidate>
           <div class="form-group form-group--name">
             <label for="mce-FNAME" class="visually-hidden">Name</label>
             <input type="text" id="mce-FNAME" name="FNAME" placeholder="NAME" required aria-label="Enter your name"/>
@@ -64,7 +64,7 @@
               required
               aria-label="Enter your email address"/>
           </div>
-          <div id="mce-responses" style="display: none;">
+          <div id="mce-responses">
             <div class="response" id="mce-error-response"></div>
             <div class="response" id="mce-success-response"></div>
           </div>
@@ -78,7 +78,23 @@
           </div>
         </form>
         <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+        (function(){
+          var successEl = document.getElementById('mce-success-response');
+          var formEl = document.getElementById('mc-embedded-subscribe-form');
+          if (!successEl || !formEl) return;
+          var contentEl = formEl.closest('.newsletter-content');
+          var observer = new MutationObserver(function(){
+            if (successEl.textContent && successEl.textContent.trim().length > 0) {
+              if (contentEl) {
+                contentEl.innerHTML = '<p class="newsletter-intro">Thanks for subscribing.</p>';
+              }
+              observer.disconnect();
+            }
+          });
+          observer.observe(successEl, { childList: true, subtree: true, characterData: true });
+        })();
+        </script>
       </div>
     </div>
   </div>

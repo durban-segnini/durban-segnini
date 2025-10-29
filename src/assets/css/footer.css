@@ -186,22 +186,15 @@ footer {
   }
 }
 
-/* Minimal Mailchimp integration - hide response containers until needed */
+/* Mailchimp responses: visually hidden (readable for script, no layout shift) */
 #mce-responses {
-  grid-column: 1 / -1;
-}
-
-#mce-error-response,
-#mce-success-response {
-  font-size: var(--step--1);
-  text-transform: uppercase;
-  padding: 0.5rem;
-}
-
-#mce-error-response {
-  color: #d32f2f;
-}
-
-#mce-success-response {
-  color: #2e7d32;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
