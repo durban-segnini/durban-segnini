@@ -11,7 +11,7 @@ photos:
 ---
 ## **Opening Saturday November 22, 2025. 6-10pm**
 
-**<b>**
+<br>
 
 **Durban Segnini Gallery is pleased to announce the exhibition *1994-95 | Mapping Relations | Balteo-Yazbeck | 2025*, by Venezuelan artist Alessandro Balteo-Yazbeck.**
 
