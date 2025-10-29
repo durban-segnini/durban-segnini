@@ -64,6 +64,7 @@
               required
               aria-label="Enter your email address"/>
           </div>
+          <input type="hidden" id="mce-LNAME" name="LNAME" value="" />
           <div id="mce-responses">
             <div class="response" id="mce-error-response"></div>
             <div class="response" id="mce-success-response"></div>
@@ -82,7 +83,29 @@
         (function(){
           var successEl = document.getElementById('mce-success-response');
           var formEl = document.getElementById('mc-embedded-subscribe-form');
-          if (!successEl || !formEl) return;
+          if (!formEl) return;
+
+          var nameInput = document.getElementById('mce-FNAME');
+          var lastInput = document.getElementById('mce-LNAME');
+
+          function splitNameIntoFields() {
+            var full = (nameInput && nameInput.value ? nameInput.value : '').trim();
+            var first = '';
+            var last = '';
+            if (full.length > 0) {
+              var parts = full.split(/\s+/);
+              first = parts.shift() || '';
+              last = parts.join(' ');
+            }
+            if (nameInput) nameInput.value = first;
+            if (lastInput) lastInput.value = last;
+          }
+
+          // Ensure split happens BEFORE Mailchimp handler using capture phase
+          formEl.addEventListener('submit', function(){ splitNameIntoFields(); }, true);
+          // No change/blur listeners: avoid modifying the field while the user is typing
+
+          if (!successEl) return;
           var contentEl = formEl.closest('.newsletter-content');
           var observer = new MutationObserver(function(){
             if (successEl.textContent && successEl.textContent.trim().length > 0) {
