@@ -74,7 +74,7 @@
             <input type="text" name="b_533045574fc769f44ab9043f5_ec946f2891" tabindex="-1" value="">
           </div>
           <div class="form-group form-group--submit">
-            <button type="submit" class="newsletter-submit-btn">
+            <button type="submit" id="mc-embedded-subscribe" name="subscribe" class="newsletter-submit-btn">
               SUBSCRIBE
             </button>
           </div>
@@ -89,6 +89,7 @@
           var visibleName = document.getElementById('mce-FNAME');
           var hiddenFirst = document.getElementById('mce-FNAME-HIDDEN');
           var hiddenLast = document.getElementById('mce-LNAME');
+          var submitBtn = document.getElementById('mc-embedded-subscribe');
 
           function populateHiddenNameFields() {
             var full = (visibleName && visibleName.value ? visibleName.value : '').trim();
@@ -107,6 +108,17 @@
 
           // Populate hidden fields before Mailchimp handler using capture phase; avoid UI changes
           formEl.addEventListener('submit', function(){ populateHiddenNameFields(); }, true);
+
+          // Ensure keyboard activation submits reliably
+          if (submitBtn) {
+            submitBtn.addEventListener('keydown', function(e){
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (formEl.requestSubmit) formEl.requestSubmit(submitBtn);
+                else formEl.submit();
+              }
+            });
+          }
 
           if (!successEl) return;
           var contentEl = formEl.closest('.newsletter-content');
