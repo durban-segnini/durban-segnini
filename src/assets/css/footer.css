@@ -185,3 +185,23 @@ footer {
       "submit";
   }
 }
+
+/* Minimal Mailchimp integration - hide response containers until needed */
+#mce-responses {
+  grid-column: 1 / -1;
+}
+
+#mce-error-response,
+#mce-success-response {
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  padding: 0.5rem;
+}
+
+#mce-error-response {
+  color: #d32f2f;
+}
+
+#mce-success-response {
+  color: #2e7d32;
+}
