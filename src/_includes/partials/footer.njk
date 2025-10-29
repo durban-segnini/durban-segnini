@@ -64,6 +64,7 @@
               required
               aria-label="Enter your email address"/>
           </div>
+          <input type="hidden" id="mce-FNAME-HIDDEN" name="FNAME" value="" />
           <input type="hidden" id="mce-LNAME" name="LNAME" value="" />
           <div id="mce-responses">
             <div class="response" id="mce-error-response"></div>
@@ -85,11 +86,12 @@
           var formEl = document.getElementById('mc-embedded-subscribe-form');
           if (!formEl) return;
 
-          var nameInput = document.getElementById('mce-FNAME');
-          var lastInput = document.getElementById('mce-LNAME');
+          var visibleName = document.getElementById('mce-FNAME');
+          var hiddenFirst = document.getElementById('mce-FNAME-HIDDEN');
+          var hiddenLast = document.getElementById('mce-LNAME');
 
-          function splitNameIntoFields() {
-            var full = (nameInput && nameInput.value ? nameInput.value : '').trim();
+          function populateHiddenNameFields() {
+            var full = (visibleName && visibleName.value ? visibleName.value : '').trim();
             var first = '';
             var last = '';
             if (full.length > 0) {
@@ -97,13 +99,14 @@
               first = parts.shift() || '';
               last = parts.join(' ');
             }
-            if (nameInput) nameInput.value = first;
-            if (lastInput) lastInput.value = last;
+            if (hiddenFirst) hiddenFirst.value = first;
+            if (hiddenLast) hiddenLast.value = last;
+            // Rename the visible field so Mailchimp ignores it; hidden fields carry the data
+            if (visibleName) visibleName.setAttribute('name', 'FULLNAME');
           }
 
-          // Ensure split happens BEFORE Mailchimp handler using capture phase
-          formEl.addEventListener('submit', function(){ splitNameIntoFields(); }, true);
-          // No change/blur listeners: avoid modifying the field while the user is typing
+          // Populate hidden fields before Mailchimp handler using capture phase; avoid UI changes
+          formEl.addEventListener('submit', function(){ populateHiddenNameFields(); }, true);
 
           if (!successEl) return;
           var contentEl = formEl.closest('.newsletter-content');
