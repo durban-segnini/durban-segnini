@@ -7,8 +7,8 @@ endingDate: 2025-10-24
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1757548867/Light-for-the-Amazon_Invite-LFTA_infuwz.jpg
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757557562/Copy_of_Press_Release__Light_for_the_Amazon_rfshwv.pdf
 photos:
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759857448/Copy_of_IMG_0198_w2cbcp.jpg
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759857451/Copy_of_IMG_0208_bwmydl.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761926315/_PAP4944_Large_lbiway.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761926315/_PAP4922_Large_xyh6kz.jpg
 works:
   - abreu-eslabon-y-esfera-cp2y
   - puente-untitled-2025-0m2a
