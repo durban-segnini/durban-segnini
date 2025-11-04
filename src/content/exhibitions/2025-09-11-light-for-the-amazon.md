@@ -1,10 +1,10 @@
 ---
 title: Light for the Amazon
-status: current
+status: past
 featured: false
 startingDate: 2025-09-11
 endingDate: 2025-10-24
-poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1757548867/Light-for-the-Amazon_Invite-LFTA_infuwz.jpg
+poster: ""
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757557562/Copy_of_Press_Release__Light_for_the_Amazon_rfshwv.pdf
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761926315/_PAP4944_Large_lbiway.jpg
