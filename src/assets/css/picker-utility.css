@@ -12,7 +12,6 @@
   overflow-x: auto;
   gap: 1rem;
   justify-content: flex-start; /* Changed from flex-end to flex-start */
-  border-top: 1px solid var(--color-brand-primary);
   position: relative;
   padding-bottom: 1rem;
   
@@ -69,9 +68,11 @@
 /* Scroll indicator arrows */
 .picker-scroll-indicators {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+  justify-content: flex-end;
+  gap: 1rem;
   margin-top: 0.5rem;
+  width: 100%;
+  align-items: center;
 }
 
 .picker-scroll-arrow {
