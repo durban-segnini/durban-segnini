@@ -133,7 +133,7 @@ footer {
   
   > :nth-child(2) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     width: 100% !important;
     border-top: 1px solid var(--color-text-secondary);

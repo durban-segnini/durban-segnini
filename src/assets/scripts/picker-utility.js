@@ -52,19 +52,73 @@ class YearPicker {
         // Add event listeners
         this.addEventListeners();
         
-        // Initialize with default active year
+        // Initialize with default active year (should be "All")
         this.initializeDefaultSelection();
         
-        // Make sure we start at the far left
-        requestAnimationFrame(() => { 
-            this.pickerContainer.scrollLeft = 0; 
-            // Force it again after a short delay to override any browser behavior
-            setTimeout(() => {
-                this.pickerContainer.scrollLeft = 0;
-                // Update scroll indicators after forcing scroll position
-                this.updateScrollIndicators();
-            }, 100);
+        // Reset horizontal scroll to far left
+        this.resetHorizontalScroll();
+    }
+    
+    /**
+     * Reset horizontal scroll to far left
+     * Vanilla JS equivalent of useResetHScroll React hook
+     */
+    resetHorizontalScroll() {
+        if (!this.pickerContainer) return;
+        
+        const reset = () => {
+            if (!this.pickerContainer) return;
+            
+            // Temporarily disable scroll snapping so the browser can't re-snap mid-init
+            const prevSnap = this.pickerContainer.style.scrollSnapType;
+            this.pickerContainer.style.scrollSnapType = 'none';
+            
+            // Force a layout read to flush style changes
+            void this.pickerContainer.offsetWidth;
+            
+            // Hard left, twice in case of late width shifts
+            this.pickerContainer.scrollLeft = 0;
+            this.pickerContainer.scrollLeft = 0;
+            
+            // Restore snapping on the next frame
+            requestAnimationFrame(() => {
+                if (this.pickerContainer) {
+                    this.pickerContainer.scrollLeft = 0;
+                    this.pickerContainer.style.scrollSnapType = prevSnap || '';
+                    this.updateScrollIndicators();
+                }
+            });
+        };
+        
+        // Stop window/element scroll restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        
+        // Beat hydration/layout thrash with nested RAFs
+        requestAnimationFrame(() => {
+            reset();
+            requestAnimationFrame(reset);
         });
+        
+        // If web fonts shift widths, reset again
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(reset).catch(() => {});
+        }
+        
+        // One more safety net after the first paint queue
+        setTimeout(reset, 0);
+        
+        // BFCache restore (back/forward)
+        const handlePageShow = (e) => {
+            if (e.persisted && this.pickerContainer) {
+                reset();
+            }
+        };
+        window.addEventListener('pageshow', handlePageShow);
+        
+        // Store cleanup function for pageshow listener
+        this._pageShowHandler = handlePageShow;
     }
     
     /**
@@ -99,12 +153,8 @@ class YearPicker {
         const { scrollLeft, scrollWidth, clientWidth } = this.pickerContainer;
         const maxScrollLeft = scrollWidth - clientWidth;
         
-        // Update left arrow
-        if (scrollLeft <= 1) {
-            left.classList.add('disabled');
-        } else {
-            left.classList.remove('disabled');
-        }
+        // Left arrow is always enabled (never disabled)
+        left.classList.remove('disabled');
         
         // Update right arrow
         if (scrollLeft >= maxScrollLeft - 1) {
@@ -134,7 +184,7 @@ class YearPicker {
         this.pickerContainer.innerHTML = '';
         this.pickerButtons = [];
         
-        // Create "All" button if enabled
+        // Create "All" button if enabled (must be first)
         if (this.includeAllButton) {
             const allButton = this.createPickerButton('All', 'All');
             this.pickerContainer.appendChild(allButton);
@@ -147,6 +197,7 @@ class YearPicker {
             this.pickerContainer.appendChild(button);
             this.pickerButtons.push(button);
         });
+        
     }
     
     /**
@@ -185,12 +236,14 @@ class YearPicker {
         leftArrow.className = 'picker-scroll-arrow picker-scroll-arrow-left';
         leftArrow.innerHTML = '&larr;';
         leftArrow.setAttribute('aria-label', 'Scroll left');
+        leftArrow.setAttribute('tabIndex', '-1'); // Prevent focus stealing
         
         // Create right arrow
         const rightArrow = document.createElement('button');
         rightArrow.className = 'picker-scroll-arrow picker-scroll-arrow-right';
         rightArrow.innerHTML = '&rarr;';
         rightArrow.setAttribute('aria-label', 'Scroll right');
+        rightArrow.setAttribute('tabIndex', '-1'); // Prevent focus stealing
         
         // Add arrows to container
         arrowsContainer.appendChild(leftArrow);
@@ -220,7 +273,13 @@ class YearPicker {
     addEventListeners() {
         this.pickerButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                this.handleButtonClick(e.target);
+                e.preventDefault();
+                e.stopPropagation();
+                // Use currentTarget to ensure we get the button, not a child element
+                const targetButton = e.currentTarget || e.target.closest('.picker-button');
+                if (targetButton) {
+                    this.handleButtonClick(targetButton);
+                }
             });
         });
     }
@@ -230,7 +289,10 @@ class YearPicker {
      * @param {HTMLElement} button - The clicked button
      */
     handleButtonClick(button) {
+        if (!button) return;
+        
         const selectedYear = button.getAttribute('data-value');
+        if (!selectedYear) return;
         
         // Remove active class from all buttons
         this.pickerButtons.forEach(btn => btn.classList.remove('active'));
@@ -314,11 +376,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Additional force scroll on window load to override any browser restoration
+// Additional force scroll on window load (backup for any picker instances)
 window.addEventListener('load', function() {
     const pickerContainer = document.querySelector('.picker');
     if (pickerContainer) {
-        pickerContainer.scrollLeft = 0;
+        // Use nested requestAnimationFrame for safety
+        requestAnimationFrame(() => {
+            pickerContainer.scrollLeft = 0;
+            requestAnimationFrame(() => {
+                pickerContainer.scrollLeft = 0;
+            });
+        });
+        
+        // Reset after fonts are ready (if fonts reflow widths)
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => {
+                pickerContainer.scrollLeft = 0;
+            }).catch(() => {});
+        }
+    }
+});
+
+// Handle bfcache restores globally (backup for any picker instances)
+window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+        const pickerContainer = document.querySelector('.picker');
+        if (pickerContainer) {
+            pickerContainer.scrollLeft = 0;
+        }
     }
 });
 

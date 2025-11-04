@@ -19,6 +19,13 @@
   gap: 3rem;
   width: 90%;
   justify-self: right;
+  
+  /* Prevent scroll anchoring from event list mutations affecting the picker */
+  overflow-anchor: none;
+  
+  & * {
+    overflow-anchor: none;
+  }
 
   @container (max-width: 500px) {
     width: 100%;
