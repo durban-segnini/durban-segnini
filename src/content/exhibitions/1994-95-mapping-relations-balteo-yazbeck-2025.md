@@ -12,6 +12,7 @@ photos:
 
 #### Opening Saturday November 22, 2025. 6-10pm
 
+
 #### Durban Segnini Gallery is pleased to announce the first solo exhibition of Alessandro Balteo-Yazbeck with the gallery. 
 
 This exhibition re-stages and recontextualizes projects conceived in Caracas three decades ago that resonate with our current global situation; tracing the evolution of subjects of material relations, displacement, and systemic interconnection over time.
