@@ -1,5 +1,5 @@
 ---
-title: "Upcming "
+title: "Upcoming "
 date: 2025-10-29
 ---
 # **Upcoming:**
