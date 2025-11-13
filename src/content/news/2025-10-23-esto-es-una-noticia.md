@@ -2,7 +2,7 @@
 title: "Upcoming "
 date: 2025-10-29
 ---
-Durban Segnini Gallery will be participating in these upcoming Art Fairs:
+Durban Segnini Gallery is pleased to announce its participation in the 2025/2026 editions of:
 
 <br>
 
