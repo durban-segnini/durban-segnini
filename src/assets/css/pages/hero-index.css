@@ -38,9 +38,9 @@
   text-transform: uppercase;
 }
 
-.hero-content p {
-  padding-top: 2em;
-  hyphens: auto;
+.hero-content-text {
+  --flow-space: 1em;
+  margin-top: 3em;
 }
 
 .hero-image {
