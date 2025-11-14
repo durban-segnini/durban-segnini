@@ -78,8 +78,20 @@ collections:
                   quality: auto
                   crop: limit
                   flags: progressive
-      - { name: short_bio, label: Short Bio, widget: markdown, required: false }
-      - { name: body, label: Bio, widget: markdown, required: false }
+      - name: short_bio
+        label: Short Bio
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
+        editor_components: []
+        modes: [rich_text]      
+      - name: body
+        label: Bio
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
+        editor_components: []
+        modes: [rich_text]    
 
   - name: works
     label: Works
@@ -133,7 +145,13 @@ collections:
                   flags: progressive
 
       # ——— Full description in the Markdown BODY (not just front matter)
-      - { name: body, label: Description, widget: markdown, required: false }
+      - name: body
+        label: Description
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
+        editor_components: []
+        modes: [rich_text]          
 
       # Optional: lock the default 11ty template for a work page
       # - { name: layout, widget: hidden, default: "work.njk" }
@@ -222,6 +240,7 @@ collections:
         required: false
         allow_add: true
         collapsed: false
+        hint: "Due to layout constraints, add exhibition photos in pairs"
         fields:
           - name: image
             label: Photo
@@ -251,8 +270,13 @@ collections:
         display_fields: [work_id, title, artist, year]
 
       # ——— Page copy (Markdown body)
-      - { name: body, label: Notes / Description, widget: markdown, required: false }
-
+      - name: body
+        label: Notes / Description
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
+        editor_components: []
+        modes: [rich_text]
       # Optional: lock the template used by 11ty for exhibitions
       # - { name: layout, widget: hidden, default: "exhibition.njk" }
 
@@ -274,7 +298,14 @@ collections:
       - { name: title, label: Title, widget: string }
       - { name: year,  label: Year,  widget: number }
       # Artists are typed into the Markdown body—one per line / list—no relations needed.
-      - { name: body,  label: List of Artists, widget: markdown }
+      - name: body
+        label: List of Artists
+        widget: markdown
+        required: false
+        buttons: [bulleted-list]
+        editor_components: []
+        modes: [rich_text]
+        hint: "The layout expects a list of artists (one per bullet point)"
 
       # Optional: lock the template
       # - { name: layout, widget: hidden, default: "artfair.njk" }
@@ -300,4 +331,11 @@ collections:
         format: "YYYY-MM-DD"   # store date-only string
         time_format: false     # no time portion
         picker_utc: true       # avoid TZ shifts
-      - { name: body, label: Body, widget: markdown }
+      - name: body
+        label: Body
+        widget: markdown
+        required: true
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
+        editor_components: []
+        modes: [rich_text]
+        hint: "Add <br> tags to create line breaks between paragraphs"
