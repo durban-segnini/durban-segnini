@@ -4,10 +4,10 @@ status: past
 featured: false
 startingDate: 2025-09-11
 endingDate: 2025-10-24
-poster: ""
+poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1763141435/_PAP4944_mersjo.jpg
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1757557562/Copy_of_Press_Release__Light_for_the_Amazon_rfshwv.pdf
 photos:
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761926315/_PAP4944_Large_lbiway.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1763141435/_PAP4944_mersjo.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761926315/_PAP4922_Large_xyh6kz.jpg
 works:
   - abreu-eslabon-y-esfera-cp2y
