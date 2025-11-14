@@ -8,6 +8,8 @@ poster: ""
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761754107/ABY_blackboard_detail_1_xkvnjr.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761760651/23_ABY_George_Pompidou_wpyk8a.jpg
+works:
+  - balteo-yazbeck-3-corrupted-files-from-page-10-from-the-series-los-manolos-plan-caracas-no-2-1974-1976-sekb
 ---
 > **Opening Saturday November 22, 2025. 6-10pm**
 
