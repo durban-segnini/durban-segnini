@@ -15,7 +15,7 @@ pageScript: alphabetical-picker.js
     </section>
     <section>
       <div class="artist-card-list cq-grid">
-        {% for artist in collections.artists %}
+        {% for artist in collections.galleryArtists %}
         <a href="{{ artist.url }}" class="artist-card-link">
           <figure class="artist-card">
             {% if artist.data.portrait %}
