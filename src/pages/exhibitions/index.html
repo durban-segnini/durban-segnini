@@ -4,17 +4,17 @@ title: Exhibitions - Duran Segnini Gallery
 ---
 
 <main class="main-wrapper grid-stack">
-  <section class="section-intro">
-    <h1 class="section-title">Current Exhibition</h1>
-    <div class="picker">
-      <!-- Picker removed but keeping div for styling -->
-    </div>
-  </section>
-  
   <!-- Current Exhibitions Section -->
-  <section class="event-listing-wrapper exhibitions-layout">
-    {% set currentExhibitions = collections.exhibitions | where("status", "current") %}
-    {% if currentExhibitions.length > 0 %}
+  {% set currentExhibitions = collections.exhibitions | where("status", "current") %}
+  {% if currentExhibitions.length > 0 %}
+    <section class="section-intro">
+      <h1 class="section-title">Current Exhibitions</h1>
+      <div class="picker">
+        <!-- Picker removed but keeping div for styling -->
+      </div>
+    </section>
+    
+    <section class="event-listing-wrapper exhibitions-layout">
       {% for exhibition in currentExhibitions %}
         {% set artists = exhibition | getArtistsFromWorks(collections.works) %}
         <div class="event-card">
@@ -54,15 +54,8 @@ title: Exhibitions - Duran Segnini Gallery
           {% endif %}
         </div>
       {% endfor %}
-    {% else %}
-      <div class="event-card">
-        <div class="event-card-content">
-          <h3>No Current Exhibitions</h3>
-          <p>No current exhibitions are currently on display.</p>
-        </div>
-      </div>
-    {% endif %}
-  </section>
+    </section>
+  {% endif %}
 
   <!-- Upcoming Exhibitions Section -->
   {% set upcomingExhibitions = collections.exhibitions | where("status", "upcoming") %}
