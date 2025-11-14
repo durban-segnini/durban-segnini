@@ -26,12 +26,25 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
 
   // Artists collection: sorted alphabetically by artist name (case & accent insensitive)
+  // This includes ALL artists (gallery and guest) for use in exhibitions and other contexts
   eleventyConfig.addCollection("artists", c =>
     c.getFilteredByGlob("src/content/artists/*.md").sort((a, b) => {
       const an = (a.data.name || '').trim();
       const bn = (b.data.name || '').trim();
       return an.localeCompare(bn, 'en', { sensitivity: 'base' });
     })
+  );
+  
+  // Gallery artists collection: excludes guest artists (is_guest_artist !== true)
+  // Used for the main artists listing page
+  eleventyConfig.addCollection("galleryArtists", c =>
+    c.getFilteredByGlob("src/content/artists/*.md")
+      .filter(artist => !artist.data.is_guest_artist)
+      .sort((a, b) => {
+        const an = (a.data.name || '').trim();
+        const bn = (b.data.name || '').trim();
+        return an.localeCompare(bn, 'en', { sensitivity: 'base' });
+      })
   );
   eleventyConfig.addCollection("works", c => c.getFilteredByGlob("src/content/works/*.md"));
   eleventyConfig.addCollection("exhibitions", c => c.getFilteredByGlob("src/content/exhibitions/*.md"));

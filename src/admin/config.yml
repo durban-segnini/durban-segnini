@@ -63,6 +63,7 @@ collections:
       - { name: computed_slug, label: Computed Slug, widget: hidden, required: false }
       - { name: year_of_birth, label: Year of Birth, widget: string, required: false }
       - { name: year_of_death, label: Year of Death, widget: string, required: false }
+      - { name: is_guest_artist, label: Guest Artist, widget: boolean, default: false, required: false, hint: "Enable for artists not represented by the gallery" }
       - name: portrait
         label: Portrait
         widget: image
