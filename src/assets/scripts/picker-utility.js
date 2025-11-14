@@ -109,6 +109,9 @@ class YearPicker {
         // One more safety net after the first paint queue
         setTimeout(reset, 0);
         
+        // Ensure arrow visibility reflects latest layout
+        requestAnimationFrame(() => this.updateArrowVisibility());
+        
         // BFCache restore (back/forward)
         const handlePageShow = (e) => {
             if (e.persisted && this.pickerContainer) {
@@ -153,14 +156,35 @@ class YearPicker {
         const { scrollLeft, scrollWidth, clientWidth } = this.pickerContainer;
         const maxScrollLeft = scrollWidth - clientWidth;
         
-        // Left arrow is always enabled (never disabled)
-        left.classList.remove('disabled');
+        // Update left arrow
+        if (scrollLeft <= 1) {
+            left.classList.add('disabled');
+        } else {
+            left.classList.remove('disabled');
+        }
         
         // Update right arrow
         if (scrollLeft >= maxScrollLeft - 1) {
             right.classList.add('disabled');
         } else {
             right.classList.remove('disabled');
+        }
+    }
+    
+    /**
+     * Show or hide arrows based on overflow
+     */
+    updateArrowVisibility() {
+        if (!this.scrollArrows) return;
+        
+        const hasOverflow = (this.pickerContainer.scrollWidth - this.pickerContainer.clientWidth) > 1;
+        this.scrollArrows.container.style.display = hasOverflow ? 'flex' : 'none';
+        
+        if (!hasOverflow) {
+            this.scrollArrows.left.classList.add('disabled');
+            this.scrollArrows.right.classList.add('disabled');
+        } else {
+            this.updateScrollIndicators();
         }
     }
     
@@ -218,12 +242,16 @@ class YearPicker {
      * Create scroll indicator arrows (only for archive page)
      */
     createScrollArrows() {
-        // Only create arrows on the archive page
-        const isArchivePage = document.body.classList.contains('archive-page') || 
-                             window.location.pathname.includes('/archive') ||
-                             document.querySelector('.archive-page');
+        // Only create arrows on pages that use the year ribbon (Archive + Art Fairs)
+        const hasArchiveMarker = document.body.classList.contains('archive-page') ||
+                                 window.location.pathname.includes('/archive') ||
+                                 document.querySelector('.archive-page');
+        const hasArtfairsMarker = document.body.classList.contains('artfairs-page') ||
+                                  window.location.pathname.includes('/artfairs') ||
+                                  document.querySelector('.artfairs-page');
+        const shouldCreateArrows = hasArchiveMarker || hasArtfairsMarker;
         
-        if (!isArchivePage) {
+        if (!shouldCreateArrows) {
             return;
         }
         
@@ -265,6 +293,13 @@ class YearPicker {
         
         // Add scroll listener to update arrow states
         this.pickerContainer.addEventListener('scroll', () => this.updateScrollIndicators());
+        
+        // Update arrow visibility immediately
+        this.updateArrowVisibility();
+        
+        // Re-evaluate on resize to handle layout changes
+        this._handleResize = () => this.updateArrowVisibility();
+        window.addEventListener('resize', this._handleResize);
     }
     
     /**

@@ -123,8 +123,9 @@ footer {
   }
 }
 
-/* Archive page specific override - disable 2-grid system */
-.archive-page .section-intro {
+/* Archive & Art Fairs page override - disable 2-grid system */
+.archive-page .section-intro,
+.artfairs-page .section-intro {
   display: block !important;
   
   .section-title {
