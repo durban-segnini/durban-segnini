@@ -4,6 +4,7 @@ last_name: Dipierro
 name: Dipierro, Marcolina
 computed_slug: dipierro-marcolina
 year_of_birth: Buenos Aires, Argentina 1962
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1763144416/HEADER-1_copy_gwr3se.jpg
 short_bio: Marcolina Dipierro is an Argentine abstract artist whose work
   examines formal aspects of modern architecture and design in contrast with a
   diverse range of materials ranging from organic to industrial elements. Her
