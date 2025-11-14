@@ -4,6 +4,7 @@ last_name: Atchugarry
 name: Atchugarry, Pablo
 computed_slug: atchugarry-pablo
 year_of_birth: "1954"
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1763144173/Screenshot_2025-11-14_at_1.15.09_PM_k5qxcs.png
 short_bio: Painter and sculptor. His father, who trained under Constructivist
   artist Joaquin Torres Garcia, guided and encouraged him to take up painting.
   At an early age he showed his works which employed different forms and
