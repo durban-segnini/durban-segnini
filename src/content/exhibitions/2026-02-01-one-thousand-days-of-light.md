@@ -11,8 +11,6 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759823147/6L1000695-Edit_wmex8r.jpg
 works:
   - arzuaga-untitled-2025-jux6
-  - arzuaga-untitled-2024-uvo3
-  - arzuaga-untitled-2023-wn41
 ---
 One Thousand Days of Light is a major upcoming exhibition that brings together works from across our gallery's program to explore themes of illumination, both literal and metaphorical. The exhibition will feature works by Mario Abreu, Ana Silva, Carlos Mendoza, and Maria Rodriguez.
 
