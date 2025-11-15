@@ -4,4 +4,3 @@ year: 1998
 ---
 - Leonardo Da Vinci
 - Miguel Angel
-- Rafael
