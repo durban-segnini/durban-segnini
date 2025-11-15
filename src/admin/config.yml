@@ -290,8 +290,8 @@ collections:
     format: frontmatter
     extension: md
 
-    # filename like "2025-art-basel-miami-beach.md"
-    slug: "{{ year }}-{{ title | slugify }}"
+    # filename like "2024-art-basel-miami-beach.md"
+    slug: "{{ fields.year }}-{{ title | slugify }}"
     identifier_field: title
     summary: "{{ fields.year }} — {{ title }}"
 

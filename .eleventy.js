@@ -81,6 +81,16 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  // Add sortByYear filter for sorting collections by year (number field)
+  eleventyConfig.addFilter("sortByYear", (collection, order = "desc") => {
+    if (!Array.isArray(collection)) return collection;
+    return [...collection].sort((a, b) => {
+      const yearA = a.data?.year || 0;
+      const yearB = b.data?.year || 0;
+      return order === "desc" ? yearB - yearA : yearA - yearB;
+    });
+  });
+
   // Add date filter for formatting dates
   eleventyConfig.addFilter("date", (date, format) => {
     if (!date) return '';
