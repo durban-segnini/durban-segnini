@@ -1,7 +1,7 @@
 ---
 first_name: Leonardo
-last_name: Da Vinci
-name: Da Vinci, Leonardo
+last_name: da Vinci
+name: da Vinci, Leonardo
 computed_slug: da-vinci-leonardo
 year_of_birth: "1452"
 year_of_death: "1519"
