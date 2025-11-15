@@ -6,14 +6,14 @@ Durban Segnini Gallery is pleased to announce its participation in the 2025/2026
 
 <br>
 
-# ART MIAMI
+**ART MIAMI**
 
-### **BOOTH AM126**
+BOOTH AM126
 
-2 – 7 DECEMBER  | 2025
+2 - 7 DECEMBER | 2025
 
 <br>
 
-# ZONAMACO MÉXICO
+**ZONAMACO MÉXICO**
 
-4 – 8 FEBRUARY | 2026
+4 - 8 FEBRUARY | 2026
