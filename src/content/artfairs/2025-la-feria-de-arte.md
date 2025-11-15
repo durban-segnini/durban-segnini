@@ -2,6 +2,5 @@
 title: La Feria de Arte
 year: 1998
 ---
-\- Leonardo Da Vinci
-
-\- Miguel Angel
+* Leonardo
+* Miguelangel
