@@ -12,6 +12,8 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761926315/_PAP4922_Large_xyh6kz.jpg
 works:
   - da-vinci-mona-lisa-4bt6
+  - arzuaga-untitled-2023-wn41
+  - atchugarry-untitled-2020-d97d
 ---
 **Da Vinci: Visions of the Infinite** presents a curated exploration of Leonardo da Vinci’s lesser-known notebooks, conceptual sketches, and imaginative designs. This fictional exhibition highlights the breadth of his visionary thinking — from celestial diagrams and mechanical inventions to poetic studies of the natural world.
 
