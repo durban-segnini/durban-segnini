@@ -1,7 +1,7 @@
 ---
 title: "Da Vinci: Visions of the Infinite"
 status: upcoming
-featured: true
+featured: false
 startingDate: 2025-11-25
 endingDate: 2025-11-29
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1759897243/Copy_of_ARTE-In-Side-Inside-NEW_eslayx.pdf
