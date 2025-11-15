@@ -1,6 +1,0 @@
----
-title: La Feria de Arte
-year: 1998
----
-* Leonardo
-* Miguelangel
