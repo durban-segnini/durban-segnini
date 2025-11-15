@@ -1,7 +1,7 @@
 ---
 work_id: da-vinci-mona-lisa-4bt6
 title: Mona Lisa
-artist: Da Vinci, Leonardo
+artist: Balteo-Yazbeck, Alessandro
 year: "1503"
 medium: Oleo
 dimensions: 12 x 15 cms
