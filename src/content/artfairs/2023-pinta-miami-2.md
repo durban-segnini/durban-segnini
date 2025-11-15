@@ -1,5 +1,5 @@
 ---
-title: ZONAMANCO
+title: ZONAMACO
 year: 2023
 date: 2023-11-29
 ---
