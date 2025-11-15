@@ -303,10 +303,10 @@ collections:
         label: List of Artists
         widget: markdown
         required: false
-        buttons: [bulleted-list]
+        buttons: []
         editor_components: []
-        modes: [rich_text]
-        hint: "The layout expects a list of artists (one per bullet point)"
+        modes: [raw]
+        hint: "The layout expects a list of artists (one per line starting with a hyphen)"
 
       # Optional: lock the template
       # - { name: layout, widget: hidden, default: "artfair.njk" }
