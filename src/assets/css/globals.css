@@ -105,6 +105,11 @@ main a {
   }
 }
 
+/* List items in main content area should use body font size (step-0) */
+main li {
+  font-size: var(--step--1);
+}
+
 figcaption {
   margin-top: 0.5em;
   max-width: 20ch;
