@@ -411,70 +411,107 @@ module.exports = function (eleventyConfig) {
     return false;
   });
 
-  // Helper function to optimize Cloudinary URLs
+  // Helper function to optimize Cloudinary URLs using URL API for robust parsing
   function optimizeCloudinaryUrl(url, options = {}) {
     if (!url || typeof url !== 'string') return url;
     
-    // Check if this is a Cloudinary URL
-    // Pattern: https://res.cloudinary.com/{cloud_name}/image/upload/{transformations}/{image_path}
-    // Transformations are optional and end with a slash
-    const cloudinaryRegex = /(https?:\/\/res\.cloudinary\.com\/[^\/]+\/image\/upload\/)(?:([^\/]+)\/)?(.+)/;
-    const match = url.match(cloudinaryRegex);
-    
-    if (!match) {
-      // Not a Cloudinary URL, return as-is
+    try {
+      // Use native URL API for robust parsing
+      const urlObj = new URL(url);
+      
+      // Check if this is a Cloudinary URL by domain
+      if (!urlObj.hostname.includes('cloudinary.com')) {
+        return url; // Not a Cloudinary URL, return as-is
+      }
+      
+      // Find the insertion point in the pathname
+      // Cloudinary URLs have structure: /{cloud_name}/image/upload/{transformations}/{image_path}
+      const pathParts = urlObj.pathname.split('/').filter(Boolean);
+      const uploadIndex = pathParts.findIndex((part, i) => 
+        part === 'image' && pathParts[i + 1] === 'upload'
+      );
+      
+      if (uploadIndex === -1) {
+        // Doesn't match expected Cloudinary structure, return as-is
+        return url;
+      }
+      
+      // Extract everything before and after the upload segment
+      const beforeUpload = pathParts.slice(0, uploadIndex + 2); // includes 'image' and 'upload'
+      const afterUpload = pathParts.slice(uploadIndex + 2);
+      
+      // Remove existing transformations if present (they're typically the first segment after upload)
+      // Transformations don't contain slashes, so we check if the first segment looks like transformations
+      let imagePathParts = afterUpload;
+      if (afterUpload.length > 0) {
+        const firstSegment = afterUpload[0];
+        // Transformations are comma-separated like "w_800,h_800,c_limit"
+        // If it contains underscores and commas, it's likely transformations
+        if (firstSegment.includes('_') && (firstSegment.includes(',') || firstSegment.match(/^[a-z]_/))) {
+          imagePathParts = afterUpload.slice(1); // Skip the transformation segment
+        }
+      }
+      
+      // Default transformation options for optimal performance
+      const defaultOptions = {
+        fetch_format: 'auto',      // Auto-format (WebP when supported)
+        quality: 'auto:good',       // Auto quality with good compression
+        flags: 'progressive',       // Progressive JPEG loading
+        ...options
+      };
+      
+      // Build transformation string
+      const transformations = [];
+      
+      // Width and height constraints
+      if (defaultOptions.width) {
+        transformations.push(`w_${defaultOptions.width}`);
+      }
+      if (defaultOptions.height) {
+        transformations.push(`h_${defaultOptions.height}`);
+      }
+      if (defaultOptions.crop) {
+        transformations.push(`c_${defaultOptions.crop}`);
+      } else if (defaultOptions.width || defaultOptions.height) {
+        // Default to limit crop if dimensions are specified
+        transformations.push('c_limit');
+      }
+      
+      // Quality
+      if (defaultOptions.quality) {
+        transformations.push(`q_${defaultOptions.quality}`);
+      }
+      
+      // Format
+      if (defaultOptions.fetch_format) {
+        transformations.push(`f_${defaultOptions.fetch_format}`);
+      }
+      
+      // Flags
+      if (defaultOptions.flags) {
+        transformations.push(`fl_${defaultOptions.flags}`);
+      }
+      
+      // Reconstruct the pathname
+      const transformationSegment = transformations.length > 0 
+        ? transformations.join(',') 
+        : '';
+      
+      const newPathParts = [
+        ...beforeUpload,
+        ...(transformationSegment ? [transformationSegment] : []),
+        ...imagePathParts
+      ];
+      
+      urlObj.pathname = '/' + newPathParts.join('/');
+      
+      return urlObj.toString();
+      
+    } catch (error) {
+      // If URL parsing fails, return original URL
+      console.warn('Failed to parse URL for optimization:', url, error);
       return url;
     }
-    
-    const [, baseUrl, existingTransformations, imagePath] = match;
-    
-    // Default transformation options for optimal performance
-    const defaultOptions = {
-      fetch_format: 'auto',      // Auto-format (WebP when supported)
-      quality: 'auto:good',       // Auto quality with good compression
-      flags: 'progressive',       // Progressive JPEG loading
-      ...options
-    };
-    
-    // Build transformation string
-    const transformations = [];
-    
-    // Width and height constraints
-    if (defaultOptions.width) {
-      transformations.push(`w_${defaultOptions.width}`);
-    }
-    if (defaultOptions.height) {
-      transformations.push(`h_${defaultOptions.height}`);
-    }
-    if (defaultOptions.crop) {
-      transformations.push(`c_${defaultOptions.crop}`);
-    } else if (defaultOptions.width || defaultOptions.height) {
-      // Default to limit crop if dimensions are specified
-      transformations.push('c_limit');
-    }
-    
-    // Quality
-    if (defaultOptions.quality) {
-      transformations.push(`q_${defaultOptions.quality}`);
-    }
-    
-    // Format
-    if (defaultOptions.fetch_format) {
-      transformations.push(`f_${defaultOptions.fetch_format}`);
-    }
-    
-    // Flags
-    if (defaultOptions.flags) {
-      transformations.push(`fl_${defaultOptions.flags}`);
-    }
-    
-    // Build the optimized URL
-    // If there are existing transformations, we replace them with our optimized ones
-    const transformationString = transformations.length > 0 
-      ? transformations.join(',') + '/' 
-      : '';
-    
-    return `${baseUrl}${transformationString}${imagePath}`;
   }
 
   // Add Cloudinary image optimization filter
