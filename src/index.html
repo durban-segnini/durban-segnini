@@ -52,7 +52,7 @@ pageScript: carousel.js
       {% if featuredExhibition and featuredExhibition.data.photos and featuredExhibition.data.photos.length > 0 %}
         {% for photo in featuredExhibition.data.photos %}
           <img
-            src="{{ photo.image or 'https://placehold.co/700x500' }}"
+            src="{{ (photo.image or 'https://placehold.co/700x500') | cloudinaryHero }}"
             alt="{{ featuredExhibition.data.title }} - Exhibition Photo {{ loop.index }}"
             class="carousel-image{% if loop.first %} active{% endif %}"
             {% if not loop.first %}loading="lazy"{% endif %}
@@ -61,7 +61,7 @@ pageScript: carousel.js
         {% endfor %}
       {% elif featuredExhibition and featuredExhibition.data.poster %}
         <img
-          src="{{ featuredExhibition.data.poster }}"
+          src="{{ featuredExhibition.data.poster | cloudinaryHero }}"
           alt="{{ featuredExhibition.data.title }} - Exhibition Poster"
           class="carousel-image active"
           data-title="{{ featuredExhibition.data.title }}"

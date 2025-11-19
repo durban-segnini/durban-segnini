@@ -411,6 +411,127 @@ module.exports = function (eleventyConfig) {
     return false;
   });
 
+  // Helper function to optimize Cloudinary URLs
+  function optimizeCloudinaryUrl(url, options = {}) {
+    if (!url || typeof url !== 'string') return url;
+    
+    // Check if this is a Cloudinary URL
+    // Pattern: https://res.cloudinary.com/{cloud_name}/image/upload/{transformations}/{image_path}
+    // Transformations are optional and end with a slash
+    const cloudinaryRegex = /(https?:\/\/res\.cloudinary\.com\/[^\/]+\/image\/upload\/)(?:([^\/]+)\/)?(.+)/;
+    const match = url.match(cloudinaryRegex);
+    
+    if (!match) {
+      // Not a Cloudinary URL, return as-is
+      return url;
+    }
+    
+    const [, baseUrl, existingTransformations, imagePath] = match;
+    
+    // Default transformation options for optimal performance
+    const defaultOptions = {
+      fetch_format: 'auto',      // Auto-format (WebP when supported)
+      quality: 'auto:good',       // Auto quality with good compression
+      flags: 'progressive',       // Progressive JPEG loading
+      ...options
+    };
+    
+    // Build transformation string
+    const transformations = [];
+    
+    // Width and height constraints
+    if (defaultOptions.width) {
+      transformations.push(`w_${defaultOptions.width}`);
+    }
+    if (defaultOptions.height) {
+      transformations.push(`h_${defaultOptions.height}`);
+    }
+    if (defaultOptions.crop) {
+      transformations.push(`c_${defaultOptions.crop}`);
+    } else if (defaultOptions.width || defaultOptions.height) {
+      // Default to limit crop if dimensions are specified
+      transformations.push('c_limit');
+    }
+    
+    // Quality
+    if (defaultOptions.quality) {
+      transformations.push(`q_${defaultOptions.quality}`);
+    }
+    
+    // Format
+    if (defaultOptions.fetch_format) {
+      transformations.push(`f_${defaultOptions.fetch_format}`);
+    }
+    
+    // Flags
+    if (defaultOptions.flags) {
+      transformations.push(`fl_${defaultOptions.flags}`);
+    }
+    
+    // Build the optimized URL
+    // If there are existing transformations, we replace them with our optimized ones
+    const transformationString = transformations.length > 0 
+      ? transformations.join(',') + '/' 
+      : '';
+    
+    return `${baseUrl}${transformationString}${imagePath}`;
+  }
+
+  // Add Cloudinary image optimization filter
+  // Automatically applies transformations to Cloudinary URLs for optimal size and weight
+  eleventyConfig.addFilter("cloudinary", (url, options = {}) => {
+    return optimizeCloudinaryUrl(url, options);
+  });
+
+  // Add preset filters for common image sizes
+  // Thumbnail: 400px max, optimized for small displays
+  eleventyConfig.addFilter("cloudinaryThumb", (url) => {
+    return optimizeCloudinaryUrl(url, {
+      width: 400,
+      height: 400,
+      crop: 'limit',
+      quality: 'auto:good',
+      fetch_format: 'auto',
+      flags: 'progressive'
+    });
+  });
+
+  // Medium: 800px max, optimized for medium displays
+  eleventyConfig.addFilter("cloudinaryMedium", (url) => {
+    return optimizeCloudinaryUrl(url, {
+      width: 800,
+      height: 800,
+      crop: 'limit',
+      quality: 'auto:good',
+      fetch_format: 'auto',
+      flags: 'progressive'
+    });
+  });
+
+  // Large: 1200px max, optimized for large displays
+  eleventyConfig.addFilter("cloudinaryLarge", (url) => {
+    return optimizeCloudinaryUrl(url, {
+      width: 1200,
+      height: 1200,
+      crop: 'limit',
+      quality: 'auto:good',
+      fetch_format: 'auto',
+      flags: 'progressive'
+    });
+  });
+
+  // Hero: 1920px max, optimized for hero images
+  eleventyConfig.addFilter("cloudinaryHero", (url) => {
+    return optimizeCloudinaryUrl(url, {
+      width: 1920,
+      height: 1920,
+      crop: 'limit',
+      quality: 'auto:good',
+      fetch_format: 'auto',
+      flags: 'progressive'
+    });
+  });
+
   // Add CSS bundle support with simple minification (built into Eleventy v3+)
   eleventyConfig.addBundle("css", {
     transforms: [
