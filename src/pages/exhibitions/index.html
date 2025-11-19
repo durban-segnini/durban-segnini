@@ -44,12 +44,12 @@ title: Exhibitions - Duran Segnini Gallery
           </div>
           {% if exhibition.data.photos and exhibition.data.photos.length > 0 %}
           <div class="event-card-image">
-            <img src="{{ exhibition.data.photos[0].image }}" alt="{{ exhibition.data.title }} - Exhibition Photo 1" />
+            <img src="{{ exhibition.data.photos[0].image | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" />
           </div>
           {% endif %}
           {% if exhibition.data.photos and exhibition.data.photos.length > 1 %}
           <div class="event-card-image">
-            <img src="{{ exhibition.data.photos[1].image }}" alt="{{ exhibition.data.title }} - Exhibition Photo 2" />
+            <img src="{{ exhibition.data.photos[1].image | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" />
           </div>
           {% endif %}
         </div>
@@ -97,12 +97,12 @@ title: Exhibitions - Duran Segnini Gallery
           </div>
           {% if exhibition.data.photos and exhibition.data.photos.length > 0 %}
           <div class="event-card-image">
-            <img src="{{ exhibition.data.photos[0].image }}" alt="{{ exhibition.data.title }} - Exhibition Photo 1" />
+            <img src="{{ exhibition.data.photos[0].image | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" />
           </div>
           {% endif %}
           {% if exhibition.data.photos and exhibition.data.photos.length > 1 %}
           <div class="event-card-image">
-            <img src="{{ exhibition.data.photos[1].image }}" alt="{{ exhibition.data.title }} - Exhibition Photo 2" />
+            <img src="{{ exhibition.data.photos[1].image | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" />
           </div>
           {% endif %}
         </div>

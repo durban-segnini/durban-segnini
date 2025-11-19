@@ -44,7 +44,7 @@ pageScript: artist-bio.js
             {% for w in mine %}
               <figure class="artist-image">
                 {% if w.data.image %}
-                  <img src="{{ w.data.image }}" alt="{{ w.data.title }}"/>
+                  <img src="{{ w.data.image | cloudinaryMedium }}" alt="{{ w.data.title }}"/>
                 {% else %}
                   <img src="https://placehold.co/400x300?text={{ w.data.title | url }}" alt="{{ w.data.title }}"/>
                 {% endif %}

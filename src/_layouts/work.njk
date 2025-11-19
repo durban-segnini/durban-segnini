@@ -6,5 +6,5 @@ layout: base.njk
 {% if year %}<p>{{ year }}</p>{% endif %}
 {% if medium %}<p>{{ medium }}</p>{% endif %}
 {% if dimensions %}<p>{{ dimensions }}</p>{% endif %}
-{% if image %}<img src="{{ image }}" alt="{{ title }}">{% endif %}
+{% if image %}<img src="{{ image | cloudinaryLarge }}" alt="{{ title }}">{% endif %}
 {{ content | safe }}

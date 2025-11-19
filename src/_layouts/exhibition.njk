@@ -31,7 +31,7 @@ pageCss: hero-exhibition.css
           <div class="exhibition-image-list-wrapper">
             {% for photo in photos %}
               <div class="exhibition-image-card">
-                <img src="{{ photo.image }}" alt="{{ title }} - Exhibition Photo {{ loop.index }}" />
+                <img src="{{ photo.image | cloudinaryLarge }}" alt="{{ title }} - Exhibition Photo {{ loop.index }}" />
               </div>
             {% endfor %}
           </div>
@@ -56,7 +56,7 @@ pageCss: hero-exhibition.css
               {% endfor %}
               {% if work %}
                 <div class="selected-artwork-card card">
-                  <img src="{{ work.data.image or 'https://placehold.co/400x300' }}" alt="{{ work.data.title }}" />
+                  <img src="{{ (work.data.image or 'https://placehold.co/400x300') | cloudinaryMedium }}" alt="{{ work.data.title }}" />
                   <figcaption>
                     {% if work.data.artist %}
                       {% set artist = null %}
@@ -130,7 +130,7 @@ pageCss: hero-exhibition.css
                     </div>
                     {% if artist.data.portrait %}
                       <div class="artist-image">
-                        <img src="{{ artist.data.portrait }}" alt="{{ artist.data.name or artistName }}" />
+                        <img src="{{ artist.data.portrait | cloudinaryMedium }}" alt="{{ artist.data.name or artistName }}" />
                       </div>
                     {% endif %}
                   </div>

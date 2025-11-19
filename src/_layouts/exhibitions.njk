@@ -16,7 +16,7 @@ layout: base.njk
             {% for exhibition in currentExhibitions %}
             <article>
                 {% if exhibition.data.poster %}
-                    <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" loading="lazy" />
+                    <img src="{{ exhibition.data.poster | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" loading="lazy" />
                 {% endif %}
                 
                 <header>
@@ -57,7 +57,7 @@ layout: base.njk
             {% for exhibition in upcomingExhibitions %}
             <article>
                 {% if exhibition.data.poster %}
-                    <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" loading="lazy" />
+                    <img src="{{ exhibition.data.poster | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" loading="lazy" />
                 {% endif %}
                 
                 <header>
@@ -98,7 +98,7 @@ layout: base.njk
             {% for exhibition in pastExhibitions %}
             <article>
                 {% if exhibition.data.poster %}
-                    <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" loading="lazy" />
+                    <img src="{{ exhibition.data.poster | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" loading="lazy" />
                 {% endif %}
                 
                 <header>

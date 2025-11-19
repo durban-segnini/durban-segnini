@@ -46,9 +46,9 @@ pageScript: picker-utility.js
           <div class="event-card-image">
             <figure>
               {% if exhibition.data.poster %}
-                <img src="{{ exhibition.data.poster }}" alt="{{ exhibition.data.title }}" />
+                <img src="{{ exhibition.data.poster | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" />
               {% elif exhibition.data.hero_image %}
-                <img src="{{ exhibition.data.hero_image }}" alt="{{ exhibition.data.title }}" />
+                <img src="{{ exhibition.data.hero_image | cloudinaryMedium }}" alt="{{ exhibition.data.title }}" />
               {% endif %}
             </figure>
           </div>
