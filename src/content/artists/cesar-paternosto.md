@@ -4,6 +4,7 @@ last_name: Paternosto
 name: Paternosto, Cesar
 computed_slug: paternosto-cesar
 year_of_birth: La Plata, Buenos Aires, Argentina, 1931
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767044245/Cesar_Paternosto_ldgs6m.jpg
 short_bio: César Paternosto is an Argentinian artist known for his contributions
   to geometric abstraction and his innovative approach to painting, which
   incorporates pre-Columbian aesthetics and architectural influences. His work
