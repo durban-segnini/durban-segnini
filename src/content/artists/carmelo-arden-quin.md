@@ -5,7 +5,7 @@ name: Arden Quin, Carmelo
 computed_slug: arden-quin-carmelo
 year_of_birth: Uruguay, 1910
 year_of_death: France, 2010
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1759514524/carmelo-arden-quin-b-y-n-acrylic-on-wood-62x82cm-2005_m1w6gn.jpg
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767036039/arden_quin_wusquu.webp
 short_bio: Painter, sculptor, and poet. From an early age, he began painting and
   participating in political demonstrations with friends. In 1935 he met Joaquin
   Torres Garcia at a conference at the headquarters of the Theosophical
