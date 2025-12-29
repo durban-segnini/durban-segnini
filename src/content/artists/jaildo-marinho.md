@@ -4,6 +4,7 @@ last_name: Marinho
 name: Marinho, Jaildo
 computed_slug: marinho-jaildo
 year_of_birth: Santa Maria da Boa Vista, Brazil, 1970
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767036223/jaildofoto_bnj5wb.png
 short_bio: >
   Jaildo Marinho is a Brazilian sculptor and painter, recognized for his
   contributions to geometric abstraction and contemporary minimalism. Marinho’s
