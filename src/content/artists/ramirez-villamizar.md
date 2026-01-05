@@ -5,6 +5,7 @@ name: Ramirez Villamizar, Eduardo
 computed_slug: ramirez-villamizar-eduardo
 year_of_birth: Pamplona, Colombia, 1922
 year_of_death: Bogotá, Colombia, 2004
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767639214/Eduardo_Rami%CC%81rez_Villamizar_xt33ds.jpg
 short_bio: >-
   Eduardo Ramírez Villamizar was a pioneering Colombian artist whose work in
   geometric abstraction and monumental sculpture left a lasting impact on Latin
