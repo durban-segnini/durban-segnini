@@ -1,7 +1,7 @@
 ---
 first_name: Antonio
-last_name: Segui
-name: Segui, Antonio
+last_name: Seguí
+name: Seguí, Antonio
 computed_slug: segui-antonio
 year_of_birth: Córdoba, Argentina, 1934
 year_of_death: Buenos Aires, Argentina, 2022
