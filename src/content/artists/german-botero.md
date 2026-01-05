@@ -4,6 +4,7 @@ last_name: Botero
 name: Botero, German
 computed_slug: botero-german
 year_of_birth: Colombia, 1946
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767641296/Captura-de-pantalla-2024-01-09-a-las-5.49.43-p.m_bflffk.png
 short_bio: Germán Botero studied at the School of Architecture of the National
   University of Colombia. He was a founding member of the Industrial Design
   program at the Universidad Pontificia Bolivariana and the art program at the
