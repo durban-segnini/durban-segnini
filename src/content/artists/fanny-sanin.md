@@ -4,7 +4,7 @@ last_name: Sanin
 name: Sanin, Fanny
 computed_slug: sanin-fanny
 year_of_birth: "1938"
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1757561357/Sanin_Fanny_-__DSC1881_1_xtmn9y.jpg
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767631282/1a2146ec-3dd3-46da-b64c-88f1cf0dda56.Fanny_Sanin_Portrait_in_front_of_Acry_qnvew1.jpg
 short_bio: Painter and engraver. She studied Fine Arts at the Universidad de Los
   Andes. In 1962 she participated at the el XIV Salón de Artistas Nacionales in
   Bogotá, where she showed first her painting Óleo N.° 1. That same year she
