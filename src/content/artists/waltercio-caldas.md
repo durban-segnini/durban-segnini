@@ -4,6 +4,7 @@ last_name: Caldas
 name: Caldas, Waltercio
 computed_slug: caldas-waltercio
 year_of_birth: Rio de Janeiro, Brazil - 1946
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767642372/100989082-sc-rio-de-janeiro-rj-28-10-2022-exposicao-do-artista-plastico-waltercio-caldas-na-galeri_dl90uu.jpg
 short_bio: >-
   Waltercio Caldas is a Brazilian sculptor, designer, and graphic artist. His
   work is linked to Neoconcretism.  Using transparent and minimalist sculptures,
