@@ -6,8 +6,6 @@ Durban Segnini Gallery is pleased to announce its participation in the 2026 edit
 
 <br>
 
-<br>
-
 **ZONAMACO MÉXICO**
 
 4 - 8 FEBRUARY | 2026
