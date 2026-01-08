@@ -4,7 +4,7 @@ last_name: Arzuaga
 name: Arzuaga, Andres
 computed_slug: arzuaga-andres
 year_of_birth: Buenos Aires, Argentina 1984
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1763142604/Screenshot_2025-11-14_at_12.49.02_PM_mnp8lm.png
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767894768/Andres_Arzuaga_nrc09j.png
 short_bio: Born in 1984 in Los Toldos, Buenos Aires, Argentina, he completed his
   visual art professor studies between 2003 and 2008 in Junín (Instituto Xul
   Solar) and Pehuajó (Instituto Carlos Torrallardona). In 2010 he moved to
