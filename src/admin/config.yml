@@ -4,9 +4,9 @@ local_backend: true
 # Use DecapBridge auth (required)
 backend:
   name: git-gateway
-  repo: adeluccar/durban-segnini
+  repo: durban-segnini/durban-segnini
   branch: main
-  identity_url: https://auth.decapbridge.com/sites/6c2dad04-8348-46c2-bd12-62bb5d5dfb72
+  identity_url: https://auth.decapbridge.com/sites/6b56fea5-cef4-4972-8166-4553eae60173
   gateway_url: https://gateway.decapbridge.com
 
   # Quickly see who did what (optional)
