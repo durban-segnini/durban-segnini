@@ -1,5 +1,5 @@
 ---
-title: 1994-95 | Mapping Relations | Balteo-Yazbeck | 2025
+title: 1993-95 | Mapping Relations | Balteo-Yazbeck | 2025
 status: current
 featured: true
 startingDate: 2025-11-22
