@@ -5,7 +5,7 @@ name: de Szyszlo, Fernando
 computed_slug: de-szyszlo-fernando
 year_of_birth: Lima, Peru 1925
 year_of_death: Lima, Peru 2017
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767631105/Fernando-de-Szyszlo-1-750x450_vvpyl1.jpg
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771348172/Fernando-De-Szyszlo-1925-Trashumante-Acrylic-on-canvas-47.24-x-39.37-in.-120-x-100-cm-2015_hy6eb1.jpg
 short_bio: >-
   Fernando de Szyszlo was a Peruvian painter, sculptor, printmaker, and teacher
   who was a pioneer and key actor in the development of Latin American abstract
