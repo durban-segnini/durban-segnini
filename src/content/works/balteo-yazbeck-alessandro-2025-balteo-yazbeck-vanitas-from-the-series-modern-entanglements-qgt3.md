@@ -5,5 +5,5 @@ artist: Balteo-Yazbeck, Alessandro
 year: "2018"
 medium: Archival inkjet print
 dimensions: 27.14 x 22.70 cm
-image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761753523/ABY_Vanitas_2018_webSize_a5g07f.jpg
+image: https://res.cloudinary.com/dao1vqck0/image/upload/v1771349898/7_ttvgj3.jpg
 ---
