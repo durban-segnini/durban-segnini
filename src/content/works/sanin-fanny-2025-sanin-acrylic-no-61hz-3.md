@@ -1,7 +1,8 @@
 ---
 work_id: sanin-acrylic-no-61hz
-title: Acrylic No 1869
+title: Study for painting No. 1 (4)
 artist: Sanin, Fanny
-year: "2012"
-image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1757561359/Sanin_Fanny_-__DSC1869_jccws0.jpg
+year: "2005"
+medium: Gouache on paper
+image: https://res.cloudinary.com/dao1vqck0/image/upload/v1771351743/13_ayvky0.jpg
 ---
