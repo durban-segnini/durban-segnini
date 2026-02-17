@@ -9,7 +9,8 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761754107/ABY_blackboard_detail_1_xkvnjr.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761760651/23_ABY_George_Pompidou_wpyk8a.jpg
 works:
-  - balteo-yazbeck-chalk-improvisation-on-rooftop-documental-record-stage-3-hypothetical-relations-series-via4
+  - balteo-yazbeck-chalkboard-improvisation-2-panoramic-record-stage-3-universidad-catolica-andres-bello-hypothetical-relations-series-eg4p
+  - balteo-yazbeck-temporary-aluminum-installation-at-the-angostura-congress-house-documental-record-2-hypothetical-relations-series-structuring-a-country-e4i0
 ---
 **Durban Segnini Gallery is pleased to announce the first solo exhibition of Alessandro Balteo-Yazbeck with the gallery.** This exhibition re-stages and recontextualizes projects conceived in Caracas three decades ago that resonate with our current global situation; tracing the evolution of subjects of material relations, displacement, and systemic interconnection over time.
 
