@@ -5,7 +5,7 @@ name: Felguerez, Manuel
 computed_slug: felguerez-manuel
 year_of_birth: Valparaíso, Zacatecas, 1928
 year_of_death: Mexico City, Mexico, 2020
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771351119/Felguerez_137_x_137_cm._1973_1_sitolm.jpg
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771354559/19_copy_u2imeo.jpg
 short_bio: Manuel Felguérez was a Mexican painter, sculptor, and pioneer of
   geometric abstraction who played a key role in the Generation of Rupture, a
   movement that challenged the dominance of Mexican muralism. His work combined
