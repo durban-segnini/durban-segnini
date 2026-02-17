@@ -4,7 +4,7 @@ last_name: Sanin
 name: Sanin, Fanny
 computed_slug: sanin-fanny
 year_of_birth: Bogotá, Colombia, 1938
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767631282/1a2146ec-3dd3-46da-b64c-88f1cf0dda56.Fanny_Sanin_Portrait_in_front_of_Acry_qnvew1.jpg
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771351582/Screenshot_2026-02-17_at_1.02.29_PM_pnrdnx.png
 short_bio: Fanny Sanín is a Colombian painter and engraver whose career has been
   fundamental to the development of geometric abstraction in Latin America. She
   studied Fine Arts at the Universidad de Los Andes in Bogotá and in 1962
