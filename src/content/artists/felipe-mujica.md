@@ -4,7 +4,7 @@ last_name: Mujica
 name: Mujica, Felipe
 computed_slug: mujica-felipe
 year_of_birth: "1974"
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1767036371/F_mujica_b_w_color_g1fx1t.webp
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771435334/Screenshot_2025-09-08_at_4.47.51_PM_mpgzwm.png
 short_bio: Felipe Mujica is a Chilean multidisciplinary artist whose practice
   incorporates installations, sound and printmaking. His fabric panels—or
   curtains—function as both sculptural objects and architectural interventions,
