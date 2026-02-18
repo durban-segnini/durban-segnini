@@ -22,3 +22,7 @@ short_bio: Born in 1984 in Los Toldos, Buenos Aires, Argentina, he completed his
 His work is conceived through a return to painting’s most essential elements, oil and canvas. It is characterized by large formats, “cut-out” frames, and color gradients interrupted by full planes and shapes. His techniques allow the spectator to enter the territory of light, study the intermittent, its decomposition, the void, and the memory in the eye. 
 
 Arzuaga contemplates and addresses the relationship between the mystical and the sacred. Through the simplicity of the specific resources, what appears to be minimal is in fact, his premeditated and precise creations. What the viewers see, what is there, and what perdures, was carefully chosen: color, the absence of color, and lines. His paintings follow a strange state of temporary-ness, as if promising the viewer an image, yet the image is not seen. It is as if a pact of faith supports the promise that the image will come. Light disappears around the edges making his structures dissolve in the atmosphere and vice versa.
+
+**Exhibitions**
+
+One Thousand Days of Light, 2025 <https://durbansegnini.com/exhibitions/one-thousand-days-of-light/>
