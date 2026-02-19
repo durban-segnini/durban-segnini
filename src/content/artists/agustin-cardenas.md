@@ -6,6 +6,7 @@ computed_slug: cardenas-agustin
 year_of_birth: Matanzas, Cuba,1927
 year_of_death: Havana, Cuba, 2001
 is_guest_artist: false
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771523843/square_ag2o6l.jpg
 short_bio: Agustin Cardenas was a renowned Cuban sculptor known for his
   impeccably finished, intellectually provocative sensual forms that explored
   his Afro-Cuban heritage and European Surrealist influence.  His wood, bronze,
