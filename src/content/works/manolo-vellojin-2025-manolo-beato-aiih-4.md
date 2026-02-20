@@ -1,7 +1,7 @@
 ---
 work_id: manolo-beato-aiih
 title: Sudario
-artist: Manolo, Vellojin
+artist: Vellojin, Manolo
 year: "1972"
 medium: Mixed on Wood
 dimensions: 21.6 x 27.5 in. (55 x 70 cm)
