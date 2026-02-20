@@ -1,9 +1,9 @@
 ---
 work_id: manolo-beato-aiih
-title: Responso
+title: VILLA CONCHA
 artist: Manolo, Vellojin
-year: "2002"
-medium: Acrylic on raw linen
+year: "1971"
+medium: Acrylic on canvas
 dimensions: 19.6 x 19.6 in. (50 x 50 cm)
-image: https://res.cloudinary.com/dao1vqck0/image/upload/v1759770682/manolo-vellojin-responso-acrylic-on-raw-linen-50x50cm-2002-2006_zghdxh.jpg
+image: https://res.cloudinary.com/dao1vqck0/image/upload/v1771604027/54_linkf1.jpg
 ---
