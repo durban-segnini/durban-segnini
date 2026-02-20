@@ -1,7 +1,7 @@
 ---
 work_id: manolo-beato-aiih
 title: VILLA CONCHA
-artist: Manolo, Vellojin
+artist: Vellojin, Manolo
 year: "1971"
 medium: Acrylic on canvas
 dimensions: 19.6 x 19.6 in. (50 x 50 cm)
