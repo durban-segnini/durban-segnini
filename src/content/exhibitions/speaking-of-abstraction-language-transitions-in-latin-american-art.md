@@ -5,6 +5,8 @@ startingDate: 2016-07-08
 endingDate: 2016-10-31
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1771878500/front_fsga6i.jpg
 catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1771878427/Cata%CC%81logo_Abstraccio%CC%81n_wod2u6.pdf
+photos:
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1771878500/front_fsga6i.jpg
 works: []
 ---
 **Durban Segnini Gallery presents a splendid selection of 12 crucial artists for understanding the language development of the Latin American Abstraction, representing Argentina, Brazil, Colombia, Cuba, Mexico, Uruguay and Venezuela.**
