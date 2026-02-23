@@ -13,7 +13,8 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864616/Copy_of__PAP3283-1_qssfdz.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864618/Copy_of__PAP3284-1_ayump3.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/c_limit,f_auto,fl_progressive,h_1024,q_auto,w_1024/v1759864620/Copy_of__PAP3286-1_c7eeta.jpg
-works: []
+works:
+  - balteo-yazbeck-3-corrupted-files-from-page-10-from-the-series-los-manolos-plan-caracas-no-2-1974-1976-sekb
 ---
 **Durban Segnini Gallery is pleased to announce the exhibition *Looking Back Moving Forward*, curated by Rina Carvajal. *Looking Back Moving Forward* presents a selection of work by six contemporary Venezuelan artists - Alexander Apóstol, Alessandro BalteoYazbeck, Mariana Bunimov, Luis Molina-Pantin, Javier Téllez and ChristianVinck - whose work provides a unique reflection on the socio-political and cultural situation of Venezuela, tracing an active dialogue between past and present, proximity and distance, rootedness and displacement, personal and collective memory.**
 
