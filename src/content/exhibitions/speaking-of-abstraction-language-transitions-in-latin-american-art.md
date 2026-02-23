@@ -15,19 +15,11 @@ The exhibition includes 33 works among drawing, painting, mixed media and sculpt
 
 "Speaking of Abstraction (...) ̈ considers more than six artists’ generations whose contributions and paths made of Abstraction the most influential tendency in the historiography of Latin American contemporary art of the twentieth century.
 
-Carmelo Arden Quin. Roah (Parti mayeur), 1979
-
-Carmelo Arden Quin. Roah satellite, 1979
-
 "Speaking of Abstraction: Language Transitions in Latin American Art" offers through a selection of 33 works including paintings, sculpture, mixed media and drawing, a unique opportunity to review and understand the language development of the Latin American Abstraction.
 
 This exemplary review includes twelve prominent artists, among which are great masters such as Carmelo Arden Quin (Uruguay), César Paternosto (Argentina), Carlos Rojas (Colombia) or Mateo Manaure (Venezuela). Also joining them new promising generation of abstract artists such a Flavio Garciandía (Cuba), Jaildo Marinho (Brazil), Emilia Sirrs (Mexico) and Beto De Volder (Argentina).
 
 The exhibition, curated by the art critic and independent curator Dennys Matos, proposes an approach from different sensibilities and formal content on the role of abstract languages in the development of society and modern culture. That is why there are not only those authors who led the vanguard of Abstraction in Latin America in the first decades of SXX, but also other young values that are performing a renewal in the artistic cultural thought of Abstraction. They all articulate a suggestive kaleidoscope through which you can watch, as a whole and through unprecedented poetic and discursive links, how the project of the Latin American modernity incorporated the abstract language to formalize key categories of its development. At the same time the sample launches a thoughtful look on the complexity of the Latin American culture, to its original hybridity wrapped in deep and contradictory socio-cultural changes.
-
-Mateo Manaure. Polichrome sculptoric column, 2002
-
-William Barbosa. Untitled, 2015
 
 “In Speaking of Abstraction (...) “, says the curator of the exhibition, “ a variety of abstract languages come together, from the lyrical and expressionistic abstraction to the purest geometric abstraction or the one with an optical vocation. However, despite this variety of abstract languages, the viewer will find astonishing formal and discursive links between artists of different generations. Different generations deployed in a privileged gallery space at Durban Segnini, summarize the history of a fundamental tendency to understand the artistic project of the Latin American modernity.”
 
