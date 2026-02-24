@@ -1,5 +1,5 @@
 ---
-title: Carmelo Arden Quin - R ETROSPECTIVE E XHIBITION 1938-2009
+title: Carmelo Arden Quin - RETROSPECTIVE EXHIBITION 1938-2009
 status: past
 startingDate: 2014-03-21
 endingDate: 2014-06-27
