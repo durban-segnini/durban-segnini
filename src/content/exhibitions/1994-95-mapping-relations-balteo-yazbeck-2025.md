@@ -5,6 +5,7 @@ featured: true
 startingDate: 2025-11-22
 endingDate: 2026-03-27
 poster: ""
+catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1771972755/ABY__1994-95___Mapping-Relations___Balteo-Yazbeck___2025_web_klpw3h.pdf
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761754107/ABY_blackboard_detail_1_xkvnjr.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761760651/23_ABY_George_Pompidou_wpyk8a.jpg
