@@ -9,4 +9,5 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1771966385/front_hwafp4.jpg
 works:
   - arden-quin-forme-blanche-no-3-t1gf
+  - arden-quin-forme-g-drw6
 ---
