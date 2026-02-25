@@ -4,7 +4,7 @@ year: 2026
 ---
 Alessandro Balteo-Yazbeck
 Leonora Carrington
-Carlos Cruz-Diez
+Carlos Cruz Diez
 Manuel Felguerez
 Sergio Hernandez
 Roberto Matta
