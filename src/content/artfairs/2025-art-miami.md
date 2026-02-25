@@ -15,7 +15,7 @@ Jesus Soto
 Ines Silva
 Carlos Rojas
 Eduardo Ramírez Villamizar
-Carlos Cruz Diez
+Carlos Cruz-Diez
 Javier Téllez
 Manuel Felguerez
 Manolo Vellojin
