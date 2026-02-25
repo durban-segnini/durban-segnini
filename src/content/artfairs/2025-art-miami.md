@@ -1,0 +1,21 @@
+---
+title: ART MIAMI
+year: 2025
+---
+Olga de Amaral
+Agustin Cardenas
+Carmelo Arden Quin
+Alessandro Balteo-Yazbeck
+Roberto Matta
+Wifredo Lam
+Cesar Paternosto
+Fanny Sanin
+Fernando de Szyszlo
+Jesus Soto
+Ines Silva
+Carlos Rojas
+Eduardo Ramírez Villamizar
+Carlos Cruz Diez
+Javier Téllez
+Manuel Felguerez
+Manolo Vellojin
