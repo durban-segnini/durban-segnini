@@ -2,10 +2,7 @@
 title: "Upcoming "
 date: 2025-10-29
 ---
-Durban Segnini Gallery is pleased to announce its participation in the 2026 edition of:
+**UPCOMING EXHIBITION**
 
-<br>
-
-**ZONAMACO MÉXICO**
-
-4 - 8 FEBRUARY | 2026
+The Silent Paths: *Medina & Tagliafico*\
+Opening Reception April 11, 2026 6-10pm
