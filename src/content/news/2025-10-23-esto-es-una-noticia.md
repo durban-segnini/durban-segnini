@@ -6,6 +6,7 @@ Durban Segnini Gallery is pleased to announce its participation in the 2026 edit
 
 <br>
 
-**ZONAMACO MÉXICO**
+**UPCOMING EXHIBITION**
 
-4 - 8 FEBRUARY | 2026
+The Silent Paths: *Medina & Tagliafico*\
+Opening Reception April 11, 2026 6-10pm
