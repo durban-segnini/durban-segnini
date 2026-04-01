@@ -7,8 +7,12 @@ endingDate: 2026-03-27
 poster: ""
 catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1771972755/ABY__1994-95___Mapping-Relations___Balteo-Yazbeck___2025_web_klpw3h.pdf
 photos:
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761754107/ABY_blackboard_detail_1_xkvnjr.jpg
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1761760651/23_ABY_George_Pompidou_wpyk8a.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065921/_PAP6317_Large_k4lv2p.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6309_Large_zjfor7.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065920/_PAP6319_Large_eaxxvp.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6325_Large_dw6cbg.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6302_Large_qe1lwt.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065918/_PAP6300_Large_fb9mhr.jpg
 works:
   - balteo-yazbeck-chalkboard-improvisation-2-panoramic-record-stage-3-universidad-catolica-andres-bello-hypothetical-relations-series-eg4p
   - balteo-yazbeck-temporary-aluminum-installation-at-the-angostura-congress-house-documental-record-2-hypothetical-relations-series-structuring-a-country-e4i0
