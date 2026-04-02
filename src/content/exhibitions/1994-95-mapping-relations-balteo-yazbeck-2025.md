@@ -4,7 +4,7 @@ status: past
 featured: false
 startingDate: 2025-11-22
 endingDate: 2026-03-27
-poster: ""
+poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6302_Large_qe1lwt.jpg
 catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1771972755/ABY__1994-95___Mapping-Relations___Balteo-Yazbeck___2025_web_klpw3h.pdf
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065921/_PAP6317_Large_k4lv2p.jpg
