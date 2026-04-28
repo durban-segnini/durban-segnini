@@ -9,7 +9,7 @@ catalog_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1771972755/ABY__
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065921/_PAP6317_Large_k4lv2p.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6309_Large_zjfor7.jpg
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065920/_PAP6319_Large_eaxxvp.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1777397515/_PAP6318-1_innsi5.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6325_Large_dw6cbg.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065919/_PAP6302_Large_qe1lwt.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1775065918/_PAP6300_Large_fb9mhr.jpg
