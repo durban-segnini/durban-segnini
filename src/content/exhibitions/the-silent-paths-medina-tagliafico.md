@@ -4,6 +4,8 @@ status: upcoming
 featured: true
 startingDate: 2026-04-11
 endingDate: 2026-08-07
+press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1778532075/TPress_Release_he_Silent_Paths__Medina_Tagliafico_p5ab8v.pdf
+catalog_pdf: https://drive.google.com/file/d/18Z1Nf8ZU7wlbqKlOSVYFxEfHPRy6scil/view?usp=sharing
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525606/_PAP6337-3_Large_o7rnhx.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525606/_PAP6346-3_Large_nqp182.jpg
