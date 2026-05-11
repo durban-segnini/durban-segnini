@@ -5,8 +5,12 @@ featured: true
 startingDate: 2026-04-11
 endingDate: 2026-08-07
 photos:
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1774634838/13_kg5arj.jpg
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1774634838/14_o15hyl.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525606/_PAP6337-3_Large_o7rnhx.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525606/_PAP6346-3_Large_nqp182.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525607/_PAP6353-1_Large_wso0zd.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525607/_PAP6352-1_Large_khe57t.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525606/_PAP6341_Large_zkeyqi.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1778525606/_PAP6348_Large_mqyt9j.jpg
 ---
 **Opening Reception:** Satuday, Apirl 11, 2026 6-10pm
 
