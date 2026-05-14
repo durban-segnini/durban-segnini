@@ -4,7 +4,7 @@ last_name: Molina-Pantin
 name: Molina-Pantin, Luis
 computed_slug: molina-pantin-luis
 year_of_birth: Geneva, 1969
-is_guest_artist: false
+is_guest_artist: true
 short_bio: Luis Molina-Pantin blends conceptual and documentary photography to
   explore what the built environment reveals about a culture’s context. As a
   self-described “urban archaeologist,” Molina-Pantin investigates themes of
