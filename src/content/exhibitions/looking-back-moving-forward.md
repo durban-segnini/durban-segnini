@@ -24,16 +24,6 @@ the diasporic experience.
 
 
 
-# Luis Molina-Pantin
-
-**Geneva, 1969**<br>
-
-Currently lives and works in Mexico City</p>
-
-<p>Luis Molina-Pantin blends conceptual and documentary photography to explore what the built environment reveals about a culture’s context. As a self-described “urban archaeologist,” Molina-Pantin investigates themes of authority, class, and display. His work documents Venezuela’s decades-long collapse and modern culture, offering insightful social and political commentary.</p>
-
-<br>
-
 # Alexander Apóstol
 
 **Barquisimeto, Venezuela, 1969**<br>
