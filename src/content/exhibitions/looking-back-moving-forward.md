@@ -21,33 +21,3 @@ works:
 
 As part of the current-day Venezuelan diaspora, the artists in Looking Back Moving Forward live and work independently in different parts of the world, but all use their practices to capture the profound sense of loss and transformation experienced by their generation. Alexander Apóstol and Alessandro Balteo-Yazbeck interrogate the fractures within Venezuela’s modernity, critically highlighting the stark contrasts between the developmentalist state policies and the lived realities of marginalization. They also reveal the inherent contradictions within kinetic artistic languages and the absorption and instrumentalization of those languages by national agendas. In a similarly reflective manner, Javier Téllez outspokenly unveils, in an almost premonitory way, the class struggles and socio-economic decay that would come to define Venezuela over subsequent decades. Luis Molina-Pantin turns his focus toward the country’s gradual economic collapse following the banking crisis of the late 1990s, while Mariana Bunimov and Christian Vinck reflect on personal and collective memories of migration, displacement, and the emotional and psychological effects of
 the diasporic experience.
-
-
-
-# Luis Molina-Pantin
-
-**Geneva, 1969**<br>
-
-Currently lives and works in Mexico City</p>
-
-<p>Luis Molina-Pantin blends conceptual and documentary photography to explore what the built environment reveals about a culture’s context. As a self-described “urban archaeologist,” Molina-Pantin investigates themes of authority, class, and display. His work documents Venezuela’s decades-long collapse and modern culture, offering insightful social and political commentary.</p>
-
-<br>
-
-# Alexander Apóstol
-
-**Barquisimeto, Venezuela, 1969**<br>
-
-Lives and works in Madrid, Spain</p>
-
-<p>Alexander Apóstol is a multimedia conceptual artist whose work examines the intersections of architecture, art, and politics in Venezuela, particularly in relation to the fractures of the country’s modernist project. Working primarily with photography and video (although also frequently collaborating with collectives and professionals from other disciplines), Apóstol investigates how artistic practices have been co-opted by state-led agendas to promote national identities. Throughout his practice, Apóstol embodies and sexualizes political discourse by connecting it to social, generational, and gender identities, as well as his own personal history.</p>
-
-<br>
-
-# Christian Vinck
-
-**Maracaibo, Venezuela, 1978**<br>
-
-Lives and works in Madrid.
-
-<p>The self-taught Dutch-Venezuelan artist Christian Vinck regards himself as belonging to a long tradition of amateur painters. His art explores epic themes on a personal scale, reconstructing symbolic memories and historic narratives through stories, documents and visual references. Vinck utilizes a wide range of source materials – archives, correspondence, found photographs, newspaper clippings and articles, notebooks, manuscripts, encyclopedias, sticker albums, postcards, and cartographic and digital images – interweaving personal narratives with real and fictional histories.</p>
