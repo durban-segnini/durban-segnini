@@ -4,7 +4,7 @@ last_name: Balteo-Yazbeck
 name: Balteo-Yazbeck, Alessandro
 computed_slug: balteo-yazbeck-alessandro
 year_of_birth: Caracas, Venezuela, 1972
-portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1761754107/ABY_blackboard_detail_1_xkvnjr.jpg
+portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1778776490/Copy_of_square_2_rowcop.jpg
 short_bio: Alessandro Balteo-Yazbeck is a Venezuelan artist whose
   multidisciplinary practice intertwines art, research, curatorial methods, and
   historical analysis into a critical reflection on modernity and its enduring
