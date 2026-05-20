@@ -1,7 +1,7 @@
 ---
-title: "Agustin Cardenas/ Marbles Woods Bronzes"
+title: "Agustin Cardenas: Marbles Woods Bronzes"
 status: past
 startingDate: 1990-08-01
+endingDate: 1990-09-30
 works: []
 ---
-
