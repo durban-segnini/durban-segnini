@@ -25,4 +25,4 @@ Arzuaga contemplates and addresses the relationship between the mystical and the
 
 **Exhibitions**
 
-One Thousand Days of Light, 2025 <https://durbansegnini.com/exhibitions/one-thousand-days-of-light/>
+[One Thousand Days of Light, 2025 ](https://durbansegnini.com/exhibitions/one-thousand-days-of-light/)
