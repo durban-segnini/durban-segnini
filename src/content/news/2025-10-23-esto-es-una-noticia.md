@@ -4,9 +4,7 @@ date: 2026-07-27
 ---
 # PRINTS & LITHOGRAPHS SALE
 
-<https://durbansegninigallery.square.site/>
-
-
+[Click here to explore prints](https://durbansegninigallery.square.site/)
 
 **UPCOMING EXHIBITION**\
 Ines Silva: Rhythms of Geometry\
