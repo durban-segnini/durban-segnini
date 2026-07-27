@@ -1,8 +1,13 @@
 ---
 title: "Upcoming "
-date: 2025-10-29
+date: 2026-07-27
 ---
-**UPCOMING EXHIBITION**
+# PRINTS & LITHOGRAPHS SALE
 
-The Silent Paths: *Medina & Tagliafico*\
-Opening Reception April 11, 2026 6-10pm
+<https://durbansegninigallery.square.site/>
+
+
+
+**UPCOMING EXHIBITION**\
+Ines Silva: Rhythms of Geometry\
+Opening: Saturday August 22, 2026 6-10pm
