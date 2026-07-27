@@ -11,4 +11,5 @@ date: 2026-07-27
 # UPCOMING EXHIBITION
 
 Ines Silva: Rhythms of Geometry
+
 Opening: Saturday August 22, 2026 6-10pm
