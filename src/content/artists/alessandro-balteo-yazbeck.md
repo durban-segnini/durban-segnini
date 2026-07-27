@@ -20,6 +20,6 @@ Over the past fifteen years, Balteo-Yazbeck’s work has been featured in major 
 
 
 
-**Exhibitions** 
+## EXHIBITIONS
 
-Mapping Relations, 1994-95/2025 <https://durbansegnini.com/exhibitions/1994-95-mapping-relations-balteo-yazbeck-2025/>
+[Mapping Relations 1994-95/2025,](https://durbansegnini.com/exhibitions/1994-95-mapping-relations-balteo-yazbeck-2025/) 2025
