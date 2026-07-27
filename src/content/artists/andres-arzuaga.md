@@ -6,7 +6,7 @@ computed_slug: arzuaga-andres
 year_of_birth: Buenos Aires, Argentina 1984
 portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771344874/2D1A7467_k2hcdd.jpg
 short_bio: >-
-  EXHIBITIONS
+  ## EXHIBITIONS
 
 
   <br> 
