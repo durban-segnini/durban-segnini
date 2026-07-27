@@ -6,10 +6,10 @@ computed_slug: arzuaga-andres
 year_of_birth: Buenos Aires, Argentina 1984
 portrait: https://res.cloudinary.com/dao1vqck0/image/upload/v1771344874/2D1A7467_k2hcdd.jpg
 short_bio: >-
-  **Exhibitions**
+  Exhibitions
 
 
-  * [One Thousand Days of Light, 2025 ](https://durbansegnini.com/exhibitions/one-thousand-days-of-light/)
+  [One Thousand Days of Light, 2025 ](https://durbansegnini.com/exhibitions/one-thousand-days-of-light/)
 
 
   Born in 1984 in Los Toldos, Buenos Aires, Argentina, he completed his visual art professor studies between 2003 and 2008 in Junín (Instituto Xul Solar) and Pehuajó (Instituto Carlos Torrallardona). In 2010 he moved to Buenos Aires to continue his artistic training. He was selected by the Universidad Torcuato Di Tella to further his art development studies under the mentorship of the artist Eduardo Stupía for two consecutive years. He continued his studies by working alongside internationally recognized Argentine artists such as Eduardo Hoffmann, Marta Minujín, Alicia Herrero, Fabián Burgos, and Marcolina Dipierro. In 2013, his work was selected by the Saloń de Artes Plaśticas Manuel Belgrano and in 2016 he was awarded the Premio Federico Jorge Klemm. His works have been acquired by the Museum of Fine Arts Houston (Houston, Texas, 2022) and by Espacio 23 (Miami, Florida, 2023).
