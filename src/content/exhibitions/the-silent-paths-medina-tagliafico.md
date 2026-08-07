@@ -1,6 +1,6 @@
 ---
 title: "The Silent Paths: Medina & Tagliafico"
-status: current
+status: past
 featured: false
 startingDate: 2026-04-11
 endingDate: 2026-08-07
