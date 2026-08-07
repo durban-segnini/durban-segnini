@@ -1,5 +1,5 @@
 ---
-title: "The Silent Paths: Medina & Tagliafico"
+title: "The Silent Paths: Medina & Tagliafico "
 status: past
 featured: false
 startingDate: 2026-04-11
