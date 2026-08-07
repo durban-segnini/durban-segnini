@@ -1,5 +1,5 @@
 ---
-title: "Ines Silva: Rhythms of  Geometry"
+title: "Ines Silva: Rhythms of Geometry"
 status: upcoming
 featured: true
 startingDate: 2026-08-22
