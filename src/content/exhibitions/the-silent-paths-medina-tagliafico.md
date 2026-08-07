@@ -1,9 +1,9 @@
 ---
 title: "The Silent Paths: Medina & Tagliafico"
-status: current
-featured: true
+status: past
+featured: false
 startingDate: 2026-04-11
-endingDate: 2026-08-07
+endingDate: 2026-07-31
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1778532075/TPress_Release_he_Silent_Paths__Medina_Tagliafico_p5ab8v.pdf
 catalog_pdf: https://drive.google.com/file/d/18Z1Nf8ZU7wlbqKlOSVYFxEfHPRy6scil/view?usp=sharing
 photos:
