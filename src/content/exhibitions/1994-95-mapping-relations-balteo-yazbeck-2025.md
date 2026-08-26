@@ -1,5 +1,5 @@
 ---
-title: 1994-95 | Mapping Relations | Balteo-Yazbeck | 2025
+title: "Alessandro Balteo-Yazbeck: Mapping Relations 1994-95 | 2025"
 status: past
 featured: false
 startingDate: 2025-11-22
