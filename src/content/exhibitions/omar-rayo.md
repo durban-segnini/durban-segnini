@@ -6,5 +6,6 @@ endingDate: 2008-03-01
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1787770397/1_rmz8j2.jpg
 photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1787770397/1_rmz8j2.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1787770516/Omar_Rayo_Exhibition_1_d8zj5n.jpg
 works: []
 ---
