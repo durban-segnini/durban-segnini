@@ -1,5 +1,5 @@
 ---
-title: One Thousand Days of Light
+title: "Andres Arzuaga: One Thousand Days of Light"
 status: past
 startingDate: 2025-05-03
 endingDate: 2025-08-03
