@@ -1,6 +1,6 @@
 ---
 title: "Ines Silva: Rhythms of Geometry"
-status: upcoming
+status: current
 featured: true
 startingDate: 2026-08-22
 endingDate: 2026-10-30
