@@ -4,9 +4,10 @@ status: current
 featured: true
 startingDate: 2026-08-22
 endingDate: 2026-10-30
-poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1786116386/front_4_roqezc.jpg
+poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1793726568/_PAP7355-1_Large_le2c1z.jpg
 photos:
-  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1786116386/front_4_roqezc.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1793726568/_PAP7355-1_Large_le2c1z.jpg
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1793726568/_PAP7372-1_Large_lyuynx.jpg
 ---
 Opening Reception: Saturday August 22, 6 - 10 pm
 
