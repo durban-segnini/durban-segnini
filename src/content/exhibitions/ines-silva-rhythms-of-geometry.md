@@ -9,7 +9,8 @@ photos:
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1793726568/_PAP7355-1_Large_le2c1z.jpg
   - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1793726568/_PAP7372-1_Large_lyuynx.jpg
 ---
-Opening Reception: Saturday August 22, 6 - 10 pm
+**Extended**\
+Closing Cocktail, Wednesday Nov 4 6-10pm
 
 Ines Silva’s Plexiglas works stand out for their airy, luminous, and profoundly musical character. Reliefs, columns, folding screens, and suspended structures create a universe in which transparency, movement, and color transform geometry into a sensory experience. Trained as an architect, Ines Silva constructs each of her works with great precision, drawing on mathematical schemes in which the golden ratio, the Fibonacci spiral, and Le Corbusier’s Modulor play a structuring role. Far from serving as a theoretical demonstration, these principles ensure a balance of form and establish a perceptible harmony between the work, its surrounding space, and the viewer’s body.
 
