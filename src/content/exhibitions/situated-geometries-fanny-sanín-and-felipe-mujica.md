@@ -6,6 +6,8 @@ startingDate: 2026-11-30
 endingDate: 2027-03-12
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1794510447/Untitled_Design_10_igokqa.jpg
 press_release_pdf: https://res.cloudinary.com/dao1vqck0/image/upload/v1794510473/PRESS_RELEASE_Situate_Geometries_Fanny_Sanin_and_Felipe_Mujica.docx_1_mzvxms.pdf
+photos:
+  - image: https://res.cloudinary.com/dao1vqck0/image/upload/v1794510447/Untitled_Design_10_igokqa.jpg
 ---
 **Opening Reception:** Monday November 30, 6-10pm
 
