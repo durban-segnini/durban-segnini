@@ -2,7 +2,7 @@
 title: Untitled Miami Beach
 year: 2026
 ---
-- Javier Tellez
+- Javier Téllez
 - Alessandro Balteo-Yazbeck
 - Marcolina Dipierro
 
