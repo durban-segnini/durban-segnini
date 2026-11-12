@@ -2,14 +2,24 @@
 title: "Upcoming "
 date: 2026-07-27
 ---
-# PRINTS & LITHOGRAPHS SALE
+# UPCOMING EXHIBITION
 
-[Click here to explore prints](https://durbansegninigallery.square.site/)
+Situated Geometries: \
+Fanny Sanin and Felipe Mujica 
+
+**Opening Reception**: Monday November 30, 2026 6-10pm
 
 **__**
 
-# UPCOMING EXHIBITION
+# UPCOMING FAIR
 
-Ines Silva: Rhythms of Geometry
+UNTITLED Miami Beach Booth C52\
+Javier Tellez, Alessandro Balteo-Yazbeck, Marcolina Dipierro
 
-Opening: Saturday August 22, 2026 6-10pm
+Dec 1 - 6, 2026
+
+**__**
+
+# PRINTS & LITHOGRAPHS SALE
+
+[Click here to explore prints](https://durbansegninigallery.square.site/)
