@@ -1,7 +1,7 @@
 ---
 title: "Situated Geometries: Fanny Sanín and Felipe Mujica"
 status: upcoming
-featured: false
+featured: true
 startingDate: 2026-11-30
 endingDate: 2027-03-12
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1794510447/Untitled_Design_10_igokqa.jpg
