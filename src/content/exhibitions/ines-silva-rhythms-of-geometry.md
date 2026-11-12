@@ -1,7 +1,7 @@
 ---
 title: "Ines Silva: Rhythms of Geometry"
 status: past
-featured: true
+featured: false
 startingDate: 2026-08-22
 endingDate: 2026-10-30
 poster: https://res.cloudinary.com/dao1vqck0/image/upload/v1793726568/_PAP7355-1_Large_le2c1z.jpg
