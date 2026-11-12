@@ -9,7 +9,7 @@ Fanny Sanin and Felipe Mujica 
 
 **Opening Reception**: Monday November 30, 2026 6-10pm
 
-**__**
+
 
 # UPCOMING FAIR
 
@@ -18,7 +18,7 @@ Javier Tellez, Alessandro Balteo-Yazbeck, Marcolina Dipierro
 
 Dec 1 - 6, 2026
 
-**__**
+
 
 # PRINTS & LITHOGRAPHS SALE
 
